@@ -1,0 +1,45 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const related = allPosts
+  .filter(p => p.id !== post.id)
+  .slice(0, 3)
+  .map(p => ({
+    title: p.data.title,
+    description: p.data.description,
+    slug: p.id,
+    image: p.data.image,
+    imageAlt: p.data.imageAlt,
+    category: p.data.category,
+    pubDate: p.data.pubDate,
+  }));
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.image}
+  imageAlt={post.data.imageAlt}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  category={post.data.category}
+  headings={headings}
+  affiliateDisclosure={post.data.affiliateDisclosure}
+>
+  <Content />
+  <RelatedArticles articles={related} />
+</BlogLayout>

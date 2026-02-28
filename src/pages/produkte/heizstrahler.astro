@@ -1,0 +1,394 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import AmazonProductBox from '../../components/AmazonProductBox.astro';
+import MamaTipp from '../../components/MamaTipp.astro';
+import WichtigHinweis from '../../components/WichtigHinweis.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const AMAZON_TAG = 'jalapeno123-21';
+
+const products = [
+  { name: 'reer EasyHeat Flex', feature: '500W, kompakt (46cm), Wand/Stand, Medizinstandard', rating: '4,5', recommended: true, affiliateLink: `https://www.amazon.de/dp/B07FM6WLYW?tag=${AMAZON_TAG}` },
+  { name: 'reer HeatCare+ Flex', feature: 'EcoHeat Carbon, 350/700W, Fernbedienung, Premium', rating: '4,6', affiliateLink: `https://www.amazon.de/dp/B0FQP3BMJ8?tag=${AMAZON_TAG}` },
+  { name: 'Babyruf BR-80', feature: '400/800W, Wand/Stand, schwenk- & höhenverstellbar', rating: '4,2', affiliateLink: `https://www.amazon.de/dp/B0B6T5W938?tag=${AMAZON_TAG}` },
+  { name: 'Babyruf BR-60', feature: '600W, Wandmontage, Abschaltautomatik, TÜV-geprüft', rating: '4,0', affiliateLink: `https://www.amazon.de/dp/B0CXJBNNB4?tag=${AMAZON_TAG}` },
+  { name: 'tectake Infrarot 2000W', feature: '3 Stufen, 2000W, Wand/Stand, Kippschutz', rating: '4,1', affiliateLink: `https://www.amazon.de/dp/B0D4DZYNFF?tag=${AMAZON_TAG}` },
+];
+
+const faqItems = [
+  {
+    question: 'Brauche ich wirklich einen Heizstrahler am Wickeltisch?',
+    answer: 'Besonders in den kälteren Monaten ist ein Heizstrahler sehr empfehlenswert. Babys können ihre Körpertemperatur noch nicht gut regulieren und kühlen nach dem warmen Bad schnell aus. Ein Heizstrahler sorgt für angenehme Wärme beim Abtrocknen, Eincremen und Anziehen &ndash; und dein Baby weint weniger, weil es sich wohler fühlt.'
+  },
+  {
+    question: 'Wandmontage oder Standgerät &ndash; was ist besser?',
+    answer: 'Wandmontage ist platzsparender und sicherer (kein Umkippen möglich). Standgeräte sind flexibler und ideal für Mietwohnungen, in denen du nicht bohren möchtest. Die beste Lösung: Ein 2-in-1-Gerät wie der reer HeatCare+ Flex oder der Babyruf BR-80, das beides kann.'
+  },
+  {
+    question: 'Wie weit muss der Heizstrahler vom Baby entfernt sein?',
+    answer: 'Mindestens 80-100 cm Abstand zum Baby &ndash; das ist die goldene Regel. Beachte immer die Herstellerangaben deines Modells. Teste die Wärme vor dem ersten Einsatz mit deiner eigenen Hand auf der Wickelfläche: Es sollte sich angenehm warm anfühlen, aber auf keinen Fall heiß.'
+  },
+  {
+    question: 'Kann ich einen normalen Heizstrahler (Terrasse/Bad) verwenden?',
+    answer: 'Wir raten dringend davon ab. Baby-Heizstrahler sind speziell für den Einsatz am Wickeltisch konzipiert. Sie haben Abschaltautomatiken, Spritzwasserschutz und strahlen eine gleichmäßige, sichere Wärme ab. Normale Heizstrahler können zu heiß werden und haben keine Sicherheitsfunktionen für den Einsatz in Babynähe.'
+  },
+  {
+    question: 'Wie lange braucht man einen Heizstrahler?',
+    answer: 'Die meisten Familien nutzen den Heizstrahler, bis das Kind etwa 2-3 Jahre alt ist. Danach können sich Kinder in der Regel schnell genug anziehen und frieren weniger leicht nach dem Baden. Im Winter ist er aber auch danach noch praktisch.'
+  },
+  {
+    question: 'Was bedeutet die Watt-Angabe?',
+    answer: 'Die Wattzahl gibt die Heizleistung an. 500-600W reicht für den Wickeltisch völlig aus und ist dabei energiesparend. 800W oder mehr erzeugt schneller Wärme, verbraucht aber auch mehr Strom. Für einen normalen Wickelplatz empfehlen wir 500-700W &ndash; das ist der Sweet Spot zwischen Wärme und Stromverbrauch.'
+  },
+];
+---
+
+<BaseLayout
+  title="Heizstrahler Wickeltisch Test 2026: Die 5 besten Wärmelampen"
+  description="Welcher Heizstrahler ist der beste für den Wickeltisch? Wir vergleichen reer, Babyruf und tectake &ndash; Wandmontage und Standgeräte im Test."
+>
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <Breadcrumb items={[
+      { label: 'Produkte', href: '/produkte/' },
+      { label: 'Heizstrahler' }
+    ]} />
+
+    <!-- Intro -->
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Heizstrahler Wickeltisch Test 2026: Die 5 besten Wärmelampen</h1>
+      <p class="text-text-light text-lg leading-relaxed mb-4">
+        Nach dem warmen Bad fällt die Körpertemperatur deines Babys schnell ab. <strong>Babys können ihre Temperatur noch nicht selbst regulieren</strong> &ndash; deshalb ist ein Heizstrahler am Wickeltisch gerade im Winter ein echtes Must-have.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Wir haben die <strong>5 beliebtesten Wickeltisch-Heizstrahler</strong> verglichen: vom günstigen Einstieg (reer EasyHeat, 33€) bis zum Premium-Modell mit Fernbedienung (reer HeatCare+ Flex, 120€). Wandmontage, Standgeräte und flexible 2-in-1-Lösungen &ndash; für jeden Wickelplatz das Richtige.
+      </p>
+      <p class="text-sm text-text-light italic">
+        <em>Zuletzt aktualisiert: Februar 2026</em>
+      </p>
+    </header>
+
+    <!-- Sicherheitshinweis -->
+    <WichtigHinweis text="Halte immer mindestens 80-100 cm Abstand zwischen Heizstrahler und Baby. Lass den Heizstrahler nie unbeaufsichtigt laufen und achte auf eine automatische Abschaltfunktion. Teste die Wärme vor dem ersten Einsatz mit deiner eigenen Hand." />
+
+    <!-- Vergleichstabelle -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Alle 5 Heizstrahler auf einen Blick</h2>
+      <ComparisonTable products={products} />
+    </section>
+
+    <!-- 1. reer EasyHeat Flex -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">1. reer EasyHeat Flex &ndash; Unser Preis-Leistungs-Sieger</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der <strong>reer EasyHeat Flex</strong> ist der Klassiker unter den Baby-Heizstrahlern und mit ~33€ der günstigste in unserem Vergleich. Mit nur <strong>46 cm Breite</strong> passt er auch in die kleinsten Badezimmer. Die 500W Heizleistung reicht für den Wickeltisch völlig aus und ist dabei besonders <strong>energiesparend</strong>. Dank des <strong>modularen Standfußes</strong> lässt er sich sowohl an der Wand montieren als auch frei neben den Wickeltisch stellen &ndash; ideal für Mietwohnungen.
+      </p>
+
+      <AmazonProductBox
+        name="reer EasyHeat Flex Wickeltischstrahler"
+        affiliateLink={`https://www.amazon.de/dp/B07FM6WLYW?tag=${AMAZON_TAG}`}
+        features={[
+          'Kompakt: Nur 46 cm breit &ndash; perfekt für kleine Räume',
+          '500W &ndash; energiesparend und trotzdem leistungsstark',
+          '2-in-1: Wandmontage ODER mit höhenverstellbarem Standfuß',
+          'Geprüft nach Medizinstandard (Teilprüfung IEC 60601-2-21)',
+          'Abschaltautomatik nach 10 Minuten',
+          'Kipp-Abschaltung und Überhitzungsschutz'
+        ]}
+        rating="4,5/5 bei 1.600+ Bewertungen"
+        badge="Preis-Leistungs-Sieger"
+        image="/images/products/reer-easyheat-heizstrahler.jpg"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Bester Preis im Vergleich (~33€)</li>
+            <li>&bull; Kompakt &ndash; ideal für kleine Bäder</li>
+            <li>&bull; Flexibel: Wand oder Stand</li>
+            <li>&bull; Nach Medizinstandard geprüft</li>
+            <li>&bull; Über 1.600 positive Bewertungen</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Standfuß nicht immer 100% stabil</li>
+            <li>&bull; Eher kurzes Kabel</li>
+            <li>&bull; Nur eine Heizstufe (500W)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. reer HeatCare+ Flex -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">2. reer HeatCare+ Flex &ndash; Das Premium-Modell</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der <strong>reer HeatCare+ Flex</strong> ist das Topmodell von reer mit innovativer <strong>EcoHeat Carbon-Technologie</strong>. Er heizt in nur 5-6 Sekunden auf und verbraucht dabei 12,5% weniger Energie als vergleichbare Modelle. Die <strong>Fernbedienung</strong> ist im Alltag ein echtes Plus &ndash; besonders wenn du dein Baby auf dem Arm hast. Als 2-in-1-Gerät lässt er sich an die Wand montieren oder mit Standfuß frei aufstellen.
+      </p>
+
+      <AmazonProductBox
+        name="reer HeatCare+ Flex Wickeltisch-Heizstrahler"
+        affiliateLink={`https://www.amazon.de/dp/B0FQP3BMJ8?tag=${AMAZON_TAG}`}
+        features={[
+          'EcoHeat Carbon-Heizelement &ndash; Wärme in 5-6 Sekunden',
+          '2 Heizstufen: 350W und 700W',
+          '12,5% weniger Energieverbrauch als Vergleichsmodelle',
+          'Fernbedienung mit klaren Symbolen',
+          '2-in-1: Wand- oder Standgerät (Teleskopstange)',
+          'Zuschaltbare Timer-Funktion',
+          'GS-zertifizierter Kippschutz'
+        ]}
+        rating="4,6/5"
+        badge="Premium-Empfehlung"
+        image="/images/products/reer-heatcare-flex-heizstrahler.jpg"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Schnellste Aufheizzeit (5-6 Sek.)</li>
+            <li>&bull; Fernbedienung &ndash; super praktisch</li>
+            <li>&bull; Flexibel: Wand oder Stand</li>
+            <li>&bull; Energiesparendste Option</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Höchster Preis im Vergleich (~120€)</li>
+            <li>&bull; Standfuß etwas wackelig</li>
+            <li>&bull; Relativ neues Modell</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Babyruf BR-80 -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">3. Babyruf BR-80 &ndash; Der Flexible</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der <strong>Babyruf BR-80</strong> punktet mit seiner <strong>modularen Bauweise</strong>: Er kommt mit Wandhalterung und Standfuß, sodass du flexibel entscheiden kannst. Mit <strong>2 Heizstufen</strong> (400W/800W) lässt sich die Wärme gut dosieren. Besonders praktisch: Er ist <strong>schwenk- und höhenverstellbar</strong> (163-193 cm), sodass du ihn perfekt auf den Wickelplatz ausrichten kannst.
+      </p>
+
+      <AmazonProductBox
+        name="Babyruf BR-80 Heizstrahler mit Wandhalterung"
+        affiliateLink={`https://www.amazon.de/dp/B0B6T5W938?tag=${AMAZON_TAG}`}
+        features={[
+          '2 Heizstufen: 400W und 800W per Zugschalter',
+          'Modulare Montage: Wand ODER Standfuß',
+          'Schwenkbar und höhenverstellbar (163-193 cm)',
+          'Sicherheitsgeflecht gegen Berührung und Splitter',
+          'Zuschaltbare Timer-Funktion',
+          'TÜV/GS-geprüft',
+          'Leicht: nur 1,54 kg'
+        ]}
+        rating="4,2/5 bei 1.100+ Bewertungen"
+        badge="Flexibelste Lösung"
+        image="/images/products/babyruf-br80-heizstrahler.jpg"
+        imagePosition="top"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; 2-in-1: Wand + Stand inklusive</li>
+            <li>&bull; Schwenk- und höhenverstellbar</li>
+            <li>&bull; 2 Heizstufen für mehr Kontrolle</li>
+            <li>&bull; TÜV/GS-geprüft</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Vereinzelt Berichte über defekte Heizstäbe</li>
+            <li>&bull; Etwas sperrig für kleine Bäder</li>
+            <li>&bull; 800W-Stufe verbraucht relativ viel Strom</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Babyruf BR-60 -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">4. Babyruf BR-60 &ndash; Solide Basis</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der <strong>Babyruf BR-60</strong> ist ein geradliniger Wickeltisch-Heizstrahler ohne viel Schnickschnack: <strong>600W, Wandmontage, Abschaltautomatik</strong> &ndash; fertig. Er macht geräuschlos sofort Wärme und schaltet sich nach 10 Minuten automatisch ab. Mit einem Schwenkbereich von 65° lässt er sich gut ausrichten. TÜV-geprüft und von einer Marke mit über 20 Jahren Erfahrung.
+      </p>
+
+      <AmazonProductBox
+        name="Babyruf BR-60 Baby-Heizstrahler 600W"
+        affiliateLink={`https://www.amazon.de/dp/B0CXJBNNB4?tag=${AMAZON_TAG}`}
+        features={[
+          '600W &ndash; geräuschlose, sofortige Wärme',
+          'Abschaltautomatik nach 10 Minuten',
+          'Schwenkbereich: 65° &ndash; flexibel ausrichtbar',
+          'TÜV-geprüft &ndash; über 20 Jahre Babyruf-Erfahrung',
+          'Einfache Wandmontage',
+          'Kompaktes Design'
+        ]}
+        rating="4,0/5"
+        badge="Solide Basis"
+        image="/images/products/babyruf-br60-heizstrahler.jpg"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Guter Preis (~40€)</li>
+            <li>&bull; Geräuschloser Betrieb</li>
+            <li>&bull; TÜV-geprüft und bewährt</li>
+            <li>&bull; Guter Kundendienst (Babyruf)</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Wandhalterung wackelig bei losen Schrauben</li>
+            <li>&bull; Nur Wandmontage (kein Standfuß)</li>
+            <li>&bull; 10 Min. Abschaltung kann knapp sein</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. tectake Infrarot -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">5. tectake Infrarot-Heizstrahler &ndash; Der Kraftvolle</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der <strong>tectake Infrarot-Heizstrahler</strong> ist mit <strong>2000W das leistungsstärkste Modell</strong> in unserem Vergleich und bietet 3 Heizstufen. Er heizt Körper und Objekte direkt per Infrarot &ndash; ohne Luftverwirbelung, was ihn auch für Allergiker interessant macht. Er kann als Wand- oder Standgerät genutzt werden und hat einen Kippschutz.
+      </p>
+
+      <AmazonProductBox
+        name="tectake Infrarot-Heizstrahler 2000W"
+        affiliateLink={`https://www.amazon.de/dp/B0D4DZYNFF?tag=${AMAZON_TAG}`}
+        features={[
+          '2000W Heizleistung &ndash; 3 einstellbare Stufen',
+          'Infrarot-Technologie: heizt direkt, keine Luftverwirbelung',
+          'Wand- oder Standgerät (Basis im Lieferumfang)',
+          'Kippschutz mit automatischer Abschaltung',
+          'Ideal für größere Räume oder als Terrassenstrahler nutzbar',
+          'Sofortige Wärme ohne Aufheizzeit'
+        ]}
+        rating="4,1/5"
+        image="/images/products/tectake-infrarot-heizstrahler.jpg"
+      />
+
+      <WichtigHinweis text="Der tectake ist kein reiner Baby-Heizstrahler, sondern ein Allround-Infrarotstrahler. Er hat keine spezielle Baby-Sicherheitszertifizierung. Die 2000W sind für den Wickeltisch eigentlich zu viel &ndash; nutze ihn nur auf der niedrigsten Stufe und mit ausreichend Abstand (mindestens 100 cm). Für reine Wickeltisch-Nutzung empfehlen wir die spezialisierten Baby-Modelle." />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Günstig trotz hoher Leistung</li>
+            <li>&bull; 3 Stufen für flexible Nutzung</li>
+            <li>&bull; Vielseitig: auch als Terrassenstrahler</li>
+            <li>&bull; Kippschutz vorhanden</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Kein spezieller Baby-Heizstrahler</li>
+            <li>&bull; 2000W für Wickeltisch überdimensioniert</li>
+            <li>&bull; Standfuß nicht immer stabil</li>
+            <li>&bull; Keine Baby-Sicherheitszertifizierung</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kaufberatung -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Kaufberatung: Wandmontage vs. Standgerät</h2>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#128736; Wandmontage</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Platzsparend &ndash; ideal für kleine Bäder</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Sicherer &ndash; kann nicht umkippen</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Fester Platz &ndash; immer bereit</li>
+            <li class="flex items-start gap-2"><span class="text-text-light">&#10007;</span> Bohren nötig</li>
+            <li class="flex items-start gap-2"><span class="text-text-light">&#10007;</span> Nicht flexibel umsetzbar</li>
+          </ul>
+          <p class="mt-4 text-sm text-primary-dark font-heading font-semibold">Ideal für: Eigentümer, fester Wickelplatz</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#128204; Standgerät</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Kein Bohren &ndash; sofort einsatzbereit</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Flexibel &ndash; auch im Schlafzimmer nutzbar</li>
+            <li class="flex items-start gap-2"><span class="text-primary">&#10003;</span> Ideal für Mietwohnungen</li>
+            <li class="flex items-start gap-2"><span class="text-text-light">&#10007;</span> Braucht Stellfläche</li>
+            <li class="flex items-start gap-2"><span class="text-text-light">&#10007;</span> Kipprisiko (auf Kippschutz achten!)</li>
+          </ul>
+          <p class="mt-4 text-sm text-primary-dark font-heading font-semibold">Ideal für: Mieter, wechselnder Wickelplatz</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#9889; Leistung (Watt)</h3>
+          <p class="text-text-light leading-relaxed">
+            <strong>500-700W reicht für den Wickeltisch völlig aus.</strong> Mehr Watt bedeutet schnellere Wärme, aber auch höheren Stromverbrauch. Der reer EasyHeat zeigt mit 500W, dass weniger oft mehr ist. Der tectake mit 2000W ist für den Wickeltisch eigentlich zu viel &ndash; nutze ihn nur auf der niedrigsten Stufe.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#128267; Sicherheitsfunktionen</h3>
+          <p class="text-text-light leading-relaxed">
+            Achte unbedingt auf: <strong>Abschaltautomatik</strong> (Timer), <strong>Kippschutz</strong>, <strong>Überhitzungsschutz</strong> und idealerweise ein <strong>Sicherheitsgeflecht</strong> (verhindert Berührung der heißen Elemente). TÜV/GS-Prüfung ist ein gutes Qualitätsmerkmal. Alle Baby-Spezialmodelle in unserem Vergleich haben diese Features.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <MamaTipp text="Nach einem Kaiserschnitt oder einer schweren Geburt ist ein Heizstrahler am Wickeltisch wirklich Gold wert. Du musst dich nicht hetzen beim Anziehen, weil dein Baby kuschelig warm liegt. Nimm dir die Zeit, die du brauchst &ndash; der Heizstrahler hält die Wärme." />
+
+    <!-- Fazit -->
+    <section class="mb-12 mt-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Unser Fazit</h2>
+
+      <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/10">
+        <p class="text-text leading-relaxed text-lg mb-6">
+          Für die meisten Familien ist der <strong>reer EasyHeat Flex</strong> die beste Wahl: <strong>kompakt, günstig (~33€), mit Standfuß, nach Medizinstandard geprüft</strong> und mit über 1.600 zufriedenen Bewertungen. Er macht genau das, was er soll &ndash; nicht mehr und nicht weniger.
+        </p>
+        <p class="text-text-light leading-relaxed mb-6">
+          Wer <strong>mehr Flexibilität</strong> braucht (Wand + Stand), greift zum <strong>Babyruf BR-80</strong> (~55€). Und wer das <strong>Beste vom Besten</strong> will &ndash; mit Fernbedienung, Carbon-Technologie und minimalem Stromverbrauch &ndash; investiert in den <strong>reer HeatCare+ Flex</strong> (~120€).
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+          <a href={`https://www.amazon.de/dp/B07FM6WLYW?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-primary-dark uppercase">Preis-Leistung</span>
+            <p class="font-heading font-bold mt-1">reer EasyHeat Flex</p>
+            <p class="text-sm text-text-light mt-1">4,5★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B0B6T5W938?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-accent-dark uppercase">Flexibelste</span>
+            <p class="font-heading font-bold mt-1">Babyruf BR-80</p>
+            <p class="text-sm text-text-light mt-1">4,2★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B0FQP3BMJ8?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-green-700 uppercase">Premium</span>
+            <p class="font-heading font-bold mt-1">reer HeatCare+</p>
+            <p class="text-sm text-text-light mt-1">4,6★</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-8">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Wickeltisch-Heizstrahlern</h2>
+      <FAQ items={faqItems} />
+    </section>
+  </article>
+</BaseLayout>

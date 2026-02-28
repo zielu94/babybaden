@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  publishedDate?: string;
+  modifiedDate?: string;
+  canonicalUrl?: string;
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  image = '/images/hero/baby-baden-hero.jpg',
+  imageAlt = 'Baby wird liebevoll gebadet',
+  type = 'website',
+  publishedDate,
+  modifiedDate,
+  canonicalUrl,
+  jsonLd,
+} = Astro.props;
+
+const siteTitle = 'babybaden.de';
+const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
+const canonical = canonicalUrl || Astro.url.href;
+const ogImage = new URL(image, Astro.site).href;
+
+const publishedMeta = publishedDate ? `<meta property="article:published_time" content="${publishedDate}" />` : '';
+const modifiedMeta = modifiedDate ? `<meta property="article:modified_time" content="${modifiedDate}" />` : '';
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content="index, follow" />
+<html lang="de" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={imageAlt} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={siteTitle} />
+<meta property="og:locale" content="de_DE" />
+
+<!-- Pinterest -->
+<meta name="pinterest-rich-pin" content="true" />
+
+<Fragment set:html={publishedMeta} />
+<Fragment set:html={modifiedMeta} />
+
+<!-- JSON-LD -->
+{jsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+)}

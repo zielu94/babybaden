@@ -1,0 +1,424 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AmazonProductBox from '../../components/AmazonProductBox.astro';
+import MamaTipp from '../../components/MamaTipp.astro';
+import WichtigHinweis from '../../components/WichtigHinweis.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const AMAZON_TAG = 'jalapeno123-21';
+
+const faqItems = [
+  {
+    question: 'Was brauche ich wirklich an Badezubehör für mein Neugeborenes?',
+    answer: 'Für den Start reichen ein <strong>weiches Kapuzenhandtuch</strong>, 2-3 sanfte <strong>Waschlappen</strong> und ein <strong>Haarwaschbecher</strong>. Ein Badekissen ist optional, macht das Baden von Neugeborenen aber deutlich entspannter. Badeschwämme und Haartrockner sind nice-to-have, aber kein Muss.'
+  },
+  {
+    question: 'Wie oft sollte ich Badehandtücher und Waschlappen waschen?',
+    answer: 'Waschlappen solltest du <strong>nach jeder Nutzung</strong> wechseln und bei mindestens 60°C waschen. Kapuzenhandtücher reichen 2-3 Nutzungen, wenn du sie zwischen den Bädern gut trocknen lässt. Generell gilt: Sobald es muffig riecht, sofort in die Wäsche!'
+  },
+  {
+    question: 'Braucht mein Baby einen speziellen Baby-Haartrockner?',
+    answer: 'Nein, <strong>ein normales Handtuch reicht völlig aus</strong>. Ein schnurloser Baby-Haartrockner kann aber praktisch sein, um empfindliche Hautfalten (Hals, Achseln, Windelbereich) sanft zu trocknen und so Windelausschlag vorzubeugen. Nie auf höchster Stufe oder zu nah an der Haut verwenden!'
+  },
+  {
+    question: 'Baumwolle, Bambus oder Mikrofaser &ndash; was ist am besten für Babyhaut?',
+    answer: '<strong>Bambus</strong> ist am saugfähigsten und wird mit jeder Wäsche weicher &ndash; ideal für Kapuzenhandtücher. <strong>Musselin-Baumwolle</strong> ist atmungsaktiv und vielseitig. <strong>Mikrofaser-Korallenfleece</strong> ist besonders weich und trocknet schnell &ndash; perfekt für Waschlappen. Alle drei sind für Babyhaut geeignet, wenn sie schadstoffgeprüft sind (OEKO-TEX).'
+  },
+  {
+    question: 'Was hilft gegen Milchschorf beim Baby?',
+    answer: 'Milchschorf (Kopfgneis) betrifft ca. 70% aller Babys und ist harmlos. Ein spezielles <strong>Milchschorf-Set</strong> (wie das Frida Baby FlakeFixer) mit Schwamm, Bürste und Kamm kann die Schuppen sanft lösen. Alternativ: Etwas Babyöl auf die Kopfhaut auftragen, einwirken lassen und mit einer weichen Bürste vorsichtig lösen. Nie kratzen!'
+  },
+  {
+    question: 'Sind Waschpads besser als herkömmliche Waschlappen?',
+    answer: 'Waschpads (wie die waschies) reinigen allein mit Wasser &ndash; ohne Seife oder Zusätze. Das ist besonders schonend für empfindliche Babyhaut und bewahrt den natürlichen Säureschutzmantel. Sie sind eine nachhaltige Alternative zu Einweg-Feuchttüchern. Für das eigentliche Baden reichen aber auch normale weiche Waschlappen völlig aus.'
+  },
+];
+---
+
+<BaseLayout
+  title="Baby-Badezubehör Test 2026: Die 10 besten Helfer fürs Baby-Bad"
+  description="Das beste Badezubehör für dein Baby: Kapuzenhandtücher, Haarwaschbecher, Waschlappen, Badekissen und mehr &ndash; ehrlich verglichen und empfohlen."
+>
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <Breadcrumb items={[
+      { label: 'Produkte', href: '/produkte/' },
+      { label: 'Badezubehör' }
+    ]} />
+
+    <!-- Intro -->
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Baby-Badezubehör: Die 10 besten Helfer fürs Bad</h1>
+      <p class="text-text-light text-lg leading-relaxed mb-4">
+        Babywanne und Thermometer hast du &ndash; aber was brauchst du sonst noch? Von <strong>Kapuzenhandtüchern</strong> über <strong>Haarwaschbecher</strong> bis zum <strong>Milchschorf-Set</strong>: Hier findest du die 10 besten Badezubehör-Produkte, die das Baden einfacher, sicherer und gemütlicher machen.
+      </p>
+      <p class="text-sm text-text-light italic">
+        <em>Zuletzt aktualisiert: Februar 2026</em>
+      </p>
+    </header>
+
+    <!-- Quick Navigation -->
+    <nav class="mb-12 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+      <h2 class="font-heading font-bold text-lg mb-4">&#128203; Auf dieser Seite</h2>
+      <div class="grid sm:grid-cols-2 gap-2 text-sm">
+        <a href="#badehelfer" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Bade-Helfer (Badekissen, Haarwaschbecher, Duschkopf)
+        </a>
+        <a href="#kopfpflege" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Kopfpflege (Milchschorf-Set, Haartrockner)
+        </a>
+        <a href="#handtuecher" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Kapuzenhandtücher & Badetücher
+        </a>
+        <a href="#waschlappen" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Waschlappen, Schwämme & Waschpads
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== -->
+    <!-- 1. BADE-HELFER -->
+    <!-- ==================== -->
+    <section id="badehelfer" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#128704;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Bade-Helfer: Entspannter baden</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Diese Helfer machen das Baden stressfreier &ndash; für dich und dein Baby. Ein Badekissen gibt Neugeborenen Halt, ein Haarwaschbecher hält Wasser aus den Augen und ein batteriebetriebener Duschkopf erleichtert das Abspülen.
+      </p>
+
+      <!-- Nuby Schildkröten-Badekissen -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">1. Nuby Schildkröten-Badekissen</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>Nuby Dr. Talbot's Schildkröten-Badekissen</strong> verwandelt jedes Waschbecken oder jede Babywanne in eine kuschelig weiche Liegewiese. Mit <strong>3,2 cm dickem Schaumstoff</strong> gibt es Neugeborenen sicheren Halt, während du beide Hände frei hast. Das schimmelresistente Material kann einfach in die Waschmaschine &ndash; genial!
+      </p>
+      <AmazonProductBox
+        name="Nuby Dr. Talbot's Schildkröten-Badekissen"
+        affiliateLink={`https://www.amazon.de/dp/B094F7YPPC?tag=${AMAZON_TAG}`}
+        features={[
+          'Superweiche Polsterung (3,2 cm Schaumstoff) &ndash; passt sich dem Baby an',
+          '82,5 cm groß &ndash; passt in die meisten Waschbecken und Babywannen',
+          'Schimmelresistentes Material &ndash; waschmaschinen- und trocknergeeignet',
+          'Für Babys von 0-6 Monaten',
+          'Süßes Schildkröten-Design in Türkis'
+        ]}
+        rating="4,4/5"
+        badge="Für Neugeborene"
+        image="/images/products/nuby-badekissen.jpg"
+      />
+
+      <!-- SKIP HOP Haarwaschbecher -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">2. Skip Hop Moby Haarwaschbecher</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Der <strong>Skip Hop Moby Haarwaschbecher</strong> in Wal-Form ist DER Bestseller unter den Haarwaschbechern &ndash; mit fast <strong>8.000 Bewertungen</strong> auf Amazon. Die patentierten Innenrillen erzeugen einen sanften Wasserfall-Effekt, die weiche Gummilippe schließt an der Stirn ab und hält Wasser zuverlässig von Augen und Ohren fern. Tränenfrei Haare waschen!
+      </p>
+      <AmazonProductBox
+        name="Skip Hop Moby Haarwaschbecher"
+        affiliateLink={`https://www.amazon.de/dp/B00FXR5S20?tag=${AMAZON_TAG}`}
+        features={[
+          'Patentierte Innenrillen für sanften, gleichmäßigen Wasserfall-Effekt',
+          'Weiche Gummilippe hält Wasser von Augen und Ohren fern',
+          'Fasst 710 ml (3 Tassen) Wasser &ndash; ergonomischer Einhandgriff',
+          'BPA-frei, PVC-frei, Phthalat-frei und spülmaschinenfest',
+          'Steht aufrecht oder lässt sich zum Trocknen aufhängen'
+        ]}
+        rating="4,5/5 bei 7.900+ Bewertungen"
+        badge="Bestseller"
+        image="/images/products/skiphop-haarwaschbecher.jpg"
+      />
+
+      <!-- Yookidoo Elefanten Baby-Party -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">3. Yookidoo Elefanten Baby-Party</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Yookidoo Elefanten Baby-Party</strong> ist ein batteriebetriebener Mini-Duschkopf in süßer Elefantenform. Der sanfte Wasserstrahl aus dem Rüssel ermöglicht <strong>gründliches Waschen mit einer Hand</strong> &ndash; die andere bleibt frei fürs Baby. Ideal für Babys, die Haarewaschen nicht mögen: Der Elefant macht's spielerisch!
+      </p>
+      <AmazonProductBox
+        name="Yookidoo Elefanten Baby-Party (Rosa)"
+        affiliateLink={`https://www.amazon.de/dp/B08DFFH9WJ?tag=${AMAZON_TAG}`}
+        features={[
+          'Batteriebetriebene Pumpe mit Duschkopf am Elefantenrüssel',
+          'Sanfter, beruhigender Wasserstrahl &ndash; perfekt für empfindliche Babys',
+          'Einhand-Bedienung &ndash; die andere Hand bleibt frei fürs Baby',
+          'Wächst mit: Duschkopf und Badespielzeug in einem (0-24 Monate)',
+          'BPA- und Phthalat-frei'
+        ]}
+        rating="4,3/5 bei 11.000+ Bewertungen"
+        image="/images/products/yookidoo-elefant.jpg"
+      />
+
+      <MamaTipp text="Mein persönlicher Favorit ist der Skip Hop Haarwaschbecher. Er ist günstig, simpel und funktioniert einfach. Die Yookidoo-Dusche ist toll, braucht aber Batterien und muss regelmäßig gereinigt werden. Für den Start reicht der Becher völlig!" />
+    </section>
+
+    <!-- ==================== -->
+    <!-- 2. KOPFPFLEGE -->
+    <!-- ==================== -->
+    <section id="kopfpflege" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#129520;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Kopfpflege: Milchschorf & Haare trocknen</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ca. 70% aller Babys bekommen Milchschorf (Kopfgneis) &ndash; harmlos, aber hartnäckig. Mit dem richtigen Set löst du die Schuppen sanft. Und ein leiser Baby-Haartrockner hilft, empfindliche Stellen nach dem Bad schonend zu trocknen.
+      </p>
+
+      <!-- Frida Baby FlakeFixer -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">4. Frida Baby DermaFrida FlakeFixer</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>Frida Baby FlakeFixer 3-in-1 Milchschorf-Set</strong> ist das erste speziell entwickelte System gegen Kopfgneis. <strong>3 Schritte: Einschäumen (Schwamm), Lösen (Bürste), Ausheben (Kamm).</strong> Viele Eltern berichten, dass der Milchschorf bereits nach der ersten Anwendung deutlich zurückgeht. Mit praktischem Aufbewahrungsständer.
+      </p>
+      <AmazonProductBox
+        name="Frida Baby DermaFrida FlakeFixer 3-in-1 Milchschorf-Set"
+        affiliateLink={`https://www.amazon.de/dp/B0CR6K13MX?tag=${AMAZON_TAG}`}
+        features={[
+          '3-Schritte-System: Schwamm, Bürste und Kamm',
+          'Superweiche Borsten &ndash; sanft zu empfindlicher Babykopfhaut',
+          'Empfohlen für 2-3 Anwendungen pro Woche',
+          'Praktischer Aufbewahrungsständer inklusive',
+          'Von Frida Baby &ndash; der Marke, der Eltern weltweit vertrauen'
+        ]}
+        rating="4,7/5 bei 1.200+ Bewertungen"
+        badge="Empfehlung"
+        image="/images/products/frida-baby-milchschorf.jpg"
+      />
+
+      <!-- Baby-Haartrockner -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">5. Schnurloser Baby-Haartrockner</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Dieser <strong>kabellose Mini-Haartrockner</strong> wurde speziell für Babys von 0-3 Jahren entwickelt. Mit nur <strong>60 dB Lautstärke</strong> erschreckt er empfindliche Babys nicht, und die sanfte Wärme hilft, Hautfalten nach dem Baden schonend zu trocknen &ndash; das kann Windelausschlag vorbeugen. Die Kindersicherung verhindert versehentliches Einschalten.
+      </p>
+      <AmazonProductBox
+        name="Schnurloser Baby-Haartrockner mit 3 Stufen"
+        affiliateLink={`https://www.amazon.de/dp/B0BQHNFQK5?tag=${AMAZON_TAG}`}
+        features={[
+          'Kabellos und wiederaufladbar (4000 mAh Akku)',
+          'Nur 60 dB leise &ndash; erschreckt dein Baby nicht',
+          '3 Gebläsemodi &ndash; sanfte Wärme für empfindliche Haut',
+          'Kindersicherung (zwei Tasten gleichzeitig drücken)',
+          'Wabendesign am Luftauslass schützt Babyfinger',
+          'Ideal zum Trocknen von Hautfalten (Windelausschlag vorbeugen)'
+        ]}
+        rating="3,4/5"
+        image="/images/products/baby-haartrockner.jpg"
+      />
+
+      <WichtigHinweis text="Verwende den Baby-Haartrockner immer nur auf der niedrigsten Stufe und halte mindestens 20 cm Abstand zur Babyhaut. Nie direkt auf Gesicht oder Ohren richten. Ein weiches Handtuch reicht für die meisten Babys völlig aus &ndash; der Haartrockner ist ein Nice-to-have, kein Muss." />
+    </section>
+
+    <!-- ==================== -->
+    <!-- 3. KAPUZENHANDTÜCHER -->
+    <!-- ==================== -->
+    <section id="handtuecher" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#129531;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Kapuzenhandtücher & Badetücher</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ein gutes Kapuzenhandtuch ist nach der Babywanne das zweitwichtigste Bade-Accessoire. Die Kapuze schützt das Köpfchen vor Auskühlung, und das Tuch hält dein Baby kuschelig warm. <strong>Tipp: Lege das Handtuch schon vor dem Baden bereit</strong> &ndash; so geht's nach dem Bad ganz schnell.
+      </p>
+
+      <!-- Blissful Diary Kapuzenhandtuch -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">6. Blissful Diary Musselin-Kapuzenhandtuch</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>Blissful Diary Kapuzenhandtuch</strong> aus Premium-Musselin-Baumwolle wird mit jeder Wäsche weicher &ndash; ein Traum für zarte Babyhaut. Mit 81×81 cm ist es groß genug für Neugeborene bis Kleinkinder. Das geschlechtsneutrale Tierdesign macht es zum perfekten Geschenk zur Geburt. Vielseitig einsetzbar: als Badetuch, Pucktuch oder Strandtuch.
+      </p>
+      <AmazonProductBox
+        name="Blissful Diary Musselin-Kapuzenhandtuch"
+        affiliateLink={`https://www.amazon.de/dp/B0FYQ2C2QP?tag=${AMAZON_TAG}`}
+        features={[
+          'Premium-Musselin-Baumwolle &ndash; wird mit jeder Wäsche weicher',
+          '81×81 cm &ndash; passend für Neugeborene bis Kleinkinder',
+          'Süßes Tiermotiv an der Kapuze &ndash; geschlechtsneutral',
+          'Vielseitig: Badetuch, Pucktuch, Strandtuch, Kinderwagen-Decke',
+          'Keine dekorativen Nähte im Kapuzeninneren &ndash; sanft am Babykopf',
+          'Maschinenwaschbar und schnelltrocknend'
+        ]}
+        rating="4,7/5"
+        badge="Empfehlung"
+        image="/images/products/blissful-diary-kapuzenhandtuch.jpg"
+      />
+
+      <!-- Momcozy Badetücher-Set -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">7. Momcozy Bambus-Badetücher 5er-Set</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>Momcozy 5-teilige Bambus-Set</strong> bietet alles für die Badezeit in einem Paket: 1 Kapuzenhandtuch, 3 Waschlappen und 1 Badehandschuh. <strong>Bambusfaser ist doppelt so saugfähig wie Baumwolle</strong> und trocknet die empfindliche Babyhaut schnell und sanft. Das süße Bären-Design macht es zum idealen Geburtsgeschenk.
+      </p>
+      <AmazonProductBox
+        name="Momcozy Bambus Baby-Badetücher 5er-Set"
+        affiliateLink={`https://www.amazon.de/dp/B086PVNCL4?tag=${AMAZON_TAG}`}
+        features={[
+          'Bambusfaser &ndash; 2x saugfähiger als Baumwolle',
+          '5-teilig: 1 Kapuzenhandtuch (76×76 cm), 3 Waschlappen, 1 Badehandschuh',
+          'Süßes Bären-Design &ndash; für Jungen und Mädchen',
+          'Wird mit jeder Wäsche weicher &ndash; maschinenwaschbar',
+          'Groß genug für Babys von 0-4 Jahren'
+        ]}
+        rating="4,5/5"
+        badge="Komplett-Set"
+        image="/images/products/momcozy-badetuecher.jpg"
+      />
+
+      <!-- Material-Vergleich -->
+      <div class="mt-8 grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h4 class="font-heading font-bold text-sm mb-2">&#127807; Musselin-Baumwolle</h4>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; Atmungsaktiv und leicht</li>
+            <li>&bull; Wird mit jeder Wäsche weicher</li>
+            <li>&bull; Ideal für Sommer und Reisen</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h4 class="font-heading font-bold text-sm mb-2">&#127795; Bambusfaser</h4>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; Doppelt so saugfähig</li>
+            <li>&bull; Natürlich antibakteriell</li>
+            <li>&bull; Ideal für empfindliche Haut</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h4 class="font-heading font-bold text-sm mb-2">&#128171; Frottee-Baumwolle</h4>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; Klassiker &ndash; kuschelig dick</li>
+            <li>&bull; Sehr warm nach dem Bad</li>
+            <li>&bull; Ideal für Herbst/Winter</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== -->
+    <!-- 4. WASCHLAPPEN & WASCHPADS -->
+    <!-- ==================== -->
+    <section id="waschlappen" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#129507;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Waschlappen, Schwämme & Waschpads</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Weiche Waschlappen brauchst du nicht nur zum Baden, sondern <strong>täglich</strong>. Ein großes Set (10-24 Stück) ist ideal, damit du immer frische Lappen parat hast. Hier unsere drei Favoriten &ndash; von Mikrofaser über Naturschwämme bis zu innovativen Waschpads.
+      </p>
+
+      <!-- Orighty Baby Waschlappen -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">8. Orighty Baby-Waschlappen 24er-Pack</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Orighty Waschlappen aus Mikrofaser-Korallenfleece</strong> sind weicher und saugfähiger als herkömmliche Baumwolltücher &ndash; und das im praktischen <strong>24er-Vorteilspack</strong>. Sie trocknen dank der Mikrofaser-Struktur besonders schnell und bleiben auch nach vielen Wäschen flauschig weich. Frei von schädlichen Chemikalien.
+      </p>
+      <AmazonProductBox
+        name="Orighty Baby-Waschlappen Korallenfleece 24er-Pack"
+        affiliateLink={`https://www.amazon.de/dp/B09KRPRWXM?tag=${AMAZON_TAG}`}
+        features={[
+          '24 Stück im Vorteilspaket &ndash; immer frische Lappen parat',
+          'Mikrofaser-Korallenfleece &ndash; weicher als Baumwolle',
+          'Besonders saugfähig und schnelltrocknend',
+          'Bleibt auch nach vielen Wäschen flauschig',
+          'Frei von schädlichen Chemikalien &ndash; sicher für Babyhaut',
+          'Maschinenwaschbar und wiederverwendbar'
+        ]}
+        rating="4,5/5 bei 1.800+ Bewertungen"
+        badge="Preis-Leistung"
+        image="/images/products/orighty-waschlappen.jpg"
+      />
+
+      <!-- Pumwoy Baby-Badeschwämme -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">9. Pumwoy Tier-Badeschwämme 4er-Set</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Pumwoy Badeschwämme</strong> in süßen Tierformen (Nilpferd, Frosch, Löwe, Huhn) bestehen aus <strong>100% natürlicher Zellulose</strong>. Im trockenen Zustand sind sie flach und komprimiert &ndash; im Wasser quellen sie auf und werden kuschelig weich. Das fasziniert kleine Kinder und macht das Einseifen zum Spiel!
+      </p>
+      <AmazonProductBox
+        name="Pumwoy Tier-Badeschwämme 4er-Set"
+        affiliateLink={`https://www.amazon.de/dp/B0FB8GBGWN?tag=${AMAZON_TAG}`}
+        features={[
+          '100% natürliche Zellulose &ndash; pflanzlich und hautfreundlich',
+          '4 süße Tierformen in bunten Farben',
+          'Quellen im Wasser auf &ndash; fasziniert kleine Kinder',
+          'Erzeugt reichhaltigen Schaum für sanfte Reinigung',
+          'Multifunktional: als Badeschwamm oder Spülschwamm nutzbar'
+        ]}
+        rating="4,5/5"
+        image="/images/products/pumwoy-badeschwamm.jpg"
+      />
+
+      <!-- waschies Waschpads -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">10. waschies Kids Waschpads 5er-Set</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>waschies Waschpads</strong> &ndash; bekannt aus &bdquo;Die Höhle der Löwen&ldquo; &ndash; reinigen empfindliche Babyhaut <strong>allein mit Wasser, ohne Seife oder Zusätze</strong>. Der spezielle Fasermix bewahrt den natürlichen Säureschutzmantel der Haut. Sie sind hundertfach waschbar (bis 95°C) und eine nachhaltige Alternative zu Einweg-Feuchttüchern. Made in Germany!
+      </p>
+      <AmazonProductBox
+        name="waschies Kids Waschpads 5er-Set &ndash; Made in Germany"
+        affiliateLink={`https://www.amazon.de/dp/B0BTPGMH47?tag=${AMAZON_TAG}`}
+        features={[
+          'Reinigung NUR mit Wasser &ndash; keine Seife nötig',
+          'OEKO-TEX 100 zertifiziert &ndash; schadstofffrei',
+          'Kompakt (15×10 cm) &ndash; ideal für den ganzen Babykörper',
+          'Waschbar bis 95°C und trocknergeeignet',
+          'Hunderte Male wiederverwendbar &ndash; nachhaltig statt Einweg',
+          'Bekannt aus &bdquo;Die Höhle der Löwen&ldquo; &ndash; Made in Germany'
+        ]}
+        rating="4,3/5"
+        badge="Nachhaltig"
+        image="/images/products/waschies-waschpads.jpg"
+      />
+    </section>
+
+    <!-- Kaufberatung -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Kaufberatung: Was brauchst du wirklich?</h2>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white rounded-2xl p-6 border border-green-200 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3 text-green-800">&#9989; Must-haves</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2"><span class="text-green-600 font-bold">1.</span> <strong>Kapuzenhandtuch</strong> (1-2 Stück) &ndash; wärmt dein Baby sofort nach dem Bad</li>
+            <li class="flex items-start gap-2"><span class="text-green-600 font-bold">2.</span> <strong>Waschlappen-Set</strong> (10-24 Stück) &ndash; brauchst du täglich, nicht nur beim Baden</li>
+            <li class="flex items-start gap-2"><span class="text-green-600 font-bold">3.</span> <strong>Haarwaschbecher</strong> &ndash; tränenfrei Haare waschen ab ~6 Monaten</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3 text-primary-dark">&#128161; Nice-to-haves</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary font-bold">4.</span> <strong>Badekissen</strong> &ndash; erleichtert das Baden von Neugeborenen enorm</li>
+            <li class="flex items-start gap-2"><span class="text-primary font-bold">5.</span> <strong>Milchschorf-Set</strong> &ndash; wenn dein Baby Kopfgneis hat</li>
+            <li class="flex items-start gap-2"><span class="text-primary font-bold">6.</span> <strong>Baby-Haartrockner</strong> &ndash; für empfindliche Hautfalten</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <MamaTipp text="Mein Tipp für die Erstausstattung: Starte mit 2 Kapuzenhandtüchern und einem großen Waschlappen-Set (24er). Dazu der Skip Hop Haarwaschbecher für ~14€. Das reicht für den Anfang völlig &ndash; alles andere kannst du bei Bedarf nachkaufen." />
+
+    <!-- FAQ -->
+    <section class="mb-12 mt-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Baby-Badezubehör</h2>
+      <FAQ items={faqItems} />
+    </section>
+
+    <!-- Fazit -->
+    <section class="mb-8">
+      <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/10">
+        <h2 class="font-heading text-xl font-extrabold mb-4">Unser Fazit</h2>
+        <p class="text-text leading-relaxed mb-4">
+          Mit dem richtigen Badezubehör wird die Badezeit zum entspannten Ritual &ndash; für dein Baby und für dich. Unsere Top-3 Empfehlungen:
+        </p>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <a href={`https://www.amazon.de/dp/B00FXR5S20?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-primary-dark uppercase">Bestseller</span>
+            <p class="font-heading font-bold mt-1 text-sm">Skip Hop Haarwaschbecher</p>
+            <p class="text-xs text-text-light mt-1">4,5★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B0CR6K13MX?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-accent-dark uppercase">Kopfpflege</span>
+            <p class="font-heading font-bold mt-1 text-sm">Frida Baby FlakeFixer</p>
+            <p class="text-xs text-text-light mt-1">4,7★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B09KRPRWXM?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-green-700 uppercase">Preis-Leistung</span>
+            <p class="font-heading font-bold mt-1 text-sm">Orighty Waschlappen 24er</p>
+            <p class="text-xs text-text-light mt-1">4,5★</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

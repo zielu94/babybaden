@@ -1,0 +1,429 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import BlogCard from '../components/BlogCard.astro';
+
+import FAQ from '../components/FAQ.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const latestPosts = allPosts
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 6);
+
+const featuredPost = allPosts.find(p => p.data.featured) || allPosts[0];
+
+const productCategories = [
+  {
+    title: 'Babywannen',
+    description: 'Faltbar, mit Gestell oder klassisch &ndash; finde die perfekte Wanne.',
+    href: '/produkte/babywannen/',
+    icon: '&#128705;',
+    color: 'bg-blue-50 border-blue-200',
+  },
+  {
+    title: 'Badethermometer',
+    description: 'Immer die richtige Temperatur &ndash; digital oder analog.',
+    href: '/produkte/badethermometer/',
+    icon: '&#127777;&#65039;',
+    color: 'bg-red-50 border-red-200',
+  },
+  {
+    title: 'Heizstrahler',
+    description: 'Kuschelige Wärme nach dem Bad &ndash; dein Baby wird es lieben.',
+    href: '/produkte/heizstrahler/',
+    icon: '&#9728;&#65039;',
+    color: 'bg-yellow-50 border-yellow-200',
+  },
+  {
+    title: 'Badezubehör',
+    description: 'Handtücher, Waschlappen und alles für die Erstausstattung.',
+    href: '/produkte/badezubehoer/',
+    icon: '&#128166;',
+    color: 'bg-green-50 border-green-200',
+  },
+  {
+    title: 'Pflegeprodukte',
+    description: 'Sanfte Öle, Cremes und Shampoos für zarte Babyhaut.',
+    href: '/produkte/pflegeprodukte/',
+    icon: '&#129524;',
+    color: 'bg-purple-50 border-purple-200',
+  },
+  {
+    title: 'Badespielzeug',
+    description: 'Badeenten, Stapelbecher und Wasserspielzeug für fröhlichen Badespaß.',
+    href: '/produkte/badespielzeug/',
+    icon: '&#129414;',
+    color: 'bg-amber-50 border-amber-200',
+  },
+];
+
+const quickTips = [
+  {
+    icon: '&#127777;&#65039;',
+    title: '36-37°C',
+    text: 'Die ideale Badetemperatur. Immer mit dem Thermometer prüfen!',
+  },
+  {
+    icon: '&#9202;',
+    title: '5-10 Minuten',
+    text: 'Mehr braucht kein Baby. Kurz und kuschelig ist perfekt.',
+  },
+  {
+    icon: '&#128167;',
+    title: '1-2x pro Woche',
+    text: 'Mehr ist nicht nötig. Babyhaut ist empfindlich.',
+  },
+  {
+    icon: '&#128065;',
+    title: 'Nie allein lassen',
+    text: 'Die wichtigste Regel: Immer bei deinem Baby bleiben.',
+  },
+];
+
+const homepageFaqs = [
+  {
+    question: 'Ab wann darf ich mein Baby baden?',
+    answer: 'Du kannst dein Baby nach dem Abfallen der Nabelschnur baden &ndash; in der Regel nach 1-2 Wochen. Bis dahin reicht ein feuchter Waschlappen. Sprich am besten mit deiner Hebamme, wann der richtige Zeitpunkt ist.'
+  },
+  {
+    question: 'Was brauche ich für das erste Bad?',
+    answer: 'Eine Babywanne, ein Badethermometer, ein weiches Handtuch (idealerweise ein Kapuzenhandtuch), frische Kleidung und eine Windel. In den ersten Wochen brauchst du keine Seife oder Badezusätze.'
+  },
+  {
+    question: 'Wie warm sollte das Badewasser sein?',
+    answer: 'Die ideale Wassertemperatur liegt bei 36-37°C. Das ist ungefähr Körpertemperatur. Überprüfe die Temperatur immer mit einem Badethermometer &ndash; der Ellbogen-Test ist als Backup okay, aber nicht so genau.'
+  },
+  {
+    question: 'Wie oft sollte ich mein Baby baden?',
+    answer: '1-2 Mal pro Woche reicht völlig aus. Babyhaut ist dünner als unsere und trocknet leicht aus. An den anderen Tagen reicht es, Gesicht, Hände und Windelbereich mit einem feuchten Waschlappen zu reinigen.'
+  },
+  {
+    question: 'Brauche ich wirklich eine Babywanne?',
+    answer: 'Wir empfehlen es sehr. Eine Babywanne gibt deinem Baby Geborgenheit und dir Sicherheit. Sie ist ergonomischer als die große Badewanne und du hast bessere Kontrolle. Es gibt faltbare Modelle, die kaum Platz brauchen.'
+  },
+];
+---
+
+<BaseLayout
+  title="babybaden.de - Dein Baby sicher & liebevoll baden"
+  description="Alles rund ums Baby-Baden: Ratgeber, Produktvergleiche, Schritt-für-Schritt-Anleitungen und Tipps von Eltern für Eltern."
+>
+  <Hero />
+
+  <!-- Quick Tips Section -->
+  <section class="bg-white/60 py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-accent/20 text-accent-dark rounded-full uppercase tracking-wide mb-4">Auf einen Blick</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-extrabold">Die 4 wichtigsten Bade-Regeln</h2>
+        <p class="mt-3 text-text-light max-w-xl mx-auto">Bevor du dein Baby zum ersten Mal badest &ndash; diese vier Dinge solltest du wissen.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {quickTips.map(tip => (
+          <div class="group bg-white rounded-2xl p-5 md:p-6 text-center border border-primary/10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <span class="text-3xl md:text-4xl block mb-3 group-hover:scale-110 transition-transform duration-300" set:html={tip.icon} />
+            <h3 class="font-heading font-extrabold text-lg md:text-xl text-primary-dark">{tip.title}</h3>
+            <p class="mt-2 text-sm text-text-light leading-relaxed">{tip.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Pillar Article -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="bg-gradient-to-br from-primary/10 via-white to-accent/10 rounded-3xl overflow-hidden border border-primary/10 shadow-sm">
+        <div class="grid md:grid-cols-2 gap-0">
+          <div class="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+            <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/15 text-primary-dark rounded-full mb-5 w-fit">Starter-Guide</span>
+            <h2 class="font-heading text-2xl md:text-3xl font-extrabold leading-tight">Baby richtig baden &ndash; die komplette Anleitung</h2>
+            <p class="mt-4 text-text-light leading-relaxed text-lg">
+              Von der Vorbereitung bis zum kuscheligen Einwickeln: Alles was du als frischgebackene Mama wissen musst. Schritt für Schritt erklärt.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="/ratgeber/baby-richtig-baden-anleitung/" class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-text font-heading font-bold rounded-full transition-colors shadow-sm">
+                Jetzt lesen
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="/checkliste/" class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-primary/5 text-text font-heading font-semibold rounded-full border border-primary/20 transition-colors">
+                Zur Checkliste
+              </a>
+            </div>
+          </div>
+          <div class="relative aspect-[4/3] md:aspect-auto">
+            <img
+              src="/images/hero/baby-baden-hero.jpg"
+              alt="Baby wird liebevoll gebadet"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent md:from-primary/5 md:to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produkt-Kategorien -->
+  <section class="bg-white/60 py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-primary/15 text-primary-dark rounded-full uppercase tracking-wide mb-4">Ausstattung</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-extrabold">Alles was du zum Baden brauchst</h2>
+        <p class="mt-3 text-text-light max-w-xl mx-auto">Ehrliche Produktvergleiche &ndash; von Eltern getestet und empfohlen.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {productCategories.map(cat => (
+          <a href={cat.href} class="group block bg-white rounded-2xl p-6 md:p-7 shadow-sm hover:shadow-lg border border-primary/10 transition-all hover:-translate-y-1 duration-300">
+            <span class="text-4xl block mb-4" set:html={cat.icon} />
+            <h3 class="font-heading font-bold text-xl group-hover:text-primary-dark transition-colors">{cat.title}</h3>
+            <p class="mt-2 text-sm text-text-light leading-relaxed" set:html={cat.description} />
+            <span class="inline-flex items-center gap-1 mt-4 text-sm font-heading font-semibold text-primary-dark group-hover:gap-2 transition-all">
+              Vergleich ansehen
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Beliebte Ratgeber -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-accent/20 text-accent-dark rounded-full uppercase tracking-wide mb-4">Wissen</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-extrabold">Beliebte Ratgeber</h2>
+        <p class="mt-3 text-text-light max-w-xl mx-auto">Die meistgelesenen Artikel unserer Community &ndash; von Eltern für Eltern.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {latestPosts.map(post => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            slug={post.id}
+            image={post.data.image}
+            imageAlt={post.data.imageAlt}
+            category={post.data.category}
+            pubDate={post.data.pubDate}
+          />
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/ratgeber/" class="inline-flex items-center gap-2 px-8 py-3.5 bg-white border border-primary/20 text-text font-heading font-semibold rounded-full hover:bg-primary/5 hover:shadow-sm transition-all">
+          Alle Ratgeber ansehen
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- So funktioniert's / Schritt-für-Schritt -->
+  <section class="bg-white/60 py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-primary/15 text-primary-dark rounded-full uppercase tracking-wide mb-4">Einfach erklärt</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-extrabold">Baby baden in 5 Schritten</h2>
+        <p class="mt-3 text-text-light max-w-xl mx-auto">Keine Angst vor dem ersten Bad. So einfach geht's:</p>
+      </div>
+      <div class="space-y-6 md:space-y-0 md:grid md:grid-cols-5 md:gap-4">
+        <div class="relative flex flex-col items-center text-center p-4">
+          <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-2xl font-heading font-extrabold text-primary-dark mb-3">1</div>
+          <h3 class="font-heading font-bold text-sm">Vorbereiten</h3>
+          <p class="mt-1 text-xs text-text-light leading-relaxed">Alles bereitlegen: Handtuch, Windel, frische Kleidung.</p>
+          <div class="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-56px)] h-0.5 bg-primary/15"></div>
+        </div>
+        <div class="relative flex flex-col items-center text-center p-4">
+          <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-2xl font-heading font-extrabold text-primary-dark mb-3">2</div>
+          <h3 class="font-heading font-bold text-sm">Wasser einlassen</h3>
+          <p class="mt-1 text-xs text-text-light leading-relaxed">36-37°C &ndash; mit dem Thermometer prüfen.</p>
+          <div class="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-56px)] h-0.5 bg-primary/15"></div>
+        </div>
+        <div class="relative flex flex-col items-center text-center p-4">
+          <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-2xl font-heading font-extrabold text-primary-dark mb-3">3</div>
+          <h3 class="font-heading font-bold text-sm">Sanft ins Wasser</h3>
+          <p class="mt-1 text-xs text-text-light leading-relaxed">Kopf und Nacken stützen, langsam eintauchen.</p>
+          <div class="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-56px)] h-0.5 bg-primary/15"></div>
+        </div>
+        <div class="relative flex flex-col items-center text-center p-4">
+          <div class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-2xl font-heading font-extrabold text-primary-dark mb-3">4</div>
+          <h3 class="font-heading font-bold text-sm">Waschen</h3>
+          <p class="mt-1 text-xs text-text-light leading-relaxed">Gesicht zuerst, Kopf zuletzt. Max. 5-10 Minuten.</p>
+          <div class="hidden md:block absolute top-7 left-[calc(50%+28px)] w-[calc(100%-56px)] h-0.5 bg-primary/15"></div>
+        </div>
+        <div class="flex flex-col items-center text-center p-4">
+          <div class="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center text-2xl font-heading font-extrabold text-accent-dark mb-3">5</div>
+          <h3 class="font-heading font-bold text-sm">Kuscheln</h3>
+          <p class="mt-1 text-xs text-text-light leading-relaxed">Abtrocknen, eincremen, Kuscheln &ndash; genießen!</p>
+        </div>
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/ratgeber/baby-erstes-bad-schritt-fuer-schritt/" class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-text font-heading font-bold rounded-full transition-colors shadow-sm">
+          Ausführliche Anleitung lesen
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mama-Tipp Highlight -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl p-8 md:p-12 border border-primary/10">
+        <div class="flex items-start gap-5">
+          <span class="text-4xl flex-shrink-0 mt-1">&#128161;</span>
+          <div>
+            <span class="font-heading font-bold text-sm text-primary-dark uppercase tracking-wide">Mama-Tipp</span>
+            <h2 class="font-heading text-xl md:text-2xl font-extrabold mt-2">Mach das Abendbad zum Ritual</h2>
+            <p class="mt-3 text-text-light leading-relaxed text-lg">
+              Viele Familien machen das Baden zu einem festen Abendritual. Das warme Wasser beruhigt, die sanften Berührungen geben Geborgenheit &ndash; und du schaffst einen wunderbaren Übergang vom aktiven Tag zur ruhigen Nacht.
+            </p>
+            <p class="mt-3 text-text-light leading-relaxed">
+              Tipp: Dimme das Licht im Badezimmer, sprich leise mit deinem Baby und nimm dir Zeit. Diese Momente gehen schneller vorbei, als du denkst.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-white/60 py-16 md:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-accent/20 text-accent-dark rounded-full uppercase tracking-wide mb-4">FAQ</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-extrabold">Häufige Fragen zum Baby-Baden</h2>
+        <p class="mt-3 text-text-light max-w-xl mx-auto">Die Antworten auf die Fragen, die sich alle frischgebackenen Eltern stellen.</p>
+      </div>
+      <FAQ items={homepageFaqs} />
+    </div>
+  </section>
+
+  <!-- Über uns Teaser -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-primary/15 text-primary-dark rounded-full uppercase tracking-wide mb-5">Über uns</span>
+          <h2 class="font-heading text-2xl md:text-3xl font-extrabold leading-tight">Von Eltern für Eltern</h2>
+          <p class="mt-4 text-text-light leading-relaxed text-lg">
+            Wir sind selbst Eltern und wissen genau, wie aufregend das erste Bad mit dem Baby sein kann. babybaden.de ist der Ort, den wir uns damals gewünscht hätten: ehrlich, verständlich und ohne erhobenen Zeigefinger.
+          </p>
+          <p class="mt-4 text-text-light leading-relaxed">
+            Alle unsere Tipps basieren auf eigener Erfahrung und werden regelmäßig überprüft. Wir arbeiten unabhängig und empfehlen nur Produkte, die wir selbst verwenden würden.
+          </p>
+          <a href="/ueber-uns/" class="inline-flex items-center gap-2 mt-6 text-primary-dark font-heading font-semibold hover:gap-3 transition-all">
+            Mehr über uns erfahren
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl p-6 text-center border border-primary/10 shadow-sm">
+            <span class="text-3xl font-heading font-extrabold text-primary-dark">12+</span>
+            <p class="mt-1 text-sm text-text-light">Ratgeber-Artikel</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 text-center border border-primary/10 shadow-sm">
+            <span class="text-3xl font-heading font-extrabold text-primary-dark">25+</span>
+            <p class="mt-1 text-sm text-text-light">Produkte verglichen</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 text-center border border-primary/10 shadow-sm">
+            <span class="text-3xl font-heading font-extrabold text-primary-dark">100%</span>
+            <p class="mt-1 text-sm text-text-light">Unabhängig</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 text-center border border-primary/10 shadow-sm">
+            <span class="text-3xl font-heading font-extrabold text-accent-dark">&#10084;</span>
+            <p class="mt-1 text-sm text-text-light">Mit Liebe gemacht</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amazon Baby-Wunschliste -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6">
+      <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl p-8 md:p-10 border border-amber-200/50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-200/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="relative">
+          <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+            <div class="flex-1">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-xs font-heading font-bold text-amber-700 rounded-full uppercase tracking-wide mb-4">
+                &#127873; Tipp für werdende Eltern
+              </span>
+              <h2 class="font-heading text-xl md:text-2xl font-extrabold text-amber-900 leading-tight">Kostenlose Amazon Baby-Wunschliste</h2>
+              <p class="mt-3 text-amber-800/80 leading-relaxed">
+                Erstelle deine Baby-Wunschliste bei Amazon und sichere dir <strong class="text-amber-900">15% Rabatt</strong> auf Babyprodukte + ein kostenloses Willkommensgeschenk. Perfekt, um alles fürs erste Bad zu sammeln.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-amber-800/70">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  15% Rabatt auf berechtigte Babyartikel
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  Kostenloses Willkommensgeschenk
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  Liste mit Familie &amp; Freunden teilen
+                </li>
+              </ul>
+            </div>
+            <div class="flex-shrink-0">
+              <a
+                href="https://www.amazon.de/baby-reg?tag=jalapeno123-21"
+                target="_blank"
+                rel="noopener sponsored"
+                class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-400 hover:bg-amber-500 text-amber-900 font-heading font-bold rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 min-h-[48px] text-base"
+              >
+                Jetzt Wunschliste erstellen
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <p class="mt-2 text-[11px] text-amber-600/60 text-center">Kostenlos &middot; Unverbindlich</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkliste CTA -->
+  <section class="bg-gradient-to-r from-primary/10 to-accent/10 py-16 md:py-20">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center">
+      <span class="text-5xl block mb-4">&#9989;</span>
+      <h2 class="font-heading text-2xl md:text-3xl font-extrabold">Bereit für das erste Bad?</h2>
+      <p class="mt-4 text-text-light text-lg leading-relaxed max-w-xl mx-auto">
+        Mit unserer interaktiven Checkliste vergisst du garantiert nichts. Hake einfach ab, was du schon vorbereitet hast.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/checkliste/" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-dark text-text font-heading font-bold rounded-full transition-colors shadow-sm">
+          Zur Baby-Bade-Checkliste
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

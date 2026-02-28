@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #A7C7E7;
+  --color-primary-dark: #8AB4D9;
+  --color-secondary: #FFF8F0;
+  --color-accent: #F4C2C2;
+  --color-accent-dark: #E8A5A5;
+  --color-text: #4A4A4A;
+  --color-text-light: #6B6B6B;
+  --color-bg: #FFF8F0;
+  --color-white: #FFFFFF;
+
+  --font-heading: 'Nunito', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg);
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-text);
+  }
+
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.375rem; }
+
+  p {
+    margin-bottom: 1.25em;
+  }
+
+  a {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-accent-dark);
+  }
+
+  /* Scroll-margin for anchor links (accounting for sticky header + progress bar) */
+  h2[id], h3[id], h4[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  /* Better prose spacing for article content */
+  .prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.85;
+  }
+
+  .prose ul, .prose ol {
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+  }
+
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+
+  .prose h2 {
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+  }
+
+  .prose h3 {
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose blockquote {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  /* Blockquote: product recommendation styling */
+  .prose blockquote strong a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-primary);
+  }
+
+  .prose blockquote strong a:hover {
+    text-decoration-color: var(--color-accent-dark);
+  }
+
+  /* Tables: better styling in articles */
+  .prose table {
+    border-collapse: collapse;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .prose thead {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  }
+
+  .prose th {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .prose td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
+  }
+
+  .prose tbody tr:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 3%, transparent);
+  }
+
+  /* Line clamp utility */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

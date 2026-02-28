@@ -1,0 +1,47 @@
+---
+import BlogCard from './BlogCard.astro';
+
+interface Article {
+  title: string;
+  description: string;
+  slug: string;
+  image?: string;
+  imageAlt?: string;
+  category?: string;
+  pubDate: Date;
+}
+
+interface Props {
+  articles: Article[];
+}
+
+const { articles } = Astro.props;
+---
+
+{articles.length > 0 && (
+  <section class="mt-16 pt-12 border-t-2 border-primary/10">
+    <div class="text-center mb-8">
+      <span class="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 text-primary-dark text-xs font-heading font-semibold rounded-full mb-3">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+        </svg>
+        Weiterlesen
+      </span>
+      <h2 class="font-heading font-bold text-2xl md:text-3xl">Das könnte dich auch interessieren</h2>
+      <p class="mt-2 text-sm text-text-light">Weitere hilfreiche Ratgeber rund ums Baby-Baden</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {articles.slice(0, 3).map(article => (
+        <BlogCard
+          title={article.title}
+          description={article.description}
+          slug={article.slug}
+          image={article.image}
+          imageAlt={article.imageAlt}
+          category={article.category}
+          pubDate={article.pubDate}
+        />
+      ))}
+    </div>
+  </section>
+)}

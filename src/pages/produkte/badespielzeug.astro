@@ -1,0 +1,378 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AmazonProductBox from '../../components/AmazonProductBox.astro';
+import MamaTipp from '../../components/MamaTipp.astro';
+import WichtigHinweis from '../../components/WichtigHinweis.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const AMAZON_TAG = 'jalapeno123-21';
+
+const faqItems = [
+  {
+    question: 'Ab wann ist Badespielzeug sinnvoll?',
+    answer: 'Ab etwa <strong>6 Monaten</strong> beginnen Babys, gezielt nach Gegenständen zu greifen und damit zu spielen. Dann macht Badespielzeug richtig Spaß. Weiche Stoff-Badetiere (wie der Fehn Otter) kannst du aber schon ab Geburt anbieten. Elektrisches Spielzeug und Kugelbahnen eignen sich erst ab 1-3 Jahren.'
+  },
+  {
+    question: 'Wie verhindere ich Schimmel im Badespielzeug?',
+    answer: 'Das A und O: <strong>Nach jedem Baden das Wasser komplett ausdrücken</strong> und das Spielzeug offen trocknen lassen. Kaufe Spritztiere aus Silikon, die sich zum Reinigen öffnen lassen (wie die reer oder BelleStyle Badetiere). Alle 2 Wochen Spielzeug in einer Essig-Wasser-Lösung (1:3) einweichen und gründlich ausspülen.'
+  },
+  {
+    question: 'Welche Materialien sind unbedenklich für Babys?',
+    answer: 'Achte auf <strong>BPA-freien, phthalatfreien Kunststoff</strong>, lebensmittelechtes Silikon oder Naturkautschuk. Stoff-Spielzeug sollte OEKO-TEX-zertifiziert sein. Spielzeug mit CE-Kennzeichnung und idealerweise TÜV-Prüfung ist empfehlenswert. Billiges Importspielzeug ohne Prüfsiegel lieber meiden &ndash; gerade weil Babys alles in den Mund nehmen.'
+  },
+  {
+    question: 'Wie viel Badespielzeug braucht mein Baby?',
+    answer: 'Weniger ist mehr! <strong>2-3 verschiedene Spielzeuge</strong> reichen völlig aus. Zu viel Spielzeug lenkt ab und macht das Baden unübersichtlich. Tausche lieber regelmäßig durch, um die Neugier deines Babys aufrechtzuerhalten. Ein Badetier + ein Badebuch sind ein perfekter Start.'
+  },
+  {
+    question: 'Sind elektrische Badespielzeuge sicher für Babys?',
+    answer: 'Ja, wenn sie <strong>IPX7-wasserdicht</strong> und für die Altersgruppe zugelassen sind. Wiederaufladbare Spielzeuge (wie der PHNIXGAM Wal) haben versiegelte Ladeanschlüsse. Achte darauf, dass das Spielzeug nur im ausgeschalteten Zustand geladen wird und nie mit offenem Ladeanschluss ins Wasser kommt.'
+  },
+  {
+    question: 'Kann ich Stoff-Badespielzeug in der Waschmaschine waschen?',
+    answer: 'Die meisten Stoff-Badetiere (wie von Fehn) sind bei <strong>40°C waschbar</strong>. Wichtig: Nach dem Baden immer gut ausdrücken und vollständig trocknen lassen. Nicht im geschlossenen Behälter aufbewahren, sonst bildet sich Schimmel. Am besten in einem Netz mit Saugnäpfen in der Dusche aufhängen.'
+  },
+];
+---
+
+<BaseLayout
+  title="Badespielzeug Baby Test 2026: Die 8 besten Spielzeuge fürs Bad"
+  description="Das beste Badespielzeug für Babys und Kleinkinder: Spritztiere, Badebücher, Wal-Sprinkler und Kugelbahnen &ndash; schimmelfrei und schadstoffgeprüft. Ehrlich verglichen."
+>
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <Breadcrumb items={[
+      { label: 'Produkte', href: '/produkte/' },
+      { label: 'Badespielzeug' }
+    ]} />
+
+    <!-- Intro -->
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Badespielzeug Baby: Die 8 besten Spielzeuge fürs Bad</h1>
+      <p class="text-text-light text-lg leading-relaxed mb-4">
+        Badespielzeug macht das Baden zum Erlebnis &ndash; und <strong>fördert gleichzeitig die Entwicklung</strong> deines Babys. Greifen, spritzen, stapeln, staunen: In der Badewanne trainiert dein Kind Feinmotorik, Ursache-Wirkung-Verständnis und sensorische Wahrnehmung. Von <strong>schimmelfreien Spritztieren</strong> über <strong>magische Badebücher</strong> bis zum <strong>leuchtenden Wal-Sprinkler</strong>: Hier unsere 8 ehrlichen Empfehlungen.
+      </p>
+      <p class="text-sm text-text-light italic">
+        <em>Zuletzt aktualisiert: Februar 2026</em>
+      </p>
+    </header>
+
+    <!-- Quick Navigation -->
+    <nav class="mb-12 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+      <h2 class="font-heading font-bold text-lg mb-4">&#128203; Auf dieser Seite</h2>
+      <div class="grid sm:grid-cols-2 gap-2 text-sm">
+        <a href="#badetiere" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Badetiere & Spritztiere (4 Produkte)
+        </a>
+        <a href="#badebuecher" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Badebücher & Sensorik (2 Produkte)
+        </a>
+        <a href="#wasserspielzeug" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Wasserspielzeug & Action (2 Produkte)
+        </a>
+        <a href="#pflege" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Pflege, Hygiene & Schimmel-Tipps
+        </a>
+      </div>
+    </nav>
+
+    <MamaTipp text="Badespielzeug lohnt sich erst ab ca. 6 Monaten, wenn dein Baby sicher sitzen kann und gezielt greifen will. Vorher genießt es einfach das warme Wasser &ndash; das ist Reiz genug. Starte mit einem weichen Badetier und einem Badebuch &ndash; mehr braucht es für den Anfang nicht." />
+
+    <!-- Sicherheitshinweis -->
+    <WichtigHinweis text="Lass dein Baby NIEMALS unbeaufsichtigt in der Badewanne &ndash; auch nicht mit Badespielzeug. Achte darauf, dass keine Kleinteile abbrechen können (Erstickungsgefahr). Prüfe Badespielzeug regelmäßig auf Risse, Schimmel und lose Teile." />
+
+    <!-- ==================== -->
+    <!-- 1. BADETIERE & SPRITZTIERE -->
+    <!-- ==================== -->
+    <section id="badetiere" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#129414;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Badetiere & Spritztiere</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der Klassiker unter dem Badespielzeug! Moderne Badetiere bestehen aus <strong>schadstofffreiem Silikon</strong> und lassen sich zum Reinigen öffnen &ndash; so hat Schimmel keine Chance. Ob süße Enten, kuschelige Otter oder weiche Schildkröten: Hier findest du unsere 4 Favoriten.
+      </p>
+
+      <!-- 1. reer MyHappyBath Toys -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">1. reer MyHappyBath Toys Ente & Pinguin</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>reer MyHappyBath Toys</strong> sind die clevere Antwort auf das größte Problem bei Badespielzeug: Schimmel! Das Set aus Ente und Pinguin lässt sich <strong>komplett auseinandernehmen</strong>, gründlich reinigen und hygienisch trocknen. Doppelte Spritzfunktion aus Schnabel oder Boden &ndash; Babys lieben es!
+      </p>
+      <AmazonProductBox
+        name="reer MyHappyBath Toys Badetiere Ente & Pinguin"
+        affiliateLink={`https://www.amazon.de/dp/B0D9YBSSZQ?tag=${AMAZON_TAG}`}
+        features={[
+          '2 Spritztiere im Set &ndash; Ente und Pinguin mit doppelter Spritzfunktion',
+          'Auseinandernehmbar &ndash; kein Schimmel dank gründlicher Reinigung',
+          'Hochwertiges Silikon &ndash; frei von Phthalaten, BPA und PVC',
+          'Fördert motorische Entwicklung und Hand-Auge-Koordination',
+          'Ab 6 Monaten geeignet'
+        ]}
+        rating="4,5/5"
+        badge="Schimmelfrei"
+        image="/images/products/reer-badetiere-ente-pinguin.jpg"
+      />
+
+      <!-- 2. BelleStyle Silikon Badetiere -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">2. BelleStyle Silikon Badetiere 4er-Set</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>BelleStyle 4er-Set</strong> bietet gleich vier süße Silikonfreunde: Elefant, Koala, Pinguin und Dinosaurier. Jedes Tier lässt sich <strong>zweiteilig aufklappen</strong> &ndash; so kannst du es nach dem Baden komplett reinigen und trocknen lassen. Die perforierten Löcher erzeugen tolle Wassereffekte beim Drücken.
+      </p>
+      <AmazonProductBox
+        name="BelleStyle Silikon Badetiere 4er-Set"
+        affiliateLink={`https://www.amazon.de/dp/B0CSFKRMK4?tag=${AMAZON_TAG}`}
+        features={[
+          '4 Silikontiere: Elefant, Koala, Pinguin und Dinosaurier',
+          'Zweiteilig aufklappbar &ndash; schimmelfrei durch einfache Reinigung',
+          'Lebensmittelechtes Silikon, BPA-frei und ungiftig',
+          'Perforierte Löcher für tolle Wasserspritz-Effekte',
+          'Vielseitig: für Badewanne, Pool und Strand'
+        ]}
+        rating="4,4/5"
+        badge="4er-Set"
+        image="/images/products/bellestyle-silikon-badetiere.jpg"
+      />
+
+      <!-- 3. Fehn Badetier Otter -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">3. Fehn Badetier Otter &bdquo;Theo&ldquo;</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Der <strong>Fehn Otter &bdquo;Theo&ldquo;</strong> ist kein gewöhnliches Plastiktier, sondern ein <strong>kuschelweicher Stoff-Otter</strong>, der dank eingearbeitetem Schwimmball auf dem Wasser treibt. Mit seinen liebevollen Details aus Plüsch, Strick und Musselin lädt er zum Greifen und Kuscheln ein &ndash; im Wasser und danach. Deutsche Markenqualität von Fehn.
+      </p>
+      <AmazonProductBox
+        name="Fehn Badetier Otter &bdquo;Theo&ldquo; 17 cm"
+        affiliateLink={`https://www.amazon.de/dp/B0D7HGQRCG?tag=${AMAZON_TAG}`}
+        features={[
+          'Schwimmt auf der Wasseroberfläche dank eingearbeitetem Schwimmball',
+          'Kuschelweiche Materialien: Plüsch, Strick und Musselin',
+          'Fördert spielerisch Greifen, Fühlen und sensorische Wahrnehmung',
+          'Waschbar bei 40°C &ndash; pflegeleicht und hygienisch',
+          'Ab 0+ Monaten &ndash; auch schon für Neugeborene'
+        ]}
+        rating="4,6/5 bei 420+ Bewertungen"
+        badge="Empfehlung"
+        image="/images/products/fehn-badetier-otter.jpg"
+      />
+
+      <!-- 4. Fehn Bade-Schwamm Schildkröte -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">4. Fehn Bade-Schwamm Schildkröte</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Fehn Bade-Schwamm Schildkröte</strong> kombiniert Spielzeug und Waschtuch in einem: Außen kuscheliger Frottee-Stoff, innen ein <strong>weicher Schwamm</strong> zum sanften Waschen der Babyhaut. Ideal für Babys, die beim Waschen etwas zum Festhalten und Spielen brauchen. Aus der beliebten &bdquo;Meereskinder&ldquo;-Kollektion.
+      </p>
+      <AmazonProductBox
+        name="Fehn Bade-Schwamm Schildkröte &bdquo;Meereskinder&ldquo;"
+        affiliateLink={`https://www.amazon.de/dp/B09F3MSBM6?tag=${AMAZON_TAG}`}
+        features={[
+          '2-in-1: Kuscheltier und Badeschwamm in einem',
+          'Weicher Frottee-Stoff (78% Baumwolle, 22% Polyester)',
+          'Eingearbeiteter Schwamm &ndash; sanft zu empfindlicher Babyhaut',
+          'Liebevolle Details &ndash; Meereskinder-Kollektion von Fehn',
+          'Waschbar bei 40°C &ndash; ab 0+ Monaten'
+        ]}
+        rating="4,5/5"
+        image="/images/products/fehn-badeschwamm-schildkroete.jpg"
+      />
+
+      <MamaTipp text="Mein Favorit für den Start: Der Fehn Otter. Er schwimmt, ist kuschelig weich und kann schon ab Geburt verwendet werden. Für schimmelfreie Spritztiere empfehle ich die reer MyHappyBath Toys &ndash; die kann man zum Reinigen komplett auseinandernehmen!" />
+    </section>
+
+    <!-- ==================== -->
+    <!-- 2. BADEBÜCHER & SENSORIK -->
+    <!-- ==================== -->
+    <section id="badebuecher" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#128214;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Badebücher & Sensorik</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Badebücher verbinden <strong>Vorlesen mit Badespaß</strong> &ndash; und fördern gleichzeitig die visuelle Wahrnehmung. Sensorisches Spielzeug wie Saugnapf-Spinner trainiert die Feinmotorik. Beide Kategorien sind besonders für <strong>neugierige kleine Entdecker</strong> ab 6 Monaten geeignet.
+      </p>
+
+      <!-- 5. reer MyHappyBath Book -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">5. reer MyHappyBath Book &ndash; Magisches Badebuch</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>reer MyHappyBath Book</strong> ist echte Magie fürs Baby-Bad: Die Unterwasser-Motive <strong>ändern im Wasser ihre Farbe</strong> &ndash; weiße Tiere werden plötzlich bunt! Dazu eine Quietschfunktion auf der letzten Seite. Das PVC-freie Material schwimmt auf dem Wasser und hat weiche, abgerundete Kanten. Ein faszinierendes Erlebnis für kleine Entdecker.
+      </p>
+      <AmazonProductBox
+        name="reer MyHappyBath Book &ndash; Magisches Badebuch mit Farbwechsel"
+        affiliateLink={`https://www.amazon.de/dp/B09D8BTCT5?tag=${AMAZON_TAG}`}
+        features={[
+          'Magischer Farbwechsel-Effekt &ndash; weiße Tiere werden im Wasser bunt',
+          '6 Seiten mit farbenfrohen Unterwasser-Illustrationen',
+          'Integrierte Quietschfunktion für zusätzlichen Badespaß',
+          'PVC-frei, weiche Kanten &ndash; sicher für Babyhände',
+          'Schwimmt auf dem Wasser (15 x 15 cm) &ndash; ab 6 Monaten'
+        ]}
+        rating="4,5/5"
+        badge="Empfehlung"
+        image="/images/products/reer-badebuch-farbwechsel.jpg"
+      />
+
+      <!-- 6. Vanmor Saugnapf Spinner -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">6. Vanmor Saugnapf-Spinner 4er-Set</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Vanmor Saugnapf-Spinner</strong> sind kleine Kreisel in süßen Tierformen (Biene, Schnecke, Schmetterling, Marienkäfer), die an der Badewanne, den Fliesen oder dem Hochstuhl haften. Einmal anstupsen, drehen sie sich faszinierend lange &ndash; das trainiert die <strong>Hand-Auge-Koordination</strong> und hält dein Baby minutenlang beschäftigt.
+      </p>
+      <AmazonProductBox
+        name="Vanmor Saugnapf-Spinner Spielzeug 4er-Set"
+        affiliateLink={`https://www.amazon.de/dp/B092S24B41?tag=${AMAZON_TAG}`}
+        features={[
+          '4 süße Tierformen: Biene, Schnecke, Schmetterling und Marienkäfer',
+          'BPA-freies ABS und lebensmittelechtes Silikon',
+          'Starke Saugnäpfe &ndash; haften an Badewanne, Fliesen und Hochstuhl',
+          'Rostfreies Nylon-Lager &ndash; dreht sich lange und gleichmäßig',
+          'Fördert Hand-Auge-Koordination und Feinmotorik &ndash; ab 1 Jahr'
+        ]}
+        rating="4,4/5"
+        badge="Lernspielzeug"
+        image="/images/products/vanmor-saugnapf-spinner.jpg"
+      />
+    </section>
+
+    <!-- ==================== -->
+    <!-- 3. WASSERSPIELZEUG & ACTION -->
+    <!-- ==================== -->
+    <section id="wasserspielzeug" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#127754;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Wasserspielzeug & Action</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Für ältere Babys und Kleinkinder darf es etwas mehr Action sein: Ein <strong>leuchtender Wal-Sprinkler</strong> sprüht Wasser und wechselt die Farben, eine <strong>DIY-Kugelbahn</strong> an der Badewannenwand fordert kleine Tüftler heraus. Beide Spielzeuge machen selbst badescheue Kinder zu Wasserratten!
+      </p>
+
+      <!-- 7. PHNIXGAM Wal Sprinkler -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">7. PHNIXGAM Wal-Sprinkler mit LED-Licht</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Der <strong>PHNIXGAM Wal-Sprinkler</strong> ist das Highlight in jeder Badewanne: Er sprüht Wasser und <strong>leuchtet bei Berührung in wechselnden Farben</strong>. Wiederaufladbar per USB-C (bis zu 80 Minuten Spielzeit), IPX7-wasserdicht und vielseitig einsetzbar &ndash; in der Badewanne, im Pool oder auf dem Rasen. Kann sogar als Nachtlicht dienen!
+      </p>
+      <AmazonProductBox
+        name="PHNIXGAM Wal-Sprinkler mit LED-Lichteffekten"
+        affiliateLink={`https://www.amazon.de/dp/B0D8BTR9FF?tag=${AMAZON_TAG}`}
+        features={[
+          'Sprühfunktion mit wechselnden LED-Lichteffekten &ndash; fasziniert Kleinkinder',
+          'Wiederaufladbar per USB-C &ndash; bis zu 80 Minuten Spielzeit',
+          'IPX7 wasserdicht &ndash; sicher beim vollständigen Eintauchen',
+          'Sicheres ABS-Material, BPA-frei, glatte Kanten',
+          'Vielseitig: Badewanne, Pool, Rasen &ndash; auch als Nachtlicht nutzbar'
+        ]}
+        rating="4,3/5"
+        badge="LED-Effekte"
+        image="/images/products/phnixgam-wal-sprinkler.jpg"
+      />
+
+      <!-- 8. Jiosdo DIY Kugelbahn -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">8. Jiosdo DIY-Kugelbahn für die Badewanne</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Jiosdo DIY-Kugelbahn</strong> verwandelt die Badewanne in einen Wasserpark! Mit Saugnäpfen an Fliesen oder Badewanne befestigt, bauen Kinder ihre <strong>eigene Wasserbahn</strong> mit Bahnen, Rädern, Trichtern und schwimmenden Enten. Das fördert logisches Denken und Kreativität &ndash; und macht jedes Bad zum Abenteuer.
+      </p>
+      <AmazonProductBox
+        name="Jiosdo DIY-Kugelbahn Badewannenspielzeug"
+        affiliateLink={`https://www.amazon.de/dp/B0B3RTGW8G?tag=${AMAZON_TAG}`}
+        features={[
+          'DIY-Kugelbahn mit bunten Bahnen, Rädern, Trichtern und Bällen',
+          'Starke Saugnäpfe &ndash; haftet an Badewanne, Fliesen und glatten Flächen',
+          'Fördert logisches Denken, Kreativität und Feinmotorik',
+          'Erweiterbar &ndash; mehrere Sets kombinierbar für längere Bahnen',
+          'Geprüft gemäß EU-Spielzeugrichtlinie &ndash; ab 3 Jahren'
+        ]}
+        rating="4,3/5"
+        image="/images/products/jiosdo-kugelbahn-krabbe.jpg"
+      />
+
+      <WichtigHinweis text="Die Jiosdo Kugelbahn enthält Kleinteile und ist erst ab 3 Jahren geeignet. Der PHNIXGAM Wal-Sprinkler darf NUR im ausgeschalteten Zustand geladen werden &ndash; niemals mit offenem USB-Anschluss ins Wasser legen. Beide Spielzeuge immer unter Aufsicht verwenden." />
+    </section>
+
+    <!-- Altersübersicht -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Welches Spielzeug für welches Alter?</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl p-5 border border-green-200 shadow-sm">
+          <h3 class="font-heading font-bold text-sm mb-2">&#128118; Ab Geburt (0+)</h3>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; Fehn Otter &bdquo;Theo&ldquo;</li>
+            <li>&bull; Fehn Bade-Schwamm Schildkröte</li>
+            <li>&bull; Weiche Stoff-Badetiere</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-sm mb-2">&#128103; Ab 6 Monaten</h3>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; reer Spritztiere Ente & Pinguin</li>
+            <li>&bull; reer Magisches Badebuch</li>
+            <li>&bull; BelleStyle Silikon Badetiere</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-accent/30 shadow-sm">
+          <h3 class="font-heading font-bold text-sm mb-2">&#128102; Ab 1-3 Jahren</h3>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; PHNIXGAM Wal-Sprinkler (ab 1 Jahr)</li>
+            <li>&bull; Vanmor Saugnapf-Spinner (ab 1 Jahr)</li>
+            <li>&bull; Jiosdo DIY-Kugelbahn (ab 3 Jahren)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pflege & Hygiene -->
+    <section id="pflege" class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Pflege & Hygiene: So bleibt Badespielzeug sauber</h2>
+
+      <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+        <ul class="space-y-4 text-text-light">
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-bold text-lg">1.</span>
+            <span><strong>Nach jedem Baden:</strong> Wasser ausdrücken, Spritztiere öffnen und offen trocknen lassen (nicht in geschlossenen Boxen!)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-bold text-lg">2.</span>
+            <span><strong>Wöchentlich:</strong> Mit warmem Wasser und mildem Spülmittel abwaschen. Stoff-Spielzeug bei 40°C in die Waschmaschine.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-bold text-lg">3.</span>
+            <span><strong>Alle 2 Wochen:</strong> Silikon-Tiere in Essig-Wasser-Lösung (1:3) einweichen und gründlich ausspülen.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-bold text-lg">4.</span>
+            <span><strong>Regelmäßig prüfen:</strong> Bei Verfärbungen, Rissen, Geruch oder Schimmel sofort entsorgen!</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <MamaTipp text="Mein bester Tipp gegen Schimmel: Kaufe nur Spritztiere aus Silikon, die sich zum Reinigen öffnen lassen (wie reer oder BelleStyle). Und hänge ein kleines Netz mit Saugnäpfen in die Dusche &ndash; da kann alles nach dem Baden abtropfen. Spart Nerven und Schimmel-Diskussionen!" />
+
+    <!-- FAQ -->
+    <section class="mb-12 mt-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Badespielzeug</h2>
+      <FAQ items={faqItems} />
+    </section>
+
+    <!-- Fazit -->
+    <section class="mb-8">
+      <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/10">
+        <h2 class="font-heading text-xl font-extrabold mb-4">Unser Fazit</h2>
+        <p class="text-text leading-relaxed mb-4">
+          Mit dem richtigen Badespielzeug wird jedes Bad zum Highlight &ndash; für dein Baby und für dich. Starte mit <strong>einem Badetier und einem Badebuch</strong> und baue die Sammlung langsam aus. Unsere Top-3 Empfehlungen:
+        </p>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <a href={`https://www.amazon.de/dp/B0D7HGQRCG?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-primary-dark uppercase">Ab Geburt</span>
+            <p class="font-heading font-bold mt-1 text-sm">Fehn Otter &bdquo;Theo&ldquo;</p>
+            <p class="text-xs text-text-light mt-1">4,6★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B0D9YBSSZQ?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-green-700 uppercase">Schimmelfrei</span>
+            <p class="font-heading font-bold mt-1 text-sm">reer Spritztiere</p>
+            <p class="text-xs text-text-light mt-1">4,5★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B09D8BTCT5?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-accent-dark uppercase">Badebuch</span>
+            <p class="font-heading font-bold mt-1 text-sm">reer Farbwechsel-Buch</p>
+            <p class="text-xs text-text-light mt-1">4,5★</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

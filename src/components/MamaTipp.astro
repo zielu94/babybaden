@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="my-6 bg-primary/5 border-l-4 border-primary rounded-r-xl px-5 py-4">
+  <div class="flex items-start gap-3">
+    <span class="text-xl flex-shrink-0" aria-hidden="true">&#128161;</span>
+    <div>
+      <span class="font-heading font-bold text-sm text-primary-dark">Mama-Tipp</span>
+      <p class="mt-1 text-sm text-text-light leading-relaxed">{text}</p>
+    </div>
+  </div>
+</div>

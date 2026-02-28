@@ -1,0 +1,279 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  category?: string;
+  headings: { depth: number; slug: string; text: string }[];
+  affiliateDisclosure?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  pubDate,
+  updatedDate,
+  category = 'Ratgeber',
+  headings,
+  affiliateDisclosure,
+} = Astro.props;
+
+const formattedPubDate = pubDate.toLocaleDateString('de-DE', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+const formattedUpdatedDate = updatedDate?.toLocaleDateString('de-DE', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+const wordCount = 2500;
+const readingTime = Math.ceil(wordCount / 200);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: image ? new URL(image, Astro.site).href : undefined,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate || pubDate).toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: 'babybaden.de Redaktion',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'babybaden.de',
+    url: 'https://babybaden.de',
+  },
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={image}
+  imageAlt={imageAlt}
+  type="article"
+  publishedDate={pubDate.toISOString()}
+  modifiedDate={(updatedDate || pubDate).toISOString()}
+  jsonLd={jsonLd}
+>
+  {/* Reading Progress Bar */}
+  <div id="reading-progress" class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-primary-dark to-accent z-[60] transition-all duration-150" style="width: 0%"></div>
+
+  <article class="min-h-screen">
+    {/* Hero Section */}
+    <div class="bg-gradient-to-b from-white to-secondary/50 pt-6 pb-12 md:pb-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={[
+          { label: category, href: category === 'Ratgeber' ? '/ratgeber/' : '/produkte/' },
+          { label: title }
+        ]} />
+
+        <header class="mt-6 text-center md:text-left">
+          {/* Category Badge + Meta */}
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full">
+              <span>&#128715;</span> {category}
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-heading bg-accent/20 text-accent-dark rounded-full">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {readingTime} Min. Lesezeit
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1 class="font-heading text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold leading-tight tracking-tight">
+            {title}
+          </h1>
+
+          {/* Subtitle / Description */}
+          <p class="mt-4 text-lg text-text-light leading-relaxed max-w-2xl mx-auto md:mx-0">
+            {description}
+          </p>
+
+          {/* Date */}
+          <div class="mt-5 flex flex-wrap items-center justify-center md:justify-start gap-2 text-sm text-text-light">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            </svg>
+            {formattedUpdatedDate ? (
+              <span>Aktualisiert am <strong>{formattedUpdatedDate}</strong></span>
+            ) : (
+              <time datetime={pubDate.toISOString()}>Veröffentlicht am <strong>{formattedPubDate}</strong></time>
+            )}
+          </div>
+
+          {/* Hero Image */}
+          {image && (
+            <div class="mt-8 rounded-2xl overflow-hidden shadow-lg">
+              <img src={image} alt={imageAlt || title} class="w-full h-auto object-cover max-h-[400px]" loading="eager" />
+            </div>
+          )}
+        </header>
+      </div>
+    </div>
+
+    {/* Affiliate Disclaimer */}
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 -mt-4 mb-8">
+      <div class="bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 flex items-start gap-3">
+        <span class="text-primary-dark text-sm mt-0.5 flex-shrink-0">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <p class="text-xs text-text-light leading-relaxed">
+          <strong class="text-text">Hinweis:</strong> Dieser Artikel enthält Affiliate-Links. Wenn du über diese Links einkaufst, erhalten wir eine kleine Provision – für dich entstehen <strong>keine Mehrkosten</strong>.
+        </p>
+      </div>
+    </div>
+
+    {/* Main Content: Two-Column Layout */}
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16">
+      <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-10">
+        {/* Left Sidebar: Sticky TOC (Desktop) */}
+        <aside class="hidden lg:block">
+          <TableOfContents headings={headings} />
+        </aside>
+
+        {/* Right: Article Content */}
+        <div class="min-w-0">
+          {/* Mobile TOC (floating button handled by TableOfContents) */}
+          <div class="lg:hidden">
+            <TableOfContents headings={headings} />
+          </div>
+
+          <div class="prose prose-lg max-w-none
+            prose-headings:font-heading prose-headings:font-bold prose-headings:scroll-mt-24
+            prose-h2:text-2xl prose-h2:md:text-[1.7rem] prose-h2:mt-14 prose-h2:mb-5 prose-h2:pb-3 prose-h2:border-b prose-h2:border-primary/15
+            prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-primary-dark
+            prose-p:text-text prose-p:leading-[1.85] prose-p:mb-6
+            prose-a:text-primary-dark prose-a:underline prose-a:underline-offset-2 prose-a:decoration-primary/30 hover:prose-a:decoration-primary hover:prose-a:text-accent-dark
+            prose-strong:text-text prose-strong:font-bold
+            prose-li:text-text prose-li:leading-[1.85] prose-li:mb-2
+            prose-ul:my-6 prose-ol:my-6
+            prose-img:rounded-2xl prose-img:shadow-md
+            prose-blockquote:my-8 prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-primary/5 prose-blockquote:rounded-r-xl prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:not-italic
+            prose-hr:my-12 prose-hr:border-primary/10
+            prose-table:my-8 prose-table:rounded-xl prose-table:overflow-hidden
+            prose-th:bg-primary/10 prose-th:font-heading prose-th:font-semibold prose-th:px-4 prose-th:py-3
+            prose-td:px-4 prose-td:py-3 prose-td:border-b prose-td:border-primary/5
+          ">
+            <slot />
+          </div>
+
+          <AuthorBox />
+
+          {/* Passende Produkte */}
+          <div class="mt-12 bg-gradient-to-br from-primary/5 via-white to-accent/5 rounded-2xl p-6 md:p-8 border border-primary/10 shadow-sm">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span class="text-lg">&#128722;</span>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-lg">Passende Produkte</h3>
+                <p class="text-xs text-text-light">Finde die richtige Ausstattung fürs Baby-Baden</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <a href="/produkte/babywannen/" class="group flex items-center gap-2 px-4 py-3 bg-white rounded-xl border border-primary/10 text-sm font-heading font-semibold hover:shadow-md hover:-translate-y-0.5 hover:border-primary/30 transition-all">
+                <span class="text-base group-hover:scale-110 transition-transform">&#128705;</span>
+                <span>Babywannen</span>
+              </a>
+              <a href="/produkte/badethermometer/" class="group flex items-center gap-2 px-4 py-3 bg-white rounded-xl border border-primary/10 text-sm font-heading font-semibold hover:shadow-md hover:-translate-y-0.5 hover:border-primary/30 transition-all">
+                <span class="text-base group-hover:scale-110 transition-transform">&#127777;&#65039;</span>
+                <span>Thermometer</span>
+              </a>
+              <a href="/produkte/heizstrahler/" class="group flex items-center gap-2 px-4 py-3 bg-white rounded-xl border border-primary/10 text-sm font-heading font-semibold hover:shadow-md hover:-translate-y-0.5 hover:border-primary/30 transition-all">
+                <span class="text-base group-hover:scale-110 transition-transform">&#9728;&#65039;</span>
+                <span>Heizstrahler</span>
+              </a>
+              <a href="/produkte/badezubehoer/" class="group flex items-center gap-2 px-4 py-3 bg-white rounded-xl border border-primary/10 text-sm font-heading font-semibold hover:shadow-md hover:-translate-y-0.5 hover:border-primary/30 transition-all">
+                <span class="text-base group-hover:scale-110 transition-transform">&#128166;</span>
+                <span>Badezubehör</span>
+              </a>
+              <a href="/produkte/pflegeprodukte/" class="group flex items-center gap-2 px-4 py-3 bg-white rounded-xl border border-primary/10 text-sm font-heading font-semibold hover:shadow-md hover:-translate-y-0.5 hover:border-primary/30 transition-all">
+                <span class="text-base group-hover:scale-110 transition-transform">&#129524;</span>
+                <span>Pflegeprodukte</span>
+              </a>
+              <a href="/produkte/badespielzeug/" class="group flex items-center gap-2 px-4 py-3 bg-white rounded-xl border border-primary/10 text-sm font-heading font-semibold hover:shadow-md hover:-translate-y-0.5 hover:border-primary/30 transition-all">
+                <span class="text-base group-hover:scale-110 transition-transform">&#129414;</span>
+                <span>Badespielzeug</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Amazon Baby-Wunschliste Tipp */}
+          <div class="mt-8 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-5 md:p-6 border border-amber-200/40">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl flex-shrink-0">&#127873;</span>
+              <div>
+                <p class="font-heading font-bold text-sm text-amber-900">Amazon Baby-Wunschliste</p>
+                <p class="mt-1 text-xs text-amber-800/70 leading-relaxed">
+                  Erstelle kostenlos deine Baby-Wunschliste und sichere dir <strong class="text-amber-900">15% Rabatt</strong> auf Babyprodukte.
+                </p>
+                <a
+                  href="https://www.amazon.de/baby-reg?tag=jalapeno123-21"
+                  target="_blank"
+                  rel="noopener sponsored"
+                  class="inline-flex items-center gap-1.5 mt-3 px-4 py-2 bg-amber-400 hover:bg-amber-500 text-amber-900 font-heading font-bold text-xs rounded-full transition-colors"
+                >
+                  Kostenlos erstellen
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  // Reading Progress Bar
+  document.addEventListener('DOMContentLoaded', () => {
+    const progressBar = document.getElementById('reading-progress');
+    if (!progressBar) return;
+
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+      progressBar!.style.width = `${progress}%`;
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateProgress();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    updateProgress();
+  });
+</script>

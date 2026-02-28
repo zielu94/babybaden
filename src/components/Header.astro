@@ -1,0 +1,173 @@
+---
+const productSublinks = [
+  { href: '/produkte/starter-set/', label: 'Starter Set', icon: '&#127873;' },
+  { href: '/produkte/babywannen/', label: 'Babywannen', icon: '&#128705;' },
+  { href: '/produkte/badethermometer/', label: 'Badethermometer', icon: '&#127777;&#65039;' },
+  { href: '/produkte/heizstrahler/', label: 'Heizstrahler', icon: '&#9728;&#65039;' },
+  { href: '/produkte/badezubehoer/', label: 'Badezubehör', icon: '&#128166;' },
+  { href: '/produkte/pflegeprodukte/', label: 'Pflegeprodukte', icon: '&#129524;' },
+  { href: '/produkte/badespielzeug/', label: 'Badespielzeug', icon: '&#129414;' },
+];
+
+const ratgeberSublinks = [
+  { href: '/ratgeber/baby-richtig-baden-anleitung/', label: 'Starter-Guide', icon: '&#128214;' },
+  { href: '/ratgeber/baby-baden-temperatur/', label: 'Richtige Temperatur', icon: '&#127777;&#65039;' },
+  { href: '/ratgeber/baby-erstes-bad-schritt-fuer-schritt/', label: 'Das erste Bad', icon: '&#128118;' },
+  { href: '/ratgeber/wie-oft-baby-baden/', label: 'Wie oft baden?', icon: '&#128167;' },
+  { href: '/ratgeber/baby-pflege-nach-dem-baden/', label: 'Pflege nach dem Bad', icon: '&#129524;' },
+];
+
+const navLinks = [
+  { href: '/ratgeber/', label: 'Ratgeber', children: ratgeberSublinks, allLabel: 'Alle Ratgeber ansehen' },
+  { href: '/produkte/', label: 'Produkte', children: productSublinks, allLabel: 'Alle Produkte ansehen' },
+  { href: '/checkliste/', label: 'Checkliste' },
+  { href: '/ueber-uns/', label: 'Über uns' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="site-header" class="sticky top-0 z-40 bg-white border-b border-primary/15 transition-shadow duration-300">
+  <nav class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group flex-shrink-0">
+      <div class="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
+        <svg width="20" height="20" viewBox="0 0 28 28" fill="none" class="text-primary-dark">
+          <path d="M2 18c2-3 4-3 6 0s4 3 6 0 4-3 6 0 4 3 6 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M4 22c2-2.5 3.5-2.5 5.5 0s3.5 2.5 5.5 0 3.5-2.5 5.5 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-heading text-lg font-bold text-text leading-tight">babybaden<span class="text-primary-dark">.de</span></span>
+        <span class="text-[10px] text-text-light leading-none hidden sm:block">Sicher & liebevoll baden</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex items-center gap-1">
+      {navLinks.map(link => (
+        <li class={link.children ? 'relative group' : ''}>
+          <a
+            href={link.href}
+            class:list={[
+              'font-heading font-semibold text-sm px-3.5 py-2 rounded-lg transition-all duration-200 inline-flex items-center gap-1',
+              currentPath.startsWith(link.href)
+                ? 'text-primary-dark bg-primary/8'
+                : 'text-text-light hover:text-text hover:bg-primary/5'
+            ]}
+          >
+            {link.label}
+            {link.children && (
+              <svg class="w-3 h-3 opacity-50 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            )}
+          </a>
+          {link.children && (
+            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="bg-white rounded-2xl shadow-xl border border-primary/10 p-2 min-w-[240px]">
+                <p class="px-3 py-2 text-[10px] font-heading font-bold text-text-light/50 uppercase tracking-wider">{link.label}</p>
+                {link.children.map(sub => (
+                  <a
+                    href={sub.href}
+                    class:list={[
+                      'flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-heading font-medium transition-colors',
+                      currentPath.startsWith(sub.href) ? 'bg-primary/10 text-primary-dark' : 'text-text hover:bg-primary/5 hover:text-primary-dark'
+                    ]}
+                  >
+                    <span class="text-base" set:html={sub.icon} />
+                    {sub.label}
+                  </a>
+                ))}
+                <div class="border-t border-primary/10 mt-1 pt-1">
+                  <a
+                    href={link.href}
+                    class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-heading font-semibold text-primary-dark hover:bg-primary/5 transition-colors"
+                  >
+                    {link.allLabel}
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden flex flex-col gap-1.5 p-2 min-w-[44px] min-h-[44px] items-center justify-center rounded-lg hover:bg-primary/5 transition-colors"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+    >
+      <span class="block w-5 h-0.5 bg-text transition-all duration-300 origin-center" id="burger-top"></span>
+      <span class="block w-5 h-0.5 bg-text transition-all duration-300" id="burger-mid"></span>
+      <span class="block w-5 h-0.5 bg-text transition-all duration-300 origin-center" id="burger-bot"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-primary/10">
+    <div class="mx-auto max-w-6xl px-4 py-3">
+      <ul class="flex flex-col gap-0.5">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'font-heading font-semibold text-base block py-3 px-3 rounded-xl transition-colors min-h-[44px] flex items-center',
+                currentPath.startsWith(link.href) ? 'text-primary-dark bg-primary/5' : 'text-text hover:bg-primary/5'
+              ]}
+            >
+              {link.label}
+            </a>
+            {link.children && (
+              <div class="pl-3 pb-2 grid grid-cols-2 gap-0.5">
+                {link.children.map(sub => (
+                  <a
+                    href={sub.href}
+                    class:list={[
+                      'flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-heading font-medium transition-colors min-h-[44px]',
+                      currentPath.startsWith(sub.href) ? 'bg-primary/10 text-primary-dark' : 'text-text-light hover:bg-primary/5'
+                    ]}
+                  >
+                    <span class="text-base" set:html={sub.icon} />
+                    {sub.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const header = document.getElementById('site-header');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(isOpen));
+    document.getElementById('burger-top')?.classList.toggle('translate-y-[4px]', isOpen);
+    document.getElementById('burger-top')?.classList.toggle('rotate-45', isOpen);
+    document.getElementById('burger-mid')?.classList.toggle('opacity-0', isOpen);
+    document.getElementById('burger-bot')?.classList.toggle('-translate-y-[4px]', isOpen);
+    document.getElementById('burger-bot')?.classList.toggle('-rotate-45', isOpen);
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('shadow-md');
+    } else {
+      header?.classList.remove('shadow-md');
+    }
+  }, { passive: true });
+</script>

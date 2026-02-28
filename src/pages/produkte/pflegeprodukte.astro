@@ -1,0 +1,500 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AmazonProductBox from '../../components/AmazonProductBox.astro';
+import MamaTipp from '../../components/MamaTipp.astro';
+import WichtigHinweis from '../../components/WichtigHinweis.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const AMAZON_TAG = 'jalapeno123-21';
+
+const faqItems = [
+  {
+    question: 'Braucht mein Baby überhaupt Badezusätze?',
+    answer: 'In den ersten 4-6 Wochen reicht <strong>klares Wasser</strong> völlig aus. Danach kannst du milde, rückfettende Badezusätze verwenden &ndash; besonders wenn die Haut trocken wird. Achte auf pH-neutrale Produkte ohne Parfüm, Farbstoffe und Alkohol.'
+  },
+  {
+    question: 'Was ist der Unterschied zwischen Badeöl und Pflegeöl?',
+    answer: '<strong>Badeöl</strong> kommt direkt ins Badewasser und bildet einen schützenden Film auf der Haut. <strong>Pflegeöl</strong> wird nach dem Baden auf die noch leicht feuchte Haut aufgetragen und zieht ein. Beides pflegt &ndash; Pflegeöl ist intensiver und ideal für die Babymassage.'
+  },
+  {
+    question: 'Wie oft sollte ich mein Baby mit Seife/Waschgel waschen?',
+    answer: 'Maximal <strong>1-2 Mal pro Woche</strong> mit mildem Waschgel baden. Zu häufiges Waschen mit Seife trocknet die empfindliche Babyhaut aus und zerstört den natürlichen Säureschutzmantel. An den anderen Tagen reicht ein kurzes Bad in klarem Wasser oder ein Waschlappen.'
+  },
+  {
+    question: 'Naturkosmetik oder konventionelle Produkte &ndash; was ist besser für Babys?',
+    answer: 'Beide können gut sein! <strong>Naturkosmetik</strong> (z.B. Weleda, boep) verzichtet auf synthetische Inhaltsstoffe und ist oft besser verträglich. <strong>Konventionelle Marken</strong> (Penaten, NIVEA) sind dermatologisch getestet, günstiger und in jeder Drogerie erhältlich. Wichtiger als das Label ist, dass das Produkt parfümfrei und pH-neutral ist.'
+  },
+  {
+    question: 'Wann sollte ich Pflegeöl nach dem Baden auftragen?',
+    answer: 'Am besten direkt nach dem Baden auf die <strong>noch leicht feuchte Haut</strong>. So schließt das Öl die Feuchtigkeit ein und zieht besonders gut ein. 2-3 Tropfen reichen für den ganzen Babykörper. Spare Gesicht und Windelbereich aus &ndash; dort besser eine leichte Creme verwenden.'
+  },
+  {
+    question: 'Welche Inhaltsstoffe sollte ich bei Babypflegeprodukten meiden?',
+    answer: 'Meide Produkte mit <strong>Parfüm/Duftstoffen, Alkohol (Ethanol), Parabenen, Mineralöl (Paraffin), PEG-Emulgatoren</strong> und synthetischen Farbstoffen. Diese können die empfindliche Babyhaut reizen. Achte auf Siegel wie NATRUE, BDIH oder Dermatest &bdquo;sehr gut&ldquo;.'
+  },
+];
+---
+
+<BaseLayout
+  title="Baby-Pflegeprodukte Test 2026: Die 13 besten Badezusätze, Waschgels & Öle"
+  description="Die besten Pflegeprodukte fürs Baby-Baden: Badezusätze, Waschgels, Badeöle und Pflegeöle &ndash; von Weleda über Penaten bis boep. Ehrlich verglichen."
+>
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <Breadcrumb items={[
+      { label: 'Produkte', href: '/produkte/' },
+      { label: 'Pflegeprodukte' }
+    ]} />
+
+    <!-- Intro -->
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Baby-Pflegeprodukte: Die 13 besten Badezusätze & Öle</h1>
+      <p class="text-text-light text-lg leading-relaxed mb-4">
+        Weniger ist mehr &ndash; das gilt besonders bei der Hautpflege von Babys. Aber welche Produkte sind wirklich gut? Von <strong>milden Badezusätzen</strong> über <strong>Naturkosmetik-Badeöle</strong> bis zu <strong>pflegenden Ölen für nach dem Bad</strong>: Hier findest du unsere 13 ehrlichen Empfehlungen für sanfte, geprüfte Pflegeprodukte.
+      </p>
+      <p class="text-sm text-text-light italic">
+        <em>Zuletzt aktualisiert: Februar 2026</em>
+      </p>
+    </header>
+
+    <!-- Quick Navigation -->
+    <nav class="mb-12 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+      <h2 class="font-heading font-bold text-lg mb-4">&#128203; Auf dieser Seite</h2>
+      <div class="grid sm:grid-cols-2 gap-2 text-sm">
+        <a href="#badezusaetze" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Badezusätze & Waschgels (5 Produkte)
+        </a>
+        <a href="#naturkosmetik" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Naturkosmetik: Badeöl & Schaumbad (3 Produkte)
+        </a>
+        <a href="#pflegeoele" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Pflegeöle für nach dem Baden (5 Produkte)
+        </a>
+        <a href="#kaufberatung" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Kaufberatung & Inhaltsstoffe
+        </a>
+      </div>
+    </nav>
+
+    <MamaTipp text="In den ersten 4-6 Wochen braucht dein Baby gar keine Pflegeprodukte &ndash; klares Wasser reicht völlig aus! Erst wenn die Haut trockener wird, greife zu einem milden, rückfettenden Badezusatz. Starte mit EINEM Produkt und beobachte, wie die Haut reagiert." />
+
+    <!-- ==================== -->
+    <!-- 1. BADEZUSÄTZE & WASCHGELS -->
+    <!-- ==================== -->
+    <section id="badezusaetze" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#128704;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Badezusätze & Waschgels</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ein guter Badezusatz reinigt sanft, ohne die empfindliche Babyhaut auszutrocknen. Rückfettende Formeln und pH-neutrale Rezepturen sind hier das A und O. Die meisten Produkte sind als <strong>Bad & Shampoo in einem</strong> verwendbar &ndash; praktisch für die schnelle Badezeit.
+      </p>
+
+      <!-- 1. WELEDA Schlaf Gut Bad -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">1. WELEDA Calendula Schlaf Gut Bad</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>WELEDA Baby Calendula Schlaf Gut Bad</strong> ist ein echtes Abendritual-Produkt: <strong>Lavendel und Calendula</strong> beruhigen dein Baby und bereiten es aufs Schlafen vor. Die NATRUE-zertifizierte Naturkosmetik reinigt sanft, ohne die zarte Babyhaut auszutrocknen. Ein Klassiker, den Hebammen seit Jahrzehnten empfehlen.
+      </p>
+      <AmazonProductBox
+        name="WELEDA Baby Calendula Schlaf Gut Bad 200ml"
+        affiliateLink={`https://www.amazon.de/dp/B0FN4BD48B?tag=${AMAZON_TAG}`}
+        features={[
+          'Beruhigende Wirkung &ndash; ideal als Abendritual vor dem Schlafengehen',
+          'Bio-Calendula und Lavendel aus kontrolliertem Anbau',
+          'NATRUE-zertifizierte Naturkosmetik &ndash; ohne synthetische Zusätze',
+          'Sanft rückfettend &ndash; trocknet die Haut nicht aus',
+          'Von Hebammen empfohlen'
+        ]}
+        rating="4,9/5"
+        badge="Empfehlung"
+        image="/images/products/weleda-schlaf-gut-bad.jpg"
+      />
+
+      <!-- 2. Penaten Wasch- & Duschcreme -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">2. Penaten Wasch- & Duschcreme</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Penaten Wasch- & Duschcreme</strong> ist ein mildes 2-in-1-Produkt zum Waschen und Duschen. Die <strong>&bdquo;Keine Tränen&ldquo;-Formel</strong> ist pH-hautneutral und dermatologisch getestet. Für Familien, die ein unkompliziertes, günstiges Alltagsprodukt suchen &ndash; die 400ml-Flasche hält ewig.
+      </p>
+      <AmazonProductBox
+        name="Penaten Baby Wasch- & Duschcreme 400ml"
+        affiliateLink={`https://www.amazon.de/dp/B07V15BFK8?tag=${AMAZON_TAG}`}
+        features={[
+          '&bdquo;Keine Tränen&ldquo;-Formel &ndash; brennt nicht in den Augen',
+          'pH-hautneutral und dermatologisch getestet',
+          'Sanfte Reinigung für Haut und Haare',
+          '400ml Großpackung &ndash; reicht für viele Bäder',
+          'Ohne Alkohol und Farbstoffe'
+        ]}
+        rating="4,5/5"
+        badge="Preis-Tipp"
+        image="/images/products/penaten-wasch-duschcreme.jpg"
+        imageFit="contain"
+      />
+
+      <!-- 3. Bübchen Baby-Bad -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">3. Bübchen Baby-Bad mit Kamille</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>Bübchen Baby-Bad</strong> mit Kamille ist ein bewährter Klassiker aus der Drogerie. Die <strong>1-Liter-Flasche</strong> bietet ein hervorragendes Preis-Leistungs-Verhältnis. Kamille beruhigt gereizte Haut und Weizenprotein pflegt zusätzlich. Mit dem praktischen Pumpspender lässt sich die Menge leicht dosieren.
+      </p>
+      <AmazonProductBox
+        name="Bübchen Baby-Bad mit Kamille 1000ml"
+        affiliateLink={`https://www.amazon.de/dp/B09W5XBHZT?tag=${AMAZON_TAG}`}
+        features={[
+          'Kamille-Extrakt beruhigt empfindliche Babyhaut',
+          'Weizenprotein pflegt und schützt den Säureschutzmantel',
+          'Besonders ergiebig: 1000ml Großflasche',
+          'Hautverträglichkeit dermatologisch bestätigt',
+          'Ohne Parabene, Silikone und Mineralöl'
+        ]}
+        rating="4,7/5"
+        badge="Viel für wenig"
+        image="/images/products/buebchen-baby-bad.jpg"
+        imageFit="contain"
+      />
+
+      <!-- 4. Penaten Ultra Sensitiv -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">4. Penaten Ultra Sensitiv Bad & Shampoo</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>Penaten Ultra Sensitiv</strong> ist die parfümfreie Variante für besonders empfindliche oder zu Neurodermitis neigende Babyhaut. <strong>Ohne Duftstoffe, ohne Farbstoffe</strong> &ndash; nur sanfte Reinigung. Perfekt für Neugeborene und Babys mit sensibler Haut.
+      </p>
+      <AmazonProductBox
+        name="Penaten Ultra Sensitiv Bad & Shampoo"
+        affiliateLink={`https://www.amazon.de/dp/B01N3B1IET?tag=${AMAZON_TAG}`}
+        features={[
+          '0% Parfüm, 0% Farbstoffe &ndash; ideal für ultra-sensible Haut',
+          '&bdquo;Keine Tränen&ldquo;-Formel &ndash; sanft zu den Augen',
+          'pH-hautneutral und dermatologisch getestet',
+          'Als Bad und Shampoo verwendbar (2-in-1)',
+          'Besonders empfehlenswert bei Neurodermitis-Neigung'
+        ]}
+        rating="4,4/5"
+        badge="Sensitiv"
+        image="/images/products/penaten-ultra-sensitiv.jpg"
+        imageFit="contain"
+      />
+
+      <!-- 5. NIVEA Baby Good Night -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">5. NIVEA Baby Good Night Bad & Shampoo</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>NIVEA Baby Good Night</strong> kombiniert sanfte Reinigung mit einem beruhigenden Duft für die Abendroutine. <strong>Natürliche Kamille und Hopfen</strong> sollen entspannend wirken und dein Baby aufs Schlafen vorbereiten. Wie alle NIVEA-Baby-Produkte ist es dermatologisch getestet und augenärztlich bestätigt.
+      </p>
+      <AmazonProductBox
+        name="NIVEA Baby Good Night Bad & Shampoo"
+        affiliateLink={`https://www.amazon.de/dp/B0CX1Q46S5?tag=${AMAZON_TAG}`}
+        features={[
+          'Beruhigender Duft &ndash; ideal als Einschlafritual',
+          'Natürliche Kamille und Hopfen-Extrakt',
+          'Sanfte &bdquo;Keine Tränen&ldquo;-Formel',
+          'Dermatologisch und augenärztlich getestet',
+          'pH-hautneutral &ndash; schützt den Säureschutzmantel'
+        ]}
+        rating="4,6/5"
+        image="/images/products/nivea-baby-gute-nacht.jpg"
+      />
+
+      <MamaTipp text="Mein Favorit für den Alltag: Bübchen mit Kamille (günstig, ergiebig, bewährt). Für die Abendroutine: das WELEDA Schlaf Gut Bad &ndash; der Lavendelduft wirkt wirklich beruhigend. Bei sensibler Haut greife zum Penaten Ultra Sensitiv ohne Parfüm." />
+    </section>
+
+    <!-- ==================== -->
+    <!-- 2. NATURKOSMETIK -->
+    <!-- ==================== -->
+    <section id="naturkosmetik" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#127807;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Naturkosmetik: Badeöl & Schaumbad</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Naturkosmetik-Produkte verzichten auf synthetische Inhaltsstoffe und setzen auf <strong>pflanzliche Öle, Bio-Extrakte und natürliche Düfte</strong>. Besonders empfehlenswert für Babys mit empfindlicher Haut oder Eltern, die Wert auf natürliche Pflege legen. Badeöle hinterlassen einen schützenden Film auf der Haut &ndash; perfekt für trockene Winterhaut.
+      </p>
+
+      <!-- 6. MABYEN Baby Bademilch -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">6. MABYEN Baby Bademilch</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>MABYEN Baby Bademilch</strong> verwandelt das Badewasser in eine sanft milchige Pflege. Entwickelt von einer <strong>Hebamme</strong>, setzt sie auf natürliche Inhaltsstoffe wie Mandelöl und Sheabutter. Die rückfettende Formel ist ideal für trockene Babyhaut und Babys, die zu Ekzemen neigen.
+      </p>
+      <AmazonProductBox
+        name="MABYEN Baby Bademilch 200ml"
+        affiliateLink={`https://www.amazon.de/dp/B0F8W3QDZV?tag=${AMAZON_TAG}`}
+        features={[
+          'Von einer Hebamme entwickelt &ndash; speziell für empfindliche Babyhaut',
+          'Rückfettende Formel mit Mandelöl und Sheabutter',
+          'Milchig-sanfte Konsistenz im Badewasser',
+          'Ohne Parabene, Silikone und Mineralöl',
+          'Dezenter, natürlicher Duft'
+        ]}
+        rating="4,5/5"
+        badge="Von Hebammen"
+        image="/images/products/mabyen-bademilch.jpg"
+      />
+
+      <!-- 7. boep Babybadeöl -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">7. boep Babybadeöl Naturkosmetik</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>boep Babybadeöl</strong> ist ein NATRUE-zertifiziertes Naturkosmetik-Produkt, das einen <strong>schützenden Ölfilm</strong> auf der Babyhaut bildet. Hochwertige pflanzliche Öle (Sonnenblume, Olive, Jojoba) pflegen intensiv &ndash; perfekt für trockene Winterhaut. Wenige Tropfen ins Badewasser genügen.
+      </p>
+      <AmazonProductBox
+        name="boep Babybadeöl Naturkosmetik"
+        affiliateLink={`https://www.amazon.de/dp/B0DXQ13CS5?tag=${AMAZON_TAG}`}
+        features={[
+          'NATRUE-zertifizierte Naturkosmetik &ndash; 100% natürliche Inhaltsstoffe',
+          'Schützender Ölfilm bewahrt die Hautfeuchtigkeit',
+          'Pflanzliche Öle: Sonnenblume, Olive und Jojoba',
+          'Besonders ergiebig &ndash; wenige Tropfen genügen',
+          'Ideal für trockene und empfindliche Babyhaut'
+        ]}
+        rating="4,8/5"
+        badge="Naturkosmetik"
+        image="/images/products/boep-babybadeoel.jpg"
+      />
+
+      <!-- 8. boep Schaumbad -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">8. boep Schaumbad Naturkosmetik</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>boep Schaumbad</strong> macht das Baden zum schaumigen Erlebnis &ndash; ganz ohne synthetische Tenside. Die <strong>zuckerbasierten Waschsubstanzen</strong> reinigen sanft und erzeugen einen feinen Schaum, der Kindern großen Spaß macht. NATRUE-zertifiziert und frei von allem, was Babyhaut reizen könnte.
+      </p>
+      <AmazonProductBox
+        name="boep Schaumbad Naturkosmetik 150ml"
+        affiliateLink={`https://www.amazon.de/dp/B078S6273X?tag=${AMAZON_TAG}`}
+        features={[
+          'NATRUE-zertifizierte Naturkosmetik &ndash; ohne synthetische Tenside',
+          'Zuckerbasierte Waschsubstanzen &ndash; besonders hautschonend',
+          'Feiner Schaum für Badespaß ohne Reizung',
+          'Ohne Parabene, Silikone, Mineralöl und PEG',
+          'In Deutschland hergestellt'
+        ]}
+        rating="4,7/5"
+        image="/images/products/boep-schaumbad.jpg"
+        imageFit="contain"
+      />
+
+      <!-- Naturkosmetik-Vergleich -->
+      <div class="mt-8 grid md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl p-5 border border-green-200 shadow-sm">
+          <h4 class="font-heading font-bold text-sm mb-2">&#127807; Naturkosmetik-Siegel</h4>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; <strong>NATRUE</strong> &ndash; strenger internationaler Standard</li>
+            <li>&bull; <strong>BDIH/COSMOS</strong> &ndash; kontrollierte Naturkosmetik</li>
+            <li>&bull; <strong>Ecocert</strong> &ndash; französischer Bio-Standard</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h4 class="font-heading font-bold text-sm mb-2">&#128269; Worauf achten?</h4>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; Ohne Parfüm oder nur natürliche ätherische Öle</li>
+            <li>&bull; Kein Mineralöl (Paraffin, Petrolatum)</li>
+            <li>&bull; Keine PEG-Emulgatoren oder Silikone</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== -->
+    <!-- 3. PFLEGEÖLE -->
+    <!-- ==================== -->
+    <section id="pflegeoele" class="mb-14">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-3xl">&#129524;</span>
+        <h2 class="font-heading text-2xl font-extrabold">Pflegeöle für nach dem Baden</h2>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ein gutes Pflegeöl nach dem Baden spendet Feuchtigkeit, macht die Haut geschmeidig und eignet sich hervorragend für die <strong>Babymassage</strong>. Trage es auf die <strong>noch leicht feuchte Haut</strong> auf &ndash; so schließt es die Feuchtigkeit optimal ein. Von Naturkosmetik bis Klassiker: Hier unsere Top 5.
+      </p>
+
+      <WichtigHinweis text="Verwende Pflegeöl NICHT im Windelbereich &ndash; dort kann es Feuchtigkeit einschließen und Windelausschlag fördern. Für den Windelbereich eignet sich eine spezielle Wundschutzcreme besser. Teste neues Öl immer erst an einer kleinen Hautstelle (Unterarm), bevor du es großflächig aufträgst." />
+
+      <!-- 9. Weleda Calendula Pflegeöl -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">9. Weleda Calendula Pflegeöl Parfümfrei</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>Weleda Calendula Pflegeöl</strong> in der parfümfreien Version ist der <strong>Gold-Standard</strong> unter den Babypflegeölen. Bio-Sesamöl pflegt intensiv, Bio-Calendula-Extrakt beruhigt empfindliche Haut. NATRUE-zertifiziert, von Hebammen empfohlen und mit sagenhaften 4,9 Sternen bewertet &ndash; besser geht's kaum.
+      </p>
+      <AmazonProductBox
+        name="Weleda Calendula Pflegeöl Parfümfrei 200ml"
+        affiliateLink={`https://www.amazon.de/dp/B00B25PIXG?tag=${AMAZON_TAG}`}
+        features={[
+          'Bio-Sesamöl und Bio-Calendula &ndash; intensive Pflege',
+          'Parfümfrei &ndash; ideal für Neugeborene und sensible Haut',
+          'NATRUE-zertifizierte Naturkosmetik',
+          'Perfekt für die Babymassage nach dem Baden',
+          'Von Hebammen und Kinderärzten empfohlen'
+        ]}
+        rating="4,9/5"
+        badge="Testsieger"
+        image="/images/products/weleda-calendula-pflegeoel.jpg"
+        imageFit="contain"
+      />
+
+      <!-- 10. BAYBIES Baby Pflege Öl -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">10. BAYBIES Baby Pflege Öl</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>BAYBIES Baby Pflege Öl</strong> setzt auf einen <strong>hochwertigen Mix aus Bio-Ölen</strong>: Mandel, Jojoba, Argan und Calendula. Es zieht schnell ein, fettet nicht nach und hinterlässt die Babyhaut samtig weich. In Deutschland hergestellt und dermatologisch mit &bdquo;sehr gut&ldquo; bewertet.
+      </p>
+      <AmazonProductBox
+        name="BAYBIES Baby Pflege Öl 100ml"
+        affiliateLink={`https://www.amazon.de/dp/B09TFS98RZ?tag=${AMAZON_TAG}`}
+        features={[
+          'Bio-Öl-Mix: Mandel, Jojoba, Argan und Calendula',
+          'Zieht schnell ein &ndash; kein klebriges Gefühl',
+          'Dermatologisch getestet &ndash; Bewertung &bdquo;sehr gut&ldquo;',
+          'Ohne Parabene, Silikone, Mineralöl und PEG',
+          'Made in Germany &ndash; vegan und tierversuchsfrei'
+        ]}
+        rating="4,5/5"
+        badge="Bio-Qualität"
+        image="/images/products/baybies-pflegeoel.jpg"
+      />
+
+      <!-- 11. JOHNSON'S Baby Oil -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">11. JOHNSON&rsquo;S Baby Oil</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>JOHNSON&rsquo;S Baby Oil</strong> ist der weltweite Klassiker seit über 100 Jahren. Die 500ml-Flasche ist besonders ergiebig und schließt bis zu <strong>10x mehr Feuchtigkeit ein als eine gewöhnliche Lotion</strong>. Klinisch getestet, hypoallergen und für den täglichen Gebrauch geeignet. Ein solides Basisprodukt zum fairen Preis.
+      </p>
+      <AmazonProductBox
+        name="JOHNSON'S Baby Oil 500ml"
+        affiliateLink={`https://www.amazon.de/dp/B00BN7ZZ8Q?tag=${AMAZON_TAG}`}
+        features={[
+          'Bewährter Klassiker &ndash; seit über 100 Jahren weltweit vertraut',
+          '500ml Großflasche &ndash; extrem ergiebig',
+          'Schließt bis zu 10x mehr Feuchtigkeit ein als Lotion',
+          'Klinisch als mild getestet und hypoallergen',
+          'Ideal für die tägliche Babymassage'
+        ]}
+        rating="4,7/5"
+        badge="Klassiker"
+        image="/images/products/johnsons-baby-oil.jpg"
+      />
+
+      <!-- 12. ELIAH SAHIL Bio Baby Öl -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">12. ELIAH SAHIL Bio Baby Öl</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>ELIAH SAHIL Bio Baby Öl</strong> kommt in einer nachhaltigen <strong>Glasflasche</strong> &ndash; plastikfrei und umweltschonend. Die Mischung aus Schwarzkümmelöl und pflanzlichen Bio-Ölen pflegt besonders intensiv und eignet sich auch für empfindliche Haut. Ein Premium-Produkt für umweltbewusste Eltern.
+      </p>
+      <AmazonProductBox
+        name="ELIAH SAHIL Bio Baby Öl Glasflasche 100ml"
+        affiliateLink={`https://www.amazon.de/dp/B07S965NL5?tag=${AMAZON_TAG}`}
+        features={[
+          'Nachhaltige Glasflasche &ndash; plastikfrei und umweltfreundlich',
+          'Bio-Schwarzkümmelöl &ndash; entzündungshemmend und beruhigend',
+          '100% natürliche Bio-Inhaltsstoffe',
+          'Vegan und tierversuchsfrei',
+          'Besonders intensiv pflegend für sehr trockene Haut'
+        ]}
+        rating="4,3/5"
+        badge="Nachhaltig"
+        image="/images/products/eliah-sahil-babyoel.jpg"
+      />
+
+      <!-- 13. NIVEA Baby Massage Öl -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">13. NIVEA Baby Pflege & Massage Öl</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Das <strong>NIVEA Baby Pflege & Massage Öl</strong> mit natürlichem Mandelöl ist der perfekte Allrounder für die tägliche Pflege. Dermatologisch getestet, von NIVEA-Qualität und zu einem fairen Preis &ndash; ein zuverlässiges Pflegeöl, das in jeder Drogerie erhältlich ist. Ideal für die regelmäßige Babymassage.
+      </p>
+      <AmazonProductBox
+        name="NIVEA Baby Pflege & Massage Öl"
+        affiliateLink={`https://www.amazon.de/dp/B0CX1QWZ8Q?tag=${AMAZON_TAG}`}
+        features={[
+          'Natürliches Mandelöl &ndash; pflegt und schützt empfindliche Babyhaut',
+          'Dermatologisch getestet &ndash; NIVEA-Qualität',
+          'Zieht gut ein &ndash; ideal für die Babymassage',
+          'Hautverträglichkeit klinisch bestätigt',
+          'Überall in der Drogerie erhältlich'
+        ]}
+        rating="4,5/5"
+        image="/images/products/nivea-baby-massageoel.jpg"
+        imageFit="contain"
+      />
+
+      <MamaTipp text="Mein Top-Tipp: Das Weleda Calendula Pflegeöl Parfümfrei. Es ist der Hebammen-Liebling, pflegt fantastisch und reizt garantiert nicht. Für die tägliche Massage ein paar Tropfen auf die feuchte Haut &ndash; dein Baby wird es lieben! Das JOHNSON'S Baby Oil ist die günstige Alltagsalternative." />
+    </section>
+
+    <!-- Kaufberatung -->
+    <section id="kaufberatung" class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Kaufberatung: Welches Pflegeprodukt für welchen Zweck?</h2>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-sm mb-2">&#128704; Zum Baden</h3>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; <strong>Badezusatz/Waschgel</strong> ins Wasser</li>
+            <li>&bull; Mildes, pH-neutrales Produkt</li>
+            <li>&bull; 1-2x pro Woche reicht</li>
+            <li>&bull; Empfehlung: Bübchen Kamille</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-sm mb-2">&#127807; Für trockene Haut</h3>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; <strong>Badeöl</strong> ins Badewasser geben</li>
+            <li>&bull; Bildet schützenden Ölfilm</li>
+            <li>&bull; Ideal im Winter</li>
+            <li>&bull; Empfehlung: boep Babybadeöl</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-sm mb-2">&#129524; Nach dem Baden</h3>
+          <ul class="text-xs text-text-light space-y-1">
+            <li>&bull; <strong>Pflegeöl</strong> auf feuchte Haut</li>
+            <li>&bull; Ideal für Babymassage</li>
+            <li>&bull; 2-3 Tropfen genügen</li>
+            <li>&bull; Empfehlung: Weleda Pflegeöl</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Inhaltsstoffe-Checkliste -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-green-200 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3 text-green-800">&#9989; Gute Inhaltsstoffe</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2"><span class="text-green-600">&#10003;</span> Pflanzliche Öle (Mandel, Olive, Jojoba, Sesam)</li>
+            <li class="flex items-start gap-2"><span class="text-green-600">&#10003;</span> Calendula, Kamille, Aloe Vera</li>
+            <li class="flex items-start gap-2"><span class="text-green-600">&#10003;</span> Sheabutter, Panthenol (Provitamin B5)</li>
+            <li class="flex items-start gap-2"><span class="text-green-600">&#10003;</span> Zuckerbasierte Tenside (milde Reinigung)</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-red-200 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3 text-red-800">&#10060; Lieber vermeiden</h3>
+          <ul class="text-sm text-text-light space-y-2">
+            <li class="flex items-start gap-2"><span class="text-red-500">&#10007;</span> Parfüm und synthetische Duftstoffe</li>
+            <li class="flex items-start gap-2"><span class="text-red-500">&#10007;</span> Mineralöl (Paraffinum Liquidum, Petrolatum)</li>
+            <li class="flex items-start gap-2"><span class="text-red-500">&#10007;</span> Parabene, PEG-Emulgatoren, Silikone</li>
+            <li class="flex items-start gap-2"><span class="text-red-500">&#10007;</span> Alkohol (Ethanol), synthetische Farbstoffe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Baby-Pflegeprodukten</h2>
+      <FAQ items={faqItems} />
+    </section>
+
+    <!-- Fazit -->
+    <section class="mb-8">
+      <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/10">
+        <h2 class="font-heading text-xl font-extrabold mb-4">Unser Fazit</h2>
+        <p class="text-text leading-relaxed mb-4">
+          Weniger ist mehr bei der Babypflege! Starte mit einem <strong>milden Badezusatz</strong> und einem <strong>guten Pflegeöl</strong> &ndash; das reicht für den Anfang. Hier unsere Top-3 Empfehlungen:
+        </p>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <a href={`https://www.amazon.de/dp/B00B25PIXG?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-primary-dark uppercase">Testsieger</span>
+            <p class="font-heading font-bold mt-1 text-sm">Weleda Pflegeöl</p>
+            <p class="text-xs text-text-light mt-1">4,9★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B09W5XBHZT?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-green-700 uppercase">Preis-Leistung</span>
+            <p class="font-heading font-bold mt-1 text-sm">Bübchen Kamille</p>
+            <p class="text-xs text-text-light mt-1">4,7★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B0DXQ13CS5?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-accent-dark uppercase">Naturkosmetik</span>
+            <p class="font-heading font-bold mt-1 text-sm">boep Babybadeöl</p>
+            <p class="text-xs text-text-light mt-1">4,8★</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

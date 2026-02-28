@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChecklistItem from '../../components/ChecklistItem.astro';
+
+---
+
+<BaseLayout
+  title="Baby-Bade-Checkliste: Damit du nichts vergisst"
+  description="Die interaktive Baby-Bade-Checkliste: Alles was du vor, während und nach dem Baden brauchst &ndash; auf einen Blick."
+>
+  <section class="mx-auto max-w-2xl px-4 py-10">
+    <h1 class="font-heading text-3xl md:text-4xl font-extrabold text-center mb-4">Baby-Bade-Checkliste</h1>
+    <p class="text-center text-text-light mb-10">
+      Hake ab, was du schon vorbereitet hast. So vergisst du beim Baden nichts!
+    </p>
+
+    <!-- Vor dem Baden -->
+    <div class="mb-8">
+      <h2 class="font-heading font-bold text-xl mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-sm font-bold text-primary-dark">1</span>
+        Vor dem Baden
+      </h2>
+      <div class="bg-white rounded-2xl border border-primary/10 p-4 space-y-1">
+        <ChecklistItem id="cl-1" label="Raum auf 22-23\u00B0C vorheizen" />
+        <ChecklistItem id="cl-2" label="Babywanne bereitstellen" />
+        <ChecklistItem id="cl-3" label="Wasser einlassen (36-37\u00B0C)" />
+        <ChecklistItem id="cl-4" label="Temperatur mit Thermometer prüfen" />
+        <ChecklistItem id="cl-5" label="Kapuzenhandtuch bereitlegen" />
+        <ChecklistItem id="cl-6" label="Frische Windel & Kleidung bereitlegen" />
+        <ChecklistItem id="cl-7" label="Waschlappen bereit?" />
+        <ChecklistItem id="cl-8" label="Heizstrahler einschalten (falls vorhanden)" />
+      </div>
+    </div>
+
+    <!-- Während dem Baden -->
+    <div class="mb-8">
+      <h2 class="font-heading font-bold text-xl mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-sm font-bold text-primary-dark">2</span>
+        Während dem Baden
+      </h2>
+      <div class="bg-white rounded-2xl border border-primary/10 p-4 space-y-1">
+        <ChecklistItem id="cl-9" label="Baby mit sicherem Griff halten (Kopf/Nacken stützen)" />
+        <ChecklistItem id="cl-10" label="Sanft von oben nach unten waschen" />
+        <ChecklistItem id="cl-11" label="Gesicht zuerst, Windelbereich zuletzt" />
+        <ChecklistItem id="cl-12" label="Hautfalten nicht vergessen (Hals, Achseln, hinter den Ohren)" />
+        <ChecklistItem id="cl-13" label="Badezeit: max. 5-10 Minuten" />
+        <ChecklistItem id="cl-14" label="Baby NIEMALS allein lassen!" />
+      </div>
+    </div>
+
+    <!-- Nach dem Baden -->
+    <div class="mb-8">
+      <h2 class="font-heading font-bold text-xl mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-sm font-bold text-primary-dark">3</span>
+        Nach dem Baden
+      </h2>
+      <div class="bg-white rounded-2xl border border-primary/10 p-4 space-y-1">
+        <ChecklistItem id="cl-15" label="Baby sofort in Kapuzenhandtuch einwickeln" />
+        <ChecklistItem id="cl-16" label="Sanft abtupfen (nicht rubbeln!)" />
+        <ChecklistItem id="cl-17" label="Hautfalten gründlich trocknen" />
+        <ChecklistItem id="cl-18" label="Bei Bedarf eincremen" />
+        <ChecklistItem id="cl-19" label="Frische Windel anlegen" />
+        <ChecklistItem id="cl-20" label="Kuscheln & genießen!" />
+      </div>
+    </div>
+
+  </section>
+</BaseLayout>

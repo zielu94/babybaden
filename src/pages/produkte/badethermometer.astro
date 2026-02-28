@@ -1,0 +1,370 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import AmazonProductBox from '../../components/AmazonProductBox.astro';
+import MamaTipp from '../../components/MamaTipp.astro';
+import WichtigHinweis from '../../components/WichtigHinweis.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const AMAZON_TAG = 'jalapeno123-21';
+
+const products = [
+  { name: 'Philips Avent SCH480/00', feature: 'Bad- & Raumthermometer, digital, schwimmfähig', rating: '4,8', recommended: true, affiliateLink: `https://www.amazon.de/dp/B07WKN8NQQ?tag=${AMAZON_TAG}` },
+  { name: 'Doli Yearning Seeotter', feature: 'Schwimmendes Badespielzeug, auto Ein/Aus', rating: '4,5', affiliateLink: `https://www.amazon.de/dp/B0DS256PZT?tag=${AMAZON_TAG}` },
+  { name: 'Nuby Pinguin', feature: 'LCD-Display, Heißwasserwarnung, BPA-frei', rating: '4,6', affiliateLink: `https://www.amazon.de/dp/B09V3914B4?tag=${AMAZON_TAG}` },
+  { name: 'Badabulle Waschbär', feature: 'Weiches Material, Temperaturwarnung', rating: '4,4', affiliateLink: `https://www.amazon.de/dp/B01M278IPP?tag=${AMAZON_TAG}` },
+  { name: 'Rotho Babydesign Ente', feature: 'Enten-Design, LED-Warnung, leicht', rating: '3,8', affiliateLink: `https://www.amazon.de/dp/B012Q85TCM?tag=${AMAZON_TAG}` },
+];
+
+const faqItems = [
+  {
+    question: 'Brauche ich wirklich ein Badethermometer?',
+    answer: 'Ja, wir empfehlen es sehr. Die ideale Badetemperatur liegt bei 36-37°C &ndash; schon 2-3 Grad Unterschied können für dein Baby unangenehm oder sogar gefährlich sein. Ein Thermometer gibt dir die Sicherheit, die Temperatur exakt zu treffen. Der Ellbogen-Test ist als Ergänzung okay, aber nicht präzise genug als alleinige Methode.'
+  },
+  {
+    question: 'Digital oder analog &ndash; was ist besser?',
+    answer: 'Digitale Thermometer messen schneller (wenige Sekunden) und zeigen die Temperatur auf 0,1°C genau an. Viele haben zusätzlich eine Warnfunktion bei zu heißem Wasser. Analoge Thermometer brauchen keine Batterien, sind aber langsamer und weniger genau. Für Babys empfehlen wir klar digital &ndash; die Warnfunktion allein ist es wert.'
+  },
+  {
+    question: 'Reicht der Ellbogen-Test nicht aus?',
+    answer: 'Der Ellbogen-Test ist ein guter zusätzlicher Check, aber kein Ersatz für ein Thermometer. Unser Temperaturempfinden ist subjektiv und wird z.B. von kalten Händen beeinflusst. Gerade bei Neugeborenen, die ihre Temperatur noch nicht gut regulieren können, ist ein Thermometer deutlich sicherer.'
+  },
+  {
+    question: 'Wie genau messen digitale Badethermometer?',
+    answer: 'Die meisten digitalen Badethermometer messen mit einer Genauigkeit von ±0,5 bis ±1°C. Das Philips Avent ist hier am genauesten. Tipp: Lass das Thermometer 30-60 Sekunden im Wasser, bevor du den Wert abliest &ndash; so bekommst du die genaueste Messung.'
+  },
+  {
+    question: 'Kann mein Baby mit dem Badethermometer spielen?',
+    answer: 'Ja, die meisten modernen Badethermometer sind bewusst als Badespielzeug gestaltet. Achte aber darauf, dass das Modell nach EN71-Spielzeugstandard geprüft ist (wie z.B. das Philips Avent). Alle Modelle in unserem Vergleich sind sicher für Babys &ndash; ohne verschluckbare Kleinteile und BPA-frei.'
+  },
+  {
+    question: 'Wie oft muss ich die Batterie wechseln?',
+    answer: 'Bei normaler Nutzung (2-3 Mal pro Woche Baden) halten die meisten Batterien 1-2 Jahre. Einige Modelle schalten sich automatisch aus, um Strom zu sparen. Beim Rotho Babydesign Ente ist der Batteriewechsel allerdings schwierig &ndash; das solltest du bei der Kaufentscheidung berücksichtigen.'
+  },
+];
+---
+
+<BaseLayout
+  title="Badethermometer Baby Test 2026: Die 5 besten im Vergleich"
+  description="Welches Badethermometer ist das beste für dein Baby? Wir vergleichen Philips Avent, Doli, Nuby, Badabulle und Rotho &ndash; ehrlich und unabhängig."
+>
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <Breadcrumb items={[
+      { label: 'Produkte', href: '/produkte/' },
+      { label: 'Badethermometer' }
+    ]} />
+
+    <!-- Intro -->
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Badethermometer Baby Test 2026: Die 5 besten Modelle im Vergleich</h1>
+      <p class="text-text-light text-lg leading-relaxed mb-4">
+        36-37°C &ndash; das ist die perfekte Badetemperatur für dein Baby. Klingt einfach, aber <strong>schon 2-3 Grad Unterschied machen einen echten Unterschied</strong>. Ein gutes Badethermometer gibt dir die Sicherheit, die richtige Temperatur zu treffen &ndash; jedes Mal.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Wir haben die <strong>5 beliebtesten Baby-Badethermometer</strong> auf Amazon verglichen: vom Testsieger Philips Avent bis zum Preis-Tipp Badabulle. Alle Modelle sind digital, schwimmfähig und doppeln als süßes Badespielzeug.
+      </p>
+      <p class="text-sm text-text-light italic">
+        <em>Zuletzt aktualisiert: Februar 2026</em>
+      </p>
+    </header>
+
+    <!-- Vergleichstabelle -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Alle 5 Badethermometer auf einen Blick</h2>
+      <ComparisonTable products={products} />
+    </section>
+
+    <!-- Testsieger: Philips Avent -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">1. Philips Avent SCH480/00 &ndash; Unser Testsieger</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Das Philips Avent SCH480/00 ist unser klarer <strong>Testsieger</strong> und das mit Abstand am besten bewertete Badethermometer auf Amazon (4,8 Sterne bei über 7.000 Bewertungen). Es misst sowohl die <strong>Bade- als auch die Raumtemperatur</strong> und ist dabei so robust gebaut, dass dein Baby damit spielen kann.
+      </p>
+
+      <AmazonProductBox
+        name="Philips Avent SCH480/00 Bad- & Raumthermometer"
+        affiliateLink={`https://www.amazon.de/dp/B07WKN8NQQ?tag=${AMAZON_TAG}`}
+        features={[
+          'Digitale Anzeige &ndash; große Zahlen, sofort ablesbar',
+          'Misst Bade- UND Raumtemperatur (10-45°C)',
+          'Schwimmfähig &ndash; komplett wasserdicht',
+          'Nach EN71-Spielzeugstandard geprüft &ndash; sicher als Badespielzeug',
+          'Bewährte Philips Avent Qualität'
+        ]}
+        rating="4,8/5 bei 7.000+ Bewertungen"
+        badge="Testsieger"
+        image="/images/products/philips-avent-thermometer.jpg"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Extrem hohe Bewertung (4,8/5)</li>
+            <li>&bull; Dual-Funktion: Bad + Raum</li>
+            <li>&bull; Verarbeitung und Robustheit top</li>
+            <li>&bull; Großes, klares Display</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Vereinzelt leichte Messabweichung (1-2°C)</li>
+            <li>&bull; Batteriewechsel etwas umständlich</li>
+            <li>&bull; Etwas teurer als die Konkurrenz</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doli Yearning -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">2. Doli Yearning Seeotter &ndash; Das süßeste Thermometer</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Das Doli Yearning Badethermometer im <strong>Seeotter-Design</strong> ist ein echtes Highlight in der Badewanne. Es schwimmt stabil auf dem Wasser, hat keine scharfen Kanten und schaltet sich <strong>automatisch ein</strong>, sobald es ins Wasser kommt &ndash; und nach dem Baden wieder aus. Besonders praktisch für stressige Bade-Momente!
+      </p>
+
+      <AmazonProductBox
+        name="Doli Yearning Baby Badethermometer Seeotter"
+        affiliateLink={`https://www.amazon.de/dp/B0DS256PZT?tag=${AMAZON_TAG}`}
+        features={[
+          'Niedliches Seeotter-Design &ndash; Badespielzeug und Thermometer in einem',
+          'Automatisches Ein-/Ausschalten im Wasser',
+          'Anzeige in Fahrenheit und Celsius',
+          'Warnung bei zu kaltem oder zu heißem Wasser',
+          'Kompakt und griffig für kleine Babyhände'
+        ]}
+        rating="4,5/5"
+        badge="Tipp: Süßestes Design"
+        image="/images/products/doli-seeotter-thermometer.jpg"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Auto-Ein/Aus &ndash; super praktisch</li>
+            <li>&bull; Entzückendes Design, Baby liebt es</li>
+            <li>&bull; Keine scharfen Kanten, stabil</li>
+            <li>&bull; Auch als Frosch-Variante erhältlich</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Relativ neues Produkt, weniger Langzeit-Tests</li>
+            <li>&bull; Keine Raumtemperatur-Funktion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuby Pinguin -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">3. Nuby Pinguin &ndash; Bester Allrounder</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der <strong>Nuby Pinguin</strong> ist ein echtes Multitalent: Er misst die Bade- und Raumtemperatur, hat ein klares LCD-Display und blinkt <strong>rot bei zu heißem Wasser</strong>. Er steht aufrecht auf dem Nachttisch für die Raumtemperatur und schwimmt im Bad. Mit 4,6 Sternen bei über 1.400 Bewertungen ein solider Favorit.
+      </p>
+
+      <AmazonProductBox
+        name="Nuby Pinguin Bade- & Raumthermometer"
+        affiliateLink={`https://www.amazon.de/dp/B09V3914B4?tag=${AMAZON_TAG}`}
+        features={[
+          'Misst Bade- UND Raumtemperatur',
+          'LCD-Display &ndash; klar und leicht ablesbar',
+          'Heißwasserwarnung: blinkt rot bei zu heißem Wasser',
+          'BPA-frei und wasserfest',
+          'Einschalten durch Antippen &ndash; spart Batterie',
+          'Ab 0 Monaten geeignet'
+        ]}
+        rating="4,6/5 bei 1.400+ Bewertungen"
+        badge="Preis-Leistungs-Tipp"
+        image="/images/products/nuby-pinguin-thermometer.jpg"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Dual-Funktion: Bad + Raum</li>
+            <li>&bull; Gutes Preis-Leistungs-Verhältnis</li>
+            <li>&bull; Rote LED-Warnung sehr praktisch</li>
+            <li>&bull; Steht aufrecht = Raumthermometer</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Vereinzelt fehlerhafte Displays (Segmente)</li>
+            <li>&bull; Batteriefach-Öffnung nicht ideal</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badabulle Waschbär -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">4. Badabulle Waschbär &ndash; Der Preis-Tipp</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Der <strong>Badabulle Waschbär</strong> überzeugt mit seinem <strong>weichen Material und abgerundeten Ecken</strong> &ndash; ideal, wenn dein Baby gerne im Bad nach Gegenständen greift. Er warnt akustisch bei zu heißem oder zu kaltem Wasser und die Batterie hält laut Hersteller bis zu 2 Jahre. Mit knapp 10€ der günstigste in unserem Vergleich.
+      </p>
+
+      <AmazonProductBox
+        name="Badabulle Badethermometer Waschbär"
+        affiliateLink={`https://www.amazon.de/dp/B01M278IPP?tag=${AMAZON_TAG}`}
+        features={[
+          'Weiches Material mit abgerundeten Ecken &ndash; verletzungssicher',
+          'Digitale Temperaturwarnung bei zu heiß/zu kalt',
+          'Niedliches Waschbär-Design',
+          'Batterie hält ca. 2 Jahre',
+          'Phthalatfreies PVC &ndash; schadstofffrei',
+          'Automatische Abschaltung'
+        ]}
+        rating="4,4/5 bei 3.400+ Bewertungen"
+        badge="Preis-Tipp"
+        image="/images/products/badabulle-waschbaer-thermometer.jpg"
+      />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Günstigster Preis im Vergleich</li>
+            <li>&bull; Weiches Material &ndash; sicher zum Greifen</li>
+            <li>&bull; Lange Batterielaufzeit (2 Jahre)</li>
+            <li>&bull; Über 3.400 positive Bewertungen</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Aktivierung manchmal verwirrend (kein ON/OFF-Knopf)</li>
+            <li>&bull; Ab 38°C schon rote Warnung (etwas empfindlich)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rotho Babydesign -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-4">5. Rotho Babydesign Ente &ndash; Süß, aber mit Schwächen</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Die <strong>Rotho Babydesign Badeente</strong> sieht niedlich aus und hat praktische Funktionen: Sie lässt sich durch Anklopfen einschalten, warnt mit rotem LED-Licht bei zu heißem Wasser und schaltet sich automatisch ab. <strong>Leider gibt es erhebliche Kritik</strong> an der Wasserdichtigkeit und dem Batteriewechsel.
+      </p>
+
+      <AmazonProductBox
+        name="Rotho Babydesign Digitales Badethermometer Ente"
+        affiliateLink={`https://www.amazon.de/dp/B012Q85TCM?tag=${AMAZON_TAG}`}
+        features={[
+          'Niedliches Enten-Design',
+          'Einschalten durch Anklopfen',
+          'Rotes LED-Licht warnt bei zu heißem Wasser',
+          'Automatische Abschaltung',
+          'Messbereich: 0-50°C, Genauigkeit: ±1°C',
+          'Batterie (CR2032) im Lieferumfang'
+        ]}
+        rating="3,8/5"
+        image="/images/products/rotho-ente-thermometer.jpg"
+      />
+
+      <WichtigHinweis text="Mehrere Käufer berichten von Problemen mit der Wasserdichtigkeit: Wasser dringt ins Innere ein und das Display beschlägt. Auch der Batteriewechsel ist schwierig &ndash; beim Öffnen kann das Batteriefach beschädigt werden. Wir empfehlen daher eher die anderen Modelle in unserem Vergleich." />
+
+      <div class="mt-4 grid sm:grid-cols-2 gap-4">
+        <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+          <h4 class="font-heading font-bold text-sm text-green-800 mb-2">&#10004; Was uns gefällt</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Klassisches Enten-Design</li>
+            <li>&bull; Deutsche Marke (Rotho Babydesign)</li>
+            <li>&bull; Einschalten durch Anklopfen clever</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+          <h4 class="font-heading font-bold text-sm text-red-800 mb-2">&#10008; Bedenken</h4>
+          <ul class="text-sm text-text-light space-y-1">
+            <li>&bull; Wasserdichtigkeit problematisch</li>
+            <li>&bull; Batteriewechsel nahezu unmöglich</li>
+            <li>&bull; Genauigkeit nur ±1°C</li>
+            <li>&bull; Niedrigste Bewertung im Vergleich</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kaufberatung -->
+    <section class="mb-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Kaufberatung: Darauf solltest du achten</h2>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#127777;&#65039; Messgenauigkeit</h3>
+          <p class="text-text-light leading-relaxed">
+            Das wichtigste Kriterium. Achte auf eine Genauigkeit von mindestens ±1°C, besser ±0,5°C. Das Philips Avent und der Nuby Pinguin schneiden hier am besten ab. Tipp: Lass das Thermometer immer 30-60 Sekunden im Wasser, bevor du den Wert abliest.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#128680; Temperaturwarnung</h3>
+          <p class="text-text-light leading-relaxed">
+            Fast alle modernen Badethermometer warnen bei zu heißem Wasser &ndash; durch blinkende LEDs, Farbwechsel oder ein akustisches Signal. Das ist besonders für müde Eltern ein echtes Sicherheitsplus. Alle 5 Modelle in unserem Vergleich bieten diese Funktion.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#127968; Dual-Funktion: Bad + Raum</h3>
+          <p class="text-text-light leading-relaxed">
+            Einige Thermometer messen auch die Raumtemperatur &ndash; praktisch fürs Schlafzimmer (ideal: 16-18°C). Das Philips Avent und der Nuby Pinguin bieten diese Doppelfunktion. So brauchst du kein separates Raumthermometer.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+          <h3 class="font-heading font-bold text-lg mb-3">&#128118; Sicherheit & Material</h3>
+          <p class="text-text-light leading-relaxed">
+            Da dein Baby das Thermometer anfassen (und in den Mund nehmen) wird, achte auf BPA-Freiheit und abgerundete Kanten. Der Badabulle Waschbär punktet hier mit extra weichem Material. Das Philips Avent ist nach EN71-Spielzeugstandard geprüft.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <MamaTipp text="Kauf dir gleich ein zweites Badethermometer als Backup. Die kosten nicht viel und du hast immer eins griffbereit &ndash; egal ob im Bad, auf Reisen oder bei den Großeltern. Wir haben z.B. das Philips Avent zu Hause und den Nuby Pinguin in der Reisetasche." />
+
+    <!-- Fazit -->
+    <section class="mb-12 mt-12">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Unser Fazit</h2>
+
+      <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/10">
+        <p class="text-text leading-relaxed text-lg mb-6">
+          Für die meisten Familien empfehlen wir das <strong>Philips Avent SCH480/00</strong> &ndash; es ist der klare Testsieger mit der höchsten Bewertung, misst Bad- und Raumtemperatur und ist als Spielzeug geprüft.
+        </p>
+        <p class="text-text-light leading-relaxed mb-6">
+          Wer ein <strong>günstigeres Modell</strong> sucht, greift zum <strong>Nuby Pinguin</strong> (bester Allrounder für ~12€) oder zum <strong>Badabulle Waschbär</strong> (günstigster Preis, weiches Material). Vom <strong>Rotho Babydesign Ente</strong> raten wir aufgrund der Wasserdichtigkeits-Probleme eher ab.
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+          <a href={`https://www.amazon.de/dp/B07WKN8NQQ?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-primary-dark uppercase">Testsieger</span>
+            <p class="font-heading font-bold mt-1">Philips Avent</p>
+            <p class="text-sm text-text-light mt-1">4,8★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B09V3914B4?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-accent-dark uppercase">Preis-Leistung</span>
+            <p class="font-heading font-bold mt-1">Nuby Pinguin</p>
+            <p class="text-sm text-text-light mt-1">4,6★</p>
+          </a>
+          <a href={`https://www.amazon.de/dp/B01M278IPP?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow" class="block bg-white rounded-xl p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+            <span class="text-xs font-heading font-bold text-green-700 uppercase">Preis-Tipp</span>
+            <p class="font-heading font-bold mt-1">Badabulle</p>
+            <p class="text-sm text-text-light mt-1">4,4★</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-8">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Baby-Badethermometern</h2>
+      <FAQ items={faqItems} />
+    </section>
+  </article>
+</BaseLayout>

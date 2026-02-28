@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-white border-t border-primary/10 mt-20">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="font-heading text-xl font-bold text-text">
+          babybaden<span class="text-primary">.de</span>
+        </a>
+        <p class="mt-3 text-sm text-text-light leading-relaxed">
+          Liebevolle Ratgeber & Tipps rund ums Baby-Baden. Von Eltern für Eltern.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-heading font-bold text-base mb-3">Entdecken</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/ratgeber/" class="text-text-light hover:text-primary-dark">Ratgeber</a></li>
+          <li><a href="/produkte/" class="text-text-light hover:text-primary-dark">Produkte</a></li>
+          <li><a href="/checkliste/" class="text-text-light hover:text-primary-dark">Checkliste</a></li>
+          <li><a href="/ueber-uns/" class="text-text-light hover:text-primary-dark">Über uns</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="font-heading font-bold text-base mb-3">Rechtliches</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/impressum/" class="text-text-light hover:text-primary-dark">Impressum</a></li>
+          <li><a href="/datenschutz/" class="text-text-light hover:text-primary-dark">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Affiliate Disclaimer -->
+    <div class="mt-10 pt-6 border-t border-primary/10 text-xs text-text-light text-center leading-relaxed">
+      <p>
+        babybaden.de ist Teilnehmer des Amazon-Partnerprogramms. Über mit * gekennzeichnete Links erhalten wir eine kleine Provision &ndash; für dich entstehen keine Mehrkosten.
+      </p>
+      <p class="mt-2">&copy; {year} babybaden.de &ndash; Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AmazonProductBox from '../../components/AmazonProductBox.astro';
+import MamaTipp from '../../components/MamaTipp.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const AMAZON_TAG = 'jalapeno123-21';
+
+const faqItems = [
+  {
+    question: 'Was brauche ich wirklich für das erste Baby-Bad?',
+    answer: 'Das Minimum sind: eine <strong>Babywanne</strong>, ein <strong>Badethermometer</strong>, ein <strong>weiches Handtuch</strong> (idealerweise Kapuzenhandtuch) und eine <strong>frische Windel + Kleidung</strong>. Seife oder Badezusatz brauchst du in den ersten Wochen noch nicht.'
+  },
+  {
+    question: 'Ab wann kann ich mein Baby das erste Mal baden?',
+    answer: 'In der Regel nach dem <strong>Abfallen des Nabelschnurrests</strong> (ca. 10-14 Tage nach der Geburt). Bis dahin reicht ein feuchter Waschlappen. Sprich am besten mit deiner Hebamme über den richtigen Zeitpunkt.'
+  },
+  {
+    question: 'Brauche ich einen Heizstrahler?',
+    answer: 'Im <strong>Sommer</strong> geht es oft ohne. Im <strong>Winter</strong> ist ein Heizstrahler am Wickeltisch aber wirklich empfehlenswert, weil Babys nach dem warmen Bad schnell auskühlen. Er gibt dir außerdem mehr Zeit zum Abtrocknen und Anziehen.'
+  },
+  {
+    question: 'Muss ich teure Pflegeprodukte kaufen?',
+    answer: 'Nein! In den ersten Wochen braucht dein Baby nur <strong>klares Wasser</strong>. Ab ca. 4-6 Wochen reicht ein mildes, parfümfreies Babybad. Weniger ist mehr bei empfindlicher Babyhaut.'
+  },
+  {
+    question: 'Kann ich die Erstausstattung auch gebraucht kaufen?',
+    answer: 'Babywannen und Handtücher findest du oft gut erhalten gebraucht. Ein <strong>Badethermometer</strong> solltest du lieber neu kaufen (Genauigkeit!). Bei <strong>Pflegeprodukten</strong> immer auf das Haltbarkeitsdatum achten.'
+  },
+];
+---
+
+<BaseLayout
+  title="Baby-Bade Starter Set: Die komplette Erstausstattung"
+  description="Alles was du für das erste Baby-Bad brauchst: unsere Empfehlungen für die komplette Bade-Erstausstattung – von der Babywanne bis zum Kapuzenhandtuch."
+>
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <Breadcrumb items={[
+      { label: 'Produkte', href: '/produkte/' },
+      { label: 'Starter Set' }
+    ]} />
+
+    <!-- Header -->
+    <header class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-accent/20 text-accent-dark rounded-full">Erstausstattung</span>
+      </div>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Baby-Bade Starter Set</h1>
+      <p class="text-text-light text-lg leading-relaxed mb-4">
+        Du erwartest ein Baby oder hast gerade eins bekommen? <strong>Hier findest du alles, was du für das erste Bad brauchst</strong> – zusammengestellt aus unseren ausführlichen Produktvergleichen. Kein Schnickschnack, nur das Wesentliche.
+      </p>
+      <p class="text-sm text-text-light italic">
+        <em>Zuletzt aktualisiert: Februar 2026</em>
+      </p>
+    </header>
+
+    <!-- Übersicht -->
+    <div class="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-6 md:p-8 border border-primary/10 mb-10">
+      <h2 class="font-heading font-bold text-lg mb-4">Das brauchst du:</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="#babywanne" class="flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-primary/10 hover:shadow-md transition-all">
+          <span class="text-xl">&#128705;</span>
+          <div>
+            <span class="font-heading font-bold text-sm">Babywanne</span>
+            <span class="block text-xs text-text-light">Must-have</span>
+          </div>
+        </a>
+        <a href="#thermometer" class="flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-primary/10 hover:shadow-md transition-all">
+          <span class="text-xl">&#127777;&#65039;</span>
+          <div>
+            <span class="font-heading font-bold text-sm">Badethermometer</span>
+            <span class="block text-xs text-text-light">Must-have</span>
+          </div>
+        </a>
+        <a href="#handtuch" class="flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-primary/10 hover:shadow-md transition-all">
+          <span class="text-xl">&#128166;</span>
+          <div>
+            <span class="font-heading font-bold text-sm">Kapuzenhandtuch</span>
+            <span class="block text-xs text-text-light">Must-have</span>
+          </div>
+        </a>
+        <a href="#waschlappen" class="flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-primary/10 hover:shadow-md transition-all">
+          <span class="text-xl">&#128166;</span>
+          <div>
+            <span class="font-heading font-bold text-sm">Waschlappen</span>
+            <span class="block text-xs text-text-light">Must-have</span>
+          </div>
+        </a>
+        <a href="#heizstrahler" class="flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-primary/10 hover:shadow-md transition-all">
+          <span class="text-xl">&#9728;&#65039;</span>
+          <div>
+            <span class="font-heading font-bold text-sm">Heizstrahler</span>
+            <span class="block text-xs text-text-light">Empfohlen (Winter)</span>
+          </div>
+        </a>
+        <a href="#pflegeprodukt" class="flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-primary/10 hover:shadow-md transition-all">
+          <span class="text-xl">&#129524;</span>
+          <div>
+            <span class="font-heading font-bold text-sm">Pflegeprodukt</span>
+            <span class="block text-xs text-text-light">Ab ca. 4 Wochen</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 1. Babywanne -->
+    <section class="mb-12" id="babywanne">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">&#128705;</span>
+        <div>
+          <span class="text-xs font-heading font-bold text-primary-dark uppercase tracking-wide">Must-have #1</span>
+          <h2 class="font-heading text-2xl font-extrabold">Babywanne</h2>
+        </div>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Eine gute Babywanne gibt deinem Baby Geborgenheit und dir Sicherheit. <strong>Faltbare Modelle</strong> sind platzsparend und ideal für kleine Badezimmer. Unser Favorit aus dem <a href="/produkte/babywannen/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary">Babywannen-Vergleich</a>:
+      </p>
+      <AmazonProductBox
+        name="FawnsLife Babywanne faltbar mit Knieschutz"
+        affiliateLink={`https://www.amazon.de/dp/B0CGXLRJQ3?tag=${AMAZON_TAG}`}
+        features={[
+          'Faltbar auf 10 cm – platzsparend zu verstauen',
+          'Integrierter Knieschutz für Eltern',
+          'Temperaturanzeige im Ablassstopfen',
+          'Stabil und kippsicher',
+        ]}
+        rating="4,6/5"
+        badge="Unser Favorit"
+        image="/images/products/fawnslife-babywanne.jpg"
+      />
+      <p class="text-sm text-text-light mt-2">
+        &#10132; <a href="/produkte/babywannen/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary font-semibold">Alle 5 Babywannen im Vergleich</a>
+      </p>
+    </section>
+
+    <!-- 2. Badethermometer -->
+    <section class="mb-12" id="thermometer">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">&#127777;&#65039;</span>
+        <div>
+          <span class="text-xs font-heading font-bold text-primary-dark uppercase tracking-wide">Must-have #2</span>
+          <h2 class="font-heading text-2xl font-extrabold">Badethermometer</h2>
+        </div>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Die richtige Wassertemperatur (36-37°C) ist entscheidend. <strong>Verlass dich nie auf dein Gefühl</strong> – ein Badethermometer ist wirklich unverzichtbar. Unser Testsieger aus dem <a href="/produkte/badethermometer/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary">Badethermometer-Test</a>:
+      </p>
+      <AmazonProductBox
+        name="Philips Avent SCH480/00 Bad- & Raumthermometer"
+        affiliateLink={`https://www.amazon.de/dp/B07WKN8NQQ?tag=${AMAZON_TAG}`}
+        features={[
+          'Digital – schnelle und genaue Messung',
+          'Misst Bad- UND Raumtemperatur',
+          'Schwimmfähig – bleibt im Wasser',
+          'Über 4.000 positive Bewertungen',
+        ]}
+        rating="4,8/5"
+        badge="Testsieger"
+        image="/images/products/philips-avent-badethermometer.jpg"
+      />
+      <p class="text-sm text-text-light mt-2">
+        &#10132; <a href="/produkte/badethermometer/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary font-semibold">Alle 5 Badethermometer im Vergleich</a>
+      </p>
+    </section>
+
+    <!-- 3. Kapuzenhandtuch -->
+    <section class="mb-12" id="handtuch">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">&#128166;</span>
+        <div>
+          <span class="text-xs font-heading font-bold text-primary-dark uppercase tracking-wide">Must-have #3</span>
+          <h2 class="font-heading text-2xl font-extrabold">Kapuzenhandtuch</h2>
+        </div>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ein Kapuzenhandtuch hält Babys Kopf warm, sobald es aus dem Wasser kommt. <strong>Musselin-Handtücher</strong> sind besonders weich und saugfähig. Unsere Empfehlung aus dem <a href="/produkte/badezubehoer/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary">Badezubehör-Vergleich</a>:
+      </p>
+      <AmazonProductBox
+        name="Blissful Diary Musselin-Kapuzenhandtuch"
+        affiliateLink={`https://www.amazon.de/dp/B0FYQ2C2QP?tag=${AMAZON_TAG}`}
+        features={[
+          '6-lagiger Musselin – extra weich und saugfähig',
+          'OEKO-TEX zertifiziert – schadstofffrei',
+          '80x80 cm – groß genug zum Einwickeln',
+          'Liebevolles Bären-Design',
+        ]}
+        rating="4,7/5"
+        badge="Empfehlung"
+        image="/images/products/blissful-diary-kapuzenhandtuch.jpg"
+      />
+      <p class="text-sm text-text-light mt-2">
+        &#10132; <a href="/produkte/badezubehoer/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary font-semibold">Mehr Badezubehör ansehen</a>
+      </p>
+    </section>
+
+    <!-- 4. Waschlappen -->
+    <section class="mb-12" id="waschlappen">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">&#128166;</span>
+        <div>
+          <span class="text-xs font-heading font-bold text-primary-dark uppercase tracking-wide">Must-have #4</span>
+          <h2 class="font-heading text-2xl font-extrabold">Waschlappen</h2>
+        </div>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Weiche Waschlappen brauchst du sowohl für das Bad als auch für die tägliche Reinigung von Gesicht und Windelbereich. <strong>Ein Set mit genug Stück</strong> ist praktisch, damit immer saubere da sind:
+      </p>
+      <AmazonProductBox
+        name="Orighty Baby-Waschlappen Korallenfleece 24er-Pack"
+        affiliateLink={`https://www.amazon.de/dp/B09KRPRWXM?tag=${AMAZON_TAG}`}
+        features={[
+          '24 Stück – immer genug saubere parat',
+          'Ultra-weiches Korallenfleece',
+          'Schnelltrocknend und maschinenwaschbar',
+          'Verschiedene Pastellfarben',
+        ]}
+        rating="4,7/5"
+        badge="Preis-Tipp"
+        image="/images/products/orighty-waschlappen.jpg"
+      />
+    </section>
+
+    <MamaTipp text="In den ersten Wochen brauchst du keine Seife oder Badezusatz – klares Wasser reicht völlig aus! Die Haut deines Neugeborenen hat einen natürlichen Schutzfilm. Weniger ist hier wirklich mehr." />
+
+    <!-- 5. Heizstrahler -->
+    <section class="mb-12 mt-10" id="heizstrahler">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">&#9728;&#65039;</span>
+        <div>
+          <span class="text-xs font-heading font-bold text-accent-dark uppercase tracking-wide">Empfohlen</span>
+          <h2 class="font-heading text-2xl font-extrabold">Heizstrahler</h2>
+        </div>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Gerade im <strong>Herbst und Winter</strong> ist ein Heizstrahler am Wickeltisch Gold wert. Babys können ihre Temperatur noch nicht regulieren und kühlen nach dem Bad schnell aus. Unser Preis-Leistungs-Sieger aus dem <a href="/produkte/heizstrahler/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary">Heizstrahler-Test</a>:
+      </p>
+      <AmazonProductBox
+        name="reer EasyHeat Flex Wickeltischstrahler"
+        affiliateLink={`https://www.amazon.de/dp/B07FM6WLYW?tag=${AMAZON_TAG}`}
+        features={[
+          'Kompakt: Nur 46 cm breit',
+          '500W – energiesparend',
+          '2-in-1: Wandmontage ODER Standfuß',
+          'Nach Medizinstandard geprüft',
+          'Abschaltautomatik nach 10 Min.',
+        ]}
+        rating="4,5/5"
+        badge="Preis-Leistungs-Sieger"
+        image="/images/products/reer-easyheat-heizstrahler.jpg"
+      />
+      <p class="text-sm text-text-light mt-2">
+        &#10132; <a href="/produkte/heizstrahler/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary font-semibold">Alle 5 Heizstrahler im Vergleich</a>
+      </p>
+    </section>
+
+    <!-- 6. Pflegeprodukt -->
+    <section class="mb-12" id="pflegeprodukt">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">&#129524;</span>
+        <div>
+          <span class="text-xs font-heading font-bold text-accent-dark uppercase tracking-wide">Ab ca. 4 Wochen</span>
+          <h2 class="font-heading text-2xl font-extrabold">Pflegeprodukt</h2>
+        </div>
+      </div>
+      <p class="text-text-light leading-relaxed mb-6">
+        Ab ca. 4-6 Wochen kannst du ein mildes Babybad verwenden. Wähle ein <strong>parfümfreies Produkt ohne aggressive Inhaltsstoffe</strong>. Unsere Empfehlung aus dem <a href="/produkte/pflegeprodukte/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary">Pflegeprodukte-Vergleich</a>:
+      </p>
+      <AmazonProductBox
+        name="WELEDA Baby Calendula Schlaf Gut Bad 200ml"
+        affiliateLink={`https://www.amazon.de/dp/B0FN4BD48B?tag=${AMAZON_TAG}`}
+        features={[
+          'Bio-Calendula und ätherische Öle',
+          'NATRUE-zertifizierte Naturkosmetik',
+          'Beruhigend – ideal fürs Abendritual',
+          'Ohne synthetische Duftstoffe',
+        ]}
+        rating="4,7/5"
+        badge="Naturkosmetik-Tipp"
+        image="/images/products/weleda-schlaf-gut-bad.jpg"
+      />
+      <p class="text-sm text-text-light mt-2">
+        &#10132; <a href="/produkte/pflegeprodukte/" class="text-primary-dark underline underline-offset-2 decoration-primary/30 hover:decoration-primary font-semibold">Alle 13 Pflegeprodukte im Vergleich</a>
+      </p>
+    </section>
+
+    <!-- Checkliste-CTA -->
+    <div class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/10 mb-10">
+      <div class="flex items-start gap-4">
+        <span class="text-3xl flex-shrink-0 mt-1">&#9989;</span>
+        <div>
+          <h3 class="font-heading font-bold text-lg">Nichts vergessen?</h3>
+          <p class="text-text-light leading-relaxed mt-2">
+            Mit unserer interaktiven Checkliste stellst du sicher, dass beim ersten Bad alles bereit ist – von der Raumtemperatur bis zum Kapuzenhandtuch.
+          </p>
+          <a href="/checkliste/" class="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-accent hover:bg-accent-dark text-text font-heading font-bold text-sm rounded-full transition-colors shadow-sm">
+            Zur Baby-Bade-Checkliste
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="mb-8">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zur Erstausstattung</h2>
+      <FAQ items={faqItems} />
+    </section>
+  </article>
+</BaseLayout>
