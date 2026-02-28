@@ -65,6 +65,15 @@ const modifiedMeta = modifiedDate ? `<meta property="article:modified_time" cont
 <Fragment set:html={publishedMeta} />
 <Fragment set:html={modifiedMeta} />
 
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QLGRN3TJ3N"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QLGRN3TJ3N');
+</script>
+
 <!-- JSON-LD -->
 {jsonLd && (
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
