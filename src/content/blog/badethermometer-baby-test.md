@@ -1,10 +1,10 @@
 ---
-title: "Baby-Badethermometer Test 2026: Die 5 besten Modelle"
+title: "Die 5 besten Baby-Badethermometer 2026 im Vergleich"
 description: "Das beste Badethermometer für dein Baby? Wir vergleichen die beliebtesten Modelle – digital, analog und mit Temperaturalarm."
-pubDate: 2026-03-01
+pubDate: 2026-02-05
 author: "babybaden.de Redaktion"
-category: "Produkttest"
-tags: ["Badethermometer", "Test", "Vergleich"]
+category: "Produktvergleich"
+tags: ["Badethermometer", "Vergleich", "Empfehlung"]
 image: "/images/blog/badethermometer-test.jpg"
 imageAlt: "Baby wird liebevoll in warmem Wasser gebadet"
 featured: true

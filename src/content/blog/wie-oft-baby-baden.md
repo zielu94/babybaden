@@ -1,7 +1,7 @@
 ---
 title: "Wie oft sollte ich mein Baby baden? Der ehrliche Guide"
 description: "Jeden Tag baden? Lieber nicht! 1-2 Mal pro Woche reicht völlig. Hier erfährst du warum weniger mehr ist und wann du trotzdem öfter baden kannst."
-pubDate: 2026-03-01
+pubDate: 2026-02-02
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Wie oft baden", "Häufigkeit", "Babyhaut"]

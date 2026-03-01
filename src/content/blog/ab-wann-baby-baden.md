@@ -1,7 +1,7 @@
 ---
 title: "Ab wann darf ich mein Baby baden? Das sagen Hebammen"
 description: "Wann ist der richtige Zeitpunkt fürs erste Bad? Was ist mit der Nabelschnur? Hier erfährst du alles – mit Hebammen-Empfehlungen."
-pubDate: 2026-03-01
+pubDate: 2026-02-09
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Ab wann baden", "Nabelschnur", "Neugeborene"]

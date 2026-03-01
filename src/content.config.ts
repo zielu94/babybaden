@@ -9,7 +9,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     author: z.string().default('babybaden.de Redaktion'),
-    category: z.enum(['Ratgeber', 'Produkttest', 'Tipps']).default('Ratgeber'),
+    category: z.enum(['Ratgeber', 'Produktvergleich', 'Tipps']).default('Ratgeber'),
     tags: z.array(z.string()).default([]),
     image: z.string().optional(),
     imageAlt: z.string().optional(),

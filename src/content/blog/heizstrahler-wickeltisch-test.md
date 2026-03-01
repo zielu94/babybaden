@@ -1,10 +1,10 @@
 ---
-title: "Heizstrahler für den Wickeltisch 2026: Die besten Wärmelampen im Test"
+title: "Heizstrahler für den Wickeltisch 2026: Die besten Wärmelampen im Vergleich"
 description: "Der beste Heizstrahler für den Wickeltisch? Wir vergleichen Standgeräte & Wandmontage – damit dein Baby nach dem Baden nicht friert."
-pubDate: 2026-03-01
+pubDate: 2026-02-12
 author: "babybaden.de Redaktion"
-category: "Produkttest"
-tags: ["Heizstrahler", "Wickeltisch", "Test"]
+category: "Produktvergleich"
+tags: ["Heizstrahler", "Wickeltisch", "Vergleich"]
 image: "/images/blog/heizstrahler-test.jpg"
 imageAlt: "Babyfüße werden sanft von Mutterhänden gehalten"
 featured: false

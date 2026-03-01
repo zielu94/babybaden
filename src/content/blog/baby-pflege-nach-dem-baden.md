@@ -1,7 +1,7 @@
 ---
 title: "Baby nach dem Baden: Eincremen, Massieren & Kuscheln"
 description: "Was kommt nach dem Bad? Abtrocknen, eincremen, kuscheln! Die perfekte After-Bath-Routine für dein Baby – mit Produktempfehlungen."
-pubDate: 2026-03-01
+pubDate: 2026-02-16
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Pflege", "Eincremen", "Babymassage", "Nach dem Baden"]
