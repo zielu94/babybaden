@@ -1,5 +1,5 @@
 ---
-title: "Die 5 besten Babybadewannen 2026 im Vergleich"
+title: "Die 7 besten Babybadewannen 2026 im Vergleich"
 description: "Welche Babywanne ist die beste? Wir vergleichen die beliebtesten Modelle 2026 – faltbar, mit Gestell und für Neugeborene. Mit Kaufberatung."
 pubDate: 2026-01-29
 author: "babybaden.de Redaktion"

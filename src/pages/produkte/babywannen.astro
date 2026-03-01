@@ -14,6 +14,7 @@ const products = [
     name: 'FawnsLife Babywanne faltbar mit Knieschutz',
     feature: 'Premium PP+TPE, faltbar, Knieschutz für Eltern',
     rating: '4,6',
+    price: 'ca. 38 €',
     affiliateLink: `https://www.amazon.de/dp/B0CGXLRJQ3?tag=${AMAZON_TAG}`,
     recommended: true,
   },
@@ -21,25 +22,43 @@ const products = [
     name: 'Faltbare Babybadewanne mit Stützkissen & Temperatursensor',
     feature: 'Faltbar, Stützkissen, Temperatursensor, leicht',
     rating: '4,5',
+    price: 'ca. 33 €',
     affiliateLink: `https://www.amazon.de/dp/B0BB1Y5K36?tag=${AMAZON_TAG}`,
   },
   {
     name: 'Faltbare Babybadewanne XXL mit Thermometer (3-Stufen)',
     feature: 'XXL-Größe, Thermometer, 3 Altersstufen',
     rating: '4,4',
+    price: 'ca. 43 €',
     affiliateLink: `https://www.amazon.de/dp/B0B9HQDZ6H?tag=${AMAZON_TAG}`,
   },
   {
     name: 'Babykajo Babywanne mit Gestell (4er-Set, TÜV zertifiziert)',
     feature: 'Mit Metallgestell, TÜV-zertifiziert, Badewannensitz inkl.',
     rating: '4,4',
+    price: 'ca. 75 €',
     affiliateLink: `https://www.amazon.de/dp/B07X2TFZCL?tag=${AMAZON_TAG}`,
   },
   {
     name: 'moovkee Babybadewanne mit Gestell 80cm',
     feature: 'LCD-Thermometer, Badekissen, Gestell, bis 30kg',
     rating: '4,3',
+    price: 'ca. 70 €',
     affiliateLink: `https://www.amazon.de/dp/B0CDLWBNW1?tag=${AMAZON_TAG}`,
+  },
+  {
+    name: 'Stokke Flexi Bath',
+    feature: 'Premium-Faltbadewanne, skandinavisches Design, bis 4 Jahre',
+    rating: '4,7',
+    price: 'ca. 43 €',
+    affiliateLink: `https://www.amazon.de/dp/B004H4CNZW?tag=${AMAZON_TAG}`,
+  },
+  {
+    name: 'Rotho Babydesign TOP',
+    feature: 'Made in Germany, Anti-Rutsch, günstigster Preis',
+    rating: '4,6',
+    price: 'ca. 22 €',
+    affiliateLink: `https://www.amazon.de/dp/B000LRUHYQ?tag=${AMAZON_TAG}`,
   },
 ];
 
@@ -73,12 +92,26 @@ const faqItems = [
     answer: 'Für Neugeborene reichen ca. <strong>10-15 cm Wasserstand</strong> &ndash; das Wasser sollte bis zum Bauchnabel reichen, wenn dein Baby liegt. Zu viel Wasser ist gefährlich und auch gar nicht nötig. Immer erst kaltes, dann warmes Wasser einfüllen und auf <strong>37°C</strong> testen.'
   },
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
-  title="Die 5 besten Babybadewannen 2026 im Vergleich"
-  description="Welche Babywanne ist die beste? Wir vergleichen 5 beliebte Modelle 2026 &ndash; faltbar und mit Gestell. Mit ehrlicher Kaufberatung und Praxistipps."
+  title="Die 7 besten Babybadewannen 2026 im Vergleich"
+  description="Welche Babywanne ist die beste? Wir vergleichen 7 beliebte Modelle 2026 &ndash; faltbar und mit Gestell. Mit ehrlicher Kaufberatung und Praxistipps."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -88,9 +121,9 @@ const faqItems = [
     <!-- Intro -->
     <header class="mb-10">
       <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
-      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Die 5 besten Babybadewannen 2026 im Vergleich</h1>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Die 7 besten Babybadewannen 2026 im Vergleich</h1>
       <p class="text-text-light text-lg leading-relaxed mb-4">
-        Eine gute Babywanne macht das Baden sicher und bequem &ndash; für dein Baby <strong>und</strong> für dich. Aber welche passt zu euch? <strong>Faltbar</strong> für kleine Bäder und Reisen? Oder mit <strong>Gestell</strong>, damit dein Rücken geschont wird? Wir haben die 5 beliebtesten Modelle verglichen und zeigen dir, worauf es wirklich ankommt.
+        Eine gute Babywanne macht das Baden sicher und bequem &ndash; für dein Baby <strong>und</strong> für dich. Aber welche passt zu euch? <strong>Faltbar</strong> für kleine Bäder und Reisen? Oder mit <strong>Gestell</strong>, damit dein Rücken geschont wird? Wir haben die 7 beliebtesten Modelle verglichen und zeigen dir, worauf es wirklich ankommt.
       </p>
       <p class="text-sm text-text-light italic">
         <em>Zuletzt aktualisiert: Februar 2026</em>
@@ -102,13 +135,16 @@ const faqItems = [
       <h2 class="font-heading font-bold text-lg mb-4">&#128203; Auf dieser Seite</h2>
       <div class="grid sm:grid-cols-2 gap-2 text-sm">
         <a href="#vergleich" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
-          <span class="text-primary">&#10148;</span> Vergleichstabelle (alle 5 Modelle)
+          <span class="text-primary">&#10148;</span> Vergleichstabelle (alle 7 Modelle)
         </a>
         <a href="#faltbar" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
           <span class="text-primary">&#10148;</span> Faltbare Babywannen (3 Modelle)
         </a>
         <a href="#gestell" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
           <span class="text-primary">&#10148;</span> Babywannen mit Gestell (2 Modelle)
+        </a>
+        <a href="#marken" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Marken: Stokke & Rotho (2 Modelle)
         </a>
         <a href="#kaufberatung" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
           <span class="text-primary">&#10148;</span> Kaufberatung & Checkliste
@@ -118,7 +154,7 @@ const faqItems = [
 
     <!-- Vergleichstabelle -->
     <section id="vergleich" class="mb-14">
-      <h2 class="font-heading text-2xl font-extrabold mb-6">Die 5 besten Babywannen auf einen Blick</h2>
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Die 7 besten Babywannen auf einen Blick</h2>
       <ComparisonTable products={products} />
     </section>
 
@@ -147,6 +183,7 @@ const faqItems = [
           'Auslaufsicherer Verschluss und stabile Verarbeitung'
         ]}
         rating="4,6/5"
+        price="ca. 38 €"
         badge="Top-Empfehlung"
         image="/images/products/fawnslife-babywanne.jpg"
       />
@@ -168,6 +205,7 @@ const faqItems = [
           'Rutschfeste Standfüße für sicheren Halt'
         ]}
         rating="4,5/5"
+        price="ca. 33 €"
         badge="Für Neugeborene"
         image="/images/products/glenmore-babywanne.jpg"
       />
@@ -188,6 +226,7 @@ const faqItems = [
           'Faltbar und leicht zu verstauen'
         ]}
         rating="4,4/5"
+        price="ca. 43 €"
         badge="Wächst mit"
         image="/images/products/xxl-babywanne-thermometer.jpg"
       />
@@ -218,6 +257,7 @@ const faqItems = [
           'Anti-Rutsch-Badewannensitz für sicheren Halt inklusive'
         ]}
         rating="4,4/5"
+        price="ca. 75 €"
         badge="TÜV-geprüft"
         image="/images/products/babykajo-babywanne-gestell.jpg"
       />
@@ -238,11 +278,70 @@ const faqItems = [
           'Bis 30 kg belastbar &ndash; nutzbar bis 36 Monate'
         ]}
         rating="4,3/5"
+        price="ca. 70 €"
         badge="Premium"
         image="/images/products/moovkee-babywanne-gestell.jpg"
       />
 
       <MamaTipp text="Nach einem Kaiserschnitt oder einer schweren Geburt ist eine Babywanne mit Gestell wirklich Gold wert. Du musst dich nicht bücken und kannst dein Baby in bequemer Höhe baden. Die Babykajo ist das beste Preis-Leistungs-Verhältnis, die moovkee die Premium-Wahl mit Thermometer." />
+    </section>
+
+    <!-- ==================== -->
+    <!-- 3. MARKEN-BABYWANNEN -->
+    <!-- ==================== -->
+    <section id="marken" class="mb-14">
+      <h2 class="font-heading text-2xl font-extrabold mb-6">Marken-Babywannen: Stokke & Rotho</h2>
+      <p class="text-text-light leading-relaxed mb-6">
+        Neben den Amazon-Bestsellern gibt es zwei <strong>etablierte Marken</strong>, die bei Hebammen und Eltern besonders beliebt sind: Die <strong>Stokke Flexi Bath</strong> als Premium-Faltlösung und die <strong>Rotho Babydesign TOP</strong> als solider Klassiker zum kleinen Preis. Beide Wannen sind seit Jahren bewährt und in vielen Farben erhältlich.
+      </p>
+
+      <!-- 6. Stokke Flexi Bath -->
+      <h3 class="font-heading font-bold text-xl mt-8 mb-3">6. Stokke Flexi Bath &ndash; Premium-Faltbadewanne</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Stokke Flexi Bath</strong> ist die Referenz unter den faltbaren Babywannen. <strong>Skandinavisches Design trifft Funktionalität:</strong> Sie faltet sich kinderleicht zusammen, ist unglaublich stabil und langlebig. Die optional erhältliche Neugeborenen-Stütze macht sie von Geburt an nutzbar. Nutzbar bis ca. 4 Jahre &ndash; länger als die meisten Konkurrenten. Der Preis ist höher, aber die Qualität rechtfertigt ihn.
+      </p>
+      <p class="text-sm text-text-light mb-4"><strong>Ideal für:</strong> Qualitätsbewusste Eltern, die eine langlebige Wanne suchen, die vom Neugeborenen bis zum Kleinkind mitwächst.</p>
+      <AmazonProductBox
+        name="Stokke Flexi Bath Faltbadewanne"
+        affiliateLink={`https://www.amazon.de/dp/B004H4CNZW?tag=${AMAZON_TAG}`}
+        features={[
+          'Faltbar in Sekunden &ndash; extrem platzsparend (nur 10 cm flach)',
+          'Stabil und standsicher &ndash; rutschfeste Gummifüße',
+          'Nutzbar von 0-4 Jahren &ndash; wächst lang mit',
+          'Newborn-Stütze separat erhältlich (ab Geburt)',
+          'Skandinavisches Design &ndash; in vielen Farben erhältlich',
+          'Leicht: nur 1,3 kg &ndash; perfekt für Reisen'
+        ]}
+        rating="4,7/5"
+        price="ca. 43 €"
+        badge="Marken-Tipp"
+        image="/images/products/stokke-flexi-bath.jpg"
+      />
+
+      <!-- 7. Rotho Babydesign TOP -->
+      <h3 class="font-heading font-bold text-xl mt-10 mb-3">7. Rotho Babydesign TOP Badewanne</h3>
+      <p class="text-text-light leading-relaxed mb-4">
+        Die <strong>Rotho Babydesign TOP</strong> ist der meistverkaufte Babywannen-Klassiker in Deutschland. <strong>Made in Germany</strong>, solide verarbeitet und mit ihrem ergonomischen Anti-Rutsch-Design seit Jahren bewährt. Der größte Pluspunkt: der unschlagbare Preis. Die Rotho TOP ist die günstigste Option in unserem Vergleich und dabei qualitativ absolut zuverlässig.
+      </p>
+      <p class="text-sm text-text-light mb-4"><strong>Ideal für:</strong> Eltern mit kleinem Budget oder als Zweitwanne bei den Großeltern &ndash; solide Qualität zum besten Preis.</p>
+      <AmazonProductBox
+        name="Rotho Babydesign TOP Babybadewanne"
+        affiliateLink={`https://www.amazon.de/dp/B000LRUHYQ?tag=${AMAZON_TAG}`}
+        features={[
+          'Made in Germany &ndash; bewährte Rotho Babydesign Qualität',
+          'Ergonomische Form mit integrierter Anti-Rutsch-Fläche',
+          'Für Babys von 0-12 Monaten (bis 11 kg)',
+          'Abflussstöpsel für einfaches Entleeren',
+          'In über 10 Farben erhältlich',
+          'Unschlagbares Preis-Leistungs-Verhältnis'
+        ]}
+        rating="4,6/5"
+        price="ca. 22 €"
+        badge="Preis-Tipp"
+        image="/images/products/rotho-top-babywanne.jpg"
+      />
+
+      <MamaTipp text="Die Stokke Flexi Bath ist mein Geheimtipp für Eltern, die viel reisen oder wenig Platz haben &ndash; sie ist unglaublich stabil trotz Faltfunktion. Und die Rotho TOP ist perfekt als zweite Wanne bei Oma und Opa: günstig, solide und in der Drogerie erhältlich." />
     </section>
 
     <!-- ==================== -->
@@ -368,5 +467,31 @@ const faqItems = [
         </div>
       </div>
     </section>
+    <!-- Passend dazu -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-extrabold mb-4">Passend zur Babywanne</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/produkte/badethermometer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#127777;&#65039;</span>
+          <h3 class="font-heading font-bold text-sm">Badethermometer</h3>
+          <p class="text-xs text-text-light mt-1">Immer die richtige Temperatur &ndash; unverzichtbar zum Baden.</p>
+        </a>
+        <a href="/produkte/heizstrahler/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#9728;&#65039;</span>
+          <h3 class="font-heading font-bold text-sm">Heizstrahler</h3>
+          <p class="text-xs text-text-light mt-1">Kuschelig warm nach dem Bad &ndash; besonders im Winter.</p>
+        </a>
+        <a href="/produkte/badezubehoer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128166;</span>
+          <h3 class="font-heading font-bold text-sm">Badezubehör</h3>
+          <p class="text-xs text-text-light mt-1">Kapuzenhandtücher, Waschlappen und alles für die Badezeit.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bewertungs-Hinweis -->
+    <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+    </p>
   </article>
 </BaseLayout>

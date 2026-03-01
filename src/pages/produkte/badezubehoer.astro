@@ -34,12 +34,26 @@ const faqItems = [
     answer: 'Waschpads (wie die waschies) reinigen allein mit Wasser &ndash; ohne Seife oder Zusätze. Das ist besonders schonend für empfindliche Babyhaut und bewahrt den natürlichen Säureschutzmantel. Sie sind eine nachhaltige Alternative zu Einweg-Feuchttüchern. Für das eigentliche Baden reichen aber auch normale weiche Waschlappen völlig aus.'
   },
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="Baby-Badezubehör 2026: Die 10 besten Helfer fürs Baby-Bad"
   description="Das beste Badezubehör für dein Baby: Kapuzenhandtücher, Haarwaschbecher, Waschlappen, Badekissen und mehr &ndash; ehrlich verglichen und empfohlen."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -105,6 +119,7 @@ const faqItems = [
           'Süßes Schildkröten-Design in Türkis'
         ]}
         rating="4,4/5"
+        price="ca. 20 €"
         badge="Für Neugeborene"
         image="/images/products/nuby-badekissen.jpg"
       />
@@ -125,6 +140,7 @@ const faqItems = [
           'Steht aufrecht oder lässt sich zum Trocknen aufhängen'
         ]}
         rating="4,5/5 bei 7.900+ Bewertungen"
+        price="ca. 14 €"
         badge="Bestseller"
         image="/images/products/skiphop-haarwaschbecher.jpg"
       />
@@ -145,6 +161,7 @@ const faqItems = [
           'BPA- und Phthalat-frei'
         ]}
         rating="4,3/5 bei 11.000+ Bewertungen"
+        price="ca. 25 €"
         image="/images/products/yookidoo-elefant.jpg"
       />
 
@@ -179,6 +196,7 @@ const faqItems = [
           'Von Frida Baby &ndash; der Marke, der Eltern weltweit vertrauen'
         ]}
         rating="4,7/5 bei 1.200+ Bewertungen"
+        price="ca. 12 €"
         badge="Empfehlung"
         image="/images/products/frida-baby-milchschorf.jpg"
       />
@@ -200,6 +218,7 @@ const faqItems = [
           'Ideal zum Trocknen von Hautfalten (Windelausschlag vorbeugen)'
         ]}
         rating="3,4/5"
+        price="ca. 28 €"
         image="/images/products/baby-haartrockner.jpg"
       />
 
@@ -235,6 +254,7 @@ const faqItems = [
           'Maschinenwaschbar und schnelltrocknend'
         ]}
         rating="4,7/5"
+        price="ca. 18 €"
         badge="Empfehlung"
         image="/images/products/blissful-diary-kapuzenhandtuch.jpg"
       />
@@ -255,6 +275,7 @@ const faqItems = [
           'Groß genug für Babys von 0-4 Jahren'
         ]}
         rating="4,5/5"
+        price="ca. 22 €"
         badge="Komplett-Set"
         image="/images/products/momcozy-badetuecher.jpg"
       />
@@ -317,6 +338,7 @@ const faqItems = [
           'Maschinenwaschbar und wiederverwendbar'
         ]}
         rating="4,5/5 bei 1.800+ Bewertungen"
+        price="ca. 14 €"
         badge="Preis-Leistung"
         image="/images/products/orighty-waschlappen.jpg"
       />
@@ -337,6 +359,7 @@ const faqItems = [
           'Multifunktional: als Badeschwamm oder Spülschwamm nutzbar'
         ]}
         rating="4,5/5"
+        price="ca. 8 €"
         image="/images/products/pumwoy-badeschwamm.jpg"
       />
 
@@ -357,6 +380,7 @@ const faqItems = [
           'Bekannt aus &bdquo;Die Höhle der Löwen&ldquo; &ndash; Made in Germany'
         ]}
         rating="4,3/5"
+        price="ca. 15 €"
         badge="Nachhaltig"
         image="/images/products/waschies-waschpads.jpg"
       />
@@ -420,5 +444,30 @@ const faqItems = [
         </div>
       </div>
     </section>
+    <!-- Passend dazu -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-extrabold mb-4">Passend zum Badezubehör</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/produkte/babywannen/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128705;</span>
+          <h3 class="font-heading font-bold text-sm">Babywannen</h3>
+          <p class="text-xs text-text-light mt-1">Finde die perfekte Wanne für euer Badezimmer.</p>
+        </a>
+        <a href="/produkte/pflegeprodukte/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#129524;</span>
+          <h3 class="font-heading font-bold text-sm">Pflegeprodukte</h3>
+          <p class="text-xs text-text-light mt-1">Badezusätze, Waschgels und Öle für zarte Babyhaut.</p>
+        </a>
+        <a href="/produkte/badespielzeug/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#129414;</span>
+          <h3 class="font-heading font-bold text-sm">Badespielzeug</h3>
+          <p class="text-xs text-text-light mt-1">Badetiere, Badebücher und Wasserspielzeug.</p>
+        </a>
+      </div>
+    </section>
+    <!-- Bewertungs-Hinweis -->
+    <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+    </p>
   </article>
 </BaseLayout>

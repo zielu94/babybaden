@@ -3,6 +3,7 @@ interface Product {
   name: string;
   feature: string;
   rating: string;
+  price?: string;
   affiliateLink?: string;
   recommended?: boolean;
 }
@@ -28,6 +29,7 @@ function getAmazonLink(product: Product) {
         <th class="px-4 py-3 text-left font-heading font-bold text-sm">Produkt</th>
         <th class="px-4 py-3 text-left font-heading font-bold text-sm">Highlight</th>
         <th class="px-4 py-3 text-center font-heading font-bold text-sm">Bewertung</th>
+        <th class="px-4 py-3 text-center font-heading font-bold text-sm">Preis</th>
         <th class="px-4 py-3 text-center font-heading font-bold text-sm"></th>
       </tr>
     </thead>
@@ -44,6 +46,7 @@ function getAmazonLink(product: Product) {
           </td>
           <td class="px-4 py-4 text-sm text-text-light">{p.feature}</td>
           <td class="px-4 py-4 text-sm text-center">&#11088; {p.rating}</td>
+          <td class="px-4 py-4 text-sm text-center font-heading font-semibold text-primary-dark">{p.price || '–'}</td>
           <td class="px-4 py-4 text-center">
             <a
               href={getAmazonLink(p)}
@@ -74,8 +77,9 @@ function getAmazonLink(product: Product) {
       <h4 class="font-heading font-bold text-base">{p.name}</h4>
       <p class="text-sm text-text-light mt-1">{p.feature}</p>
       <div class="flex items-center justify-between mt-3">
-        <div class="text-sm">
+        <div class="text-sm flex items-center gap-3">
           <span>&#11088; {p.rating}</span>
+          {p.price && <span class="font-heading font-semibold text-primary-dark">{p.price}</span>}
         </div>
         <a
           href={getAmazonLink(p)}

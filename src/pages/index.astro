@@ -81,6 +81,21 @@ const quickTips = [
   },
 ];
 
+const AMAZON_TAG = 'jalapeno123-21';
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'babybaden.de',
+  url: 'https://babybaden.de',
+  description: 'Dein Ratgeber rund ums Baby-Baden: Produktvergleiche, Anleitungen und Tipps von Eltern für Eltern.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'babybaden.de',
+    url: 'https://babybaden.de',
+  },
+};
+
 const homepageFaqs = [
   {
     question: 'Ab wann darf ich mein Baby baden?',
@@ -103,12 +118,28 @@ const homepageFaqs = [
     answer: 'Wir empfehlen es sehr. Eine Babywanne gibt deinem Baby Geborgenheit und dir Sicherheit. Sie ist ergonomischer als die große Badewanne und du hast bessere Kontrolle. Es gibt faltbare Modelle, die kaum Platz brauchen.'
   },
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homepageFaqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="babybaden.de - Dein Baby sicher & liebevoll baden"
   description="Alles rund ums Baby-Baden: Ratgeber, Produktvergleiche, Schritt-für-Schritt-Anleitungen und Tipps von Eltern für Eltern."
 >
+  <!-- Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <Hero />
 
   <!-- Quick Tips Section -->
@@ -127,6 +158,58 @@ const homepageFaqs = [
             <p class="mt-2 text-sm text-text-light leading-relaxed">{tip.text}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Top-3 Empfehlungen -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-primary/15 text-primary-dark rounded-full uppercase tracking-wide mb-4">Unsere Top-Empfehlungen</span>
+        <h2 class="font-heading text-2xl md:text-3xl font-extrabold">Die 3 wichtigsten Produkte fürs Baby-Bad</h2>
+        <p class="mt-3 text-text-light max-w-xl mx-auto">Wenn du nur drei Dinge kaufst &ndash; dann diese. Unsere meistempfohlenen Produkte auf einen Blick.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
+        <a href="/produkte/babywannen/" class="group block bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-primary/10 transition-all hover:-translate-y-1 duration-300 text-center">
+          <span class="text-4xl block mb-3">&#128705;</span>
+          <span class="inline-block px-2 py-0.5 text-[10px] font-heading font-bold text-white bg-primary-dark rounded-full uppercase mb-2">Nr. 1</span>
+          <h3 class="font-heading font-bold text-lg">FawnsLife Babywanne</h3>
+          <p class="text-sm text-text-light mt-1">Faltbar, mit Knieschutz</p>
+          <div class="mt-3 flex items-center justify-center gap-2 text-sm">
+            <span>&#11088; 4,6/5 (Amazon)</span>
+            <span class="font-heading font-semibold text-primary-dark">ca. 38 &euro;</span>
+          </div>
+          <span class="inline-flex items-center gap-1 mt-4 text-xs font-heading font-semibold text-primary-dark group-hover:gap-2 transition-all">
+            Zum Vergleich &rarr;
+          </span>
+        </a>
+        <a href="/produkte/badethermometer/" class="group block bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-primary/10 transition-all hover:-translate-y-1 duration-300 text-center">
+          <span class="text-4xl block mb-3">&#127777;&#65039;</span>
+          <span class="inline-block px-2 py-0.5 text-[10px] font-heading font-bold text-white bg-primary-dark rounded-full uppercase mb-2">Nr. 2</span>
+          <h3 class="font-heading font-bold text-lg">Philips Avent Thermometer</h3>
+          <p class="text-sm text-text-light mt-1">Bad- & Raumtemperatur</p>
+          <div class="mt-3 flex items-center justify-center gap-2 text-sm">
+            <span>&#11088; 4,8/5 (Amazon)</span>
+            <span class="font-heading font-semibold text-primary-dark">ca. 14 &euro;</span>
+          </div>
+          <span class="inline-flex items-center gap-1 mt-4 text-xs font-heading font-semibold text-primary-dark group-hover:gap-2 transition-all">
+            Zum Vergleich &rarr;
+          </span>
+        </a>
+        <a href="/produkte/heizstrahler/" class="group block bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-primary/10 transition-all hover:-translate-y-1 duration-300 text-center">
+          <span class="text-4xl block mb-3">&#9728;&#65039;</span>
+          <span class="inline-block px-2 py-0.5 text-[10px] font-heading font-bold text-white bg-primary-dark rounded-full uppercase mb-2">Nr. 3</span>
+          <h3 class="font-heading font-bold text-lg">reer EasyHeat Flex</h3>
+          <p class="text-sm text-text-light mt-1">Heizstrahler, 500W</p>
+          <div class="mt-3 flex items-center justify-center gap-2 text-sm">
+            <span>&#11088; 4,5/5 (Amazon)</span>
+            <span class="font-heading font-semibold text-primary-dark">ca. 33 &euro;</span>
+          </div>
+          <span class="inline-flex items-center gap-1 mt-4 text-xs font-heading font-semibold text-primary-dark group-hover:gap-2 transition-all">
+            Zum Vergleich &rarr;
+          </span>
+        </a>
       </div>
     </div>
   </section>
@@ -315,12 +398,12 @@ const homepageFaqs = [
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
           <span class="inline-block px-4 py-1.5 text-xs font-heading font-bold bg-primary/15 text-primary-dark rounded-full uppercase tracking-wide mb-5">Über uns</span>
-          <h2 class="font-heading text-2xl md:text-3xl font-extrabold leading-tight">Von Eltern für Eltern</h2>
+          <h2 class="font-heading text-2xl md:text-3xl font-extrabold leading-tight">Von werdenden Eltern für Eltern</h2>
           <p class="mt-4 text-text-light leading-relaxed text-lg">
-            Wir sind selbst Eltern und wissen genau, wie aufregend das erste Bad mit dem Baby sein kann. babybaden.de ist der Ort, den wir uns damals gewünscht hätten: ehrlich, verständlich und ohne erhobenen Zeigefinger.
+            Wir sind <strong>Rafael und Karolina</strong> &ndash; werdende Eltern aus Berlin, die sich gerade voller Vorfreude auf ihr erstes Kind vorbereiten. babybaden.de ist der Ratgeber, den wir uns bei der Recherche gewünscht hätten: ehrlich, verständlich und ohne erhobenen Zeigefinger.
           </p>
           <p class="mt-4 text-text-light leading-relaxed">
-            Alle unsere Tipps basieren auf eigener Erfahrung und werden regelmäßig überprüft. Wir arbeiten unabhängig und empfehlen nur Produkte, die wir selbst verwenden würden.
+            Alle unsere Tipps basieren auf gründlicher Recherche, Amazon-Kundenrezensionen und Hebammen-Empfehlungen. Wir arbeiten unabhängig und empfehlen nur Produkte, die wir selbst kaufen würden.
           </p>
           <a href="/ueber-uns/" class="inline-flex items-center gap-2 mt-6 text-primary-dark font-heading font-semibold hover:gap-3 transition-all">
             Mehr über uns erfahren

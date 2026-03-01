@@ -10,11 +10,11 @@ import FAQ from '../../components/FAQ.astro';
 const AMAZON_TAG = 'jalapeno123-21';
 
 const products = [
-  { name: 'reer EasyHeat Flex', feature: '500W, kompakt (46cm), Wand/Stand, Medizinstandard', rating: '4,5', recommended: true, affiliateLink: `https://www.amazon.de/dp/B07FM6WLYW?tag=${AMAZON_TAG}` },
-  { name: 'reer HeatCare+ Flex', feature: 'EcoHeat Carbon, 350/700W, Fernbedienung, Premium', rating: '4,6', affiliateLink: `https://www.amazon.de/dp/B0FQP3BMJ8?tag=${AMAZON_TAG}` },
-  { name: 'Babyruf BR-80', feature: '400/800W, Wand/Stand, schwenk- & höhenverstellbar', rating: '4,2', affiliateLink: `https://www.amazon.de/dp/B0B6T5W938?tag=${AMAZON_TAG}` },
-  { name: 'Babyruf BR-60', feature: '600W, Wandmontage, Abschaltautomatik, TÜV-geprüft', rating: '4,0', affiliateLink: `https://www.amazon.de/dp/B0CXJBNNB4?tag=${AMAZON_TAG}` },
-  { name: 'tectake Infrarot 2000W', feature: '3 Stufen, 2000W, Wand/Stand, Kippschutz', rating: '4,1', affiliateLink: `https://www.amazon.de/dp/B0D4DZYNFF?tag=${AMAZON_TAG}` },
+  { name: 'reer EasyHeat Flex', feature: '500W, kompakt (46cm), Wand/Stand, Medizinstandard', rating: '4,5', price: 'ca. 33 €', recommended: true, affiliateLink: `https://www.amazon.de/dp/B07FM6WLYW?tag=${AMAZON_TAG}` },
+  { name: 'reer HeatCare+ Flex', feature: 'EcoHeat Carbon, 350/700W, Fernbedienung, Premium', rating: '4,6', price: 'ca. 120 €', affiliateLink: `https://www.amazon.de/dp/B0FQP3BMJ8?tag=${AMAZON_TAG}` },
+  { name: 'Babyruf BR-80', feature: '400/800W, Wand/Stand, schwenk- & höhenverstellbar', rating: '4,2', price: 'ca. 55 €', affiliateLink: `https://www.amazon.de/dp/B0B6T5W938?tag=${AMAZON_TAG}` },
+  { name: 'Babyruf BR-60', feature: '600W, Wandmontage, Abschaltautomatik, TÜV-geprüft', rating: '4,0', price: 'ca. 40 €', affiliateLink: `https://www.amazon.de/dp/B0CXJBNNB4?tag=${AMAZON_TAG}` },
+  { name: 'tectake Infrarot 2000W', feature: '3 Stufen, 2000W, Wand/Stand, Kippschutz', rating: '4,1', price: 'ca. 33 €', affiliateLink: `https://www.amazon.de/dp/B0D4DZYNFF?tag=${AMAZON_TAG}` },
 ];
 
 const faqItems = [
@@ -43,12 +43,26 @@ const faqItems = [
     answer: 'Die Wattzahl gibt die Heizleistung an. 500-600W reicht für den Wickeltisch völlig aus und ist dabei energiesparend. 800W oder mehr erzeugt schneller Wärme, verbraucht aber auch mehr Strom. Für einen normalen Wickelplatz empfehlen wir 500-700W &ndash; das ist der Sweet Spot zwischen Wärme und Stromverbrauch.'
   },
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="Die 5 besten Heizstrahler für den Wickeltisch 2026 im Vergleich"
   description="Welcher Heizstrahler ist der beste für den Wickeltisch? Wir vergleichen reer, Babyruf und tectake &ndash; Wandmontage und Standgeräte im Vergleich."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -98,6 +112,7 @@ const faqItems = [
           'Kipp-Abschaltung und Überhitzungsschutz'
         ]}
         rating="4,5/5 bei 1.600+ Bewertungen"
+        price="ca. 33 €"
         badge="Preis-Leistungs-Sieger"
         image="/images/products/reer-easyheat-heizstrahler.jpg"
       />
@@ -144,6 +159,7 @@ const faqItems = [
           'GS-zertifizierter Kippschutz'
         ]}
         rating="4,6/5"
+        price="ca. 120 €"
         badge="Premium-Empfehlung"
         image="/images/products/reer-heatcare-flex-heizstrahler.jpg"
       />
@@ -189,6 +205,7 @@ const faqItems = [
           'Leicht: nur 1,54 kg'
         ]}
         rating="4,2/5 bei 1.100+ Bewertungen"
+        price="ca. 55 €"
         badge="Flexibelste Lösung"
         image="/images/products/babyruf-br80-heizstrahler.jpg"
         imagePosition="top"
@@ -234,6 +251,7 @@ const faqItems = [
           'Kompaktes Design'
         ]}
         rating="4,0/5"
+        price="ca. 40 €"
         badge="Solide Basis"
         image="/images/products/babyruf-br60-heizstrahler.jpg"
       />
@@ -278,6 +296,7 @@ const faqItems = [
           'Sofortige Wärme ohne Aufheizzeit'
         ]}
         rating="4,1/5"
+        price="ca. 33 €"
         image="/images/products/tectake-infrarot-heizstrahler.jpg"
       />
 
@@ -390,5 +409,30 @@ const faqItems = [
       <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Wickeltisch-Heizstrahlern</h2>
       <FAQ items={faqItems} />
     </section>
+    <!-- Passend dazu -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-extrabold mb-4">Passend zum Heizstrahler</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/produkte/babywannen/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128705;</span>
+          <h3 class="font-heading font-bold text-sm">Babywannen</h3>
+          <p class="text-xs text-text-light mt-1">Die passende Wanne für euer Bad &ndash; faltbar oder mit Gestell.</p>
+        </a>
+        <a href="/produkte/badethermometer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#127777;&#65039;</span>
+          <h3 class="font-heading font-bold text-sm">Badethermometer</h3>
+          <p class="text-xs text-text-light mt-1">Immer die perfekte Badetemperatur &ndash; 36-37°C.</p>
+        </a>
+        <a href="/produkte/badezubehoer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128166;</span>
+          <h3 class="font-heading font-bold text-sm">Badezubehör</h3>
+          <p class="text-xs text-text-light mt-1">Kapuzenhandtücher und Waschlappen für nach dem Bad.</p>
+        </a>
+      </div>
+    </section>
+    <!-- Bewertungs-Hinweis -->
+    <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+    </p>
   </article>
 </BaseLayout>

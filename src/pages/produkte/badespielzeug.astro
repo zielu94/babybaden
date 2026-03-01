@@ -34,12 +34,26 @@ const faqItems = [
     answer: 'Die meisten Stoff-Badetiere (wie von Fehn) sind bei <strong>40°C waschbar</strong>. Wichtig: Nach dem Baden immer gut ausdrücken und vollständig trocknen lassen. Nicht im geschlossenen Behälter aufbewahren, sonst bildet sich Schimmel. Am besten in einem Netz mit Saugnäpfen in der Dusche aufhängen.'
   },
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="Badespielzeug Baby 2026: Die 8 besten Spielzeuge fürs Bad"
   description="Das beste Badespielzeug für Babys und Kleinkinder: Spritztiere, Badebücher, Wal-Sprinkler und Kugelbahnen &ndash; schimmelfrei und schadstoffgeprüft. Ehrlich verglichen."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -110,6 +124,7 @@ const faqItems = [
           'Ab 6 Monaten geeignet'
         ]}
         rating="4,5/5"
+        price="ca. 10 €"
         badge="Schimmelfrei"
         image="/images/products/reer-badetiere-ente-pinguin.jpg"
       />
@@ -130,6 +145,7 @@ const faqItems = [
           'Vielseitig: für Badewanne, Pool und Strand'
         ]}
         rating="4,4/5"
+        price="ca. 12 €"
         badge="4er-Set"
         image="/images/products/bellestyle-silikon-badetiere.jpg"
       />
@@ -150,6 +166,7 @@ const faqItems = [
           'Ab 0+ Monaten &ndash; auch schon für Neugeborene'
         ]}
         rating="4,6/5 bei 420+ Bewertungen"
+        price="ca. 11 €"
         badge="Empfehlung"
         image="/images/products/fehn-badetier-otter.jpg"
       />
@@ -170,6 +187,7 @@ const faqItems = [
           'Waschbar bei 40°C &ndash; ab 0+ Monaten'
         ]}
         rating="4,5/5"
+        price="ca. 8 €"
         image="/images/products/fehn-badeschwamm-schildkroete.jpg"
       />
 
@@ -204,6 +222,7 @@ const faqItems = [
           'Schwimmt auf dem Wasser (15 x 15 cm) &ndash; ab 6 Monaten'
         ]}
         rating="4,5/5"
+        price="ca. 7 €"
         badge="Empfehlung"
         image="/images/products/reer-badebuch-farbwechsel.jpg"
       />
@@ -224,6 +243,7 @@ const faqItems = [
           'Fördert Hand-Auge-Koordination und Feinmotorik &ndash; ab 1 Jahr'
         ]}
         rating="4,4/5"
+        price="ca. 10 €"
         badge="Lernspielzeug"
         image="/images/products/vanmor-saugnapf-spinner.jpg"
       />
@@ -257,6 +277,7 @@ const faqItems = [
           'Vielseitig: Badewanne, Pool, Rasen &ndash; auch als Nachtlicht nutzbar'
         ]}
         rating="4,3/5"
+        price="ca. 16 €"
         badge="LED-Effekte"
         image="/images/products/phnixgam-wal-sprinkler.jpg"
       />
@@ -277,6 +298,7 @@ const faqItems = [
           'Geprüft gemäß EU-Spielzeugrichtlinie &ndash; ab 3 Jahren'
         ]}
         rating="4,3/5"
+        price="ca. 18 €"
         image="/images/products/jiosdo-kugelbahn-krabbe.jpg"
       />
 
@@ -374,5 +396,31 @@ const faqItems = [
         </div>
       </div>
     </section>
+
+    <!-- Passend dazu -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-extrabold mb-4">Passend zum Badespielzeug</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/produkte/babywannen/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128705;</span>
+          <h3 class="font-heading font-bold text-sm">Babywannen</h3>
+          <p class="text-xs text-text-light mt-1">Die passende Wanne zum Planschen &ndash; faltbar oder mit Gestell.</p>
+        </a>
+        <a href="/produkte/badethermometer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#127777;&#65039;</span>
+          <h3 class="font-heading font-bold text-sm">Badethermometer</h3>
+          <p class="text-xs text-text-light mt-1">Immer die perfekte Badetemperatur fürs Spielbad.</p>
+        </a>
+        <a href="/produkte/badezubehoer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128166;</span>
+          <h3 class="font-heading font-bold text-sm">Badezubehör</h3>
+          <p class="text-xs text-text-light mt-1">Handtücher und Waschlappen für nach dem Badespaß.</p>
+        </a>
+      </div>
+    </section>
+    <!-- Bewertungs-Hinweis -->
+    <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+    </p>
   </article>
 </BaseLayout>

@@ -10,11 +10,11 @@ import FAQ from '../../components/FAQ.astro';
 const AMAZON_TAG = 'jalapeno123-21';
 
 const products = [
-  { name: 'Philips Avent SCH480/00', feature: 'Bad- & Raumthermometer, digital, schwimmfähig', rating: '4,8', recommended: true, affiliateLink: `https://www.amazon.de/dp/B07WKN8NQQ?tag=${AMAZON_TAG}` },
-  { name: 'Doli Yearning Seeotter', feature: 'Schwimmendes Badespielzeug, auto Ein/Aus', rating: '4,5', affiliateLink: `https://www.amazon.de/dp/B0DS256PZT?tag=${AMAZON_TAG}` },
-  { name: 'Nuby Pinguin', feature: 'LCD-Display, Heißwasserwarnung, BPA-frei', rating: '4,6', affiliateLink: `https://www.amazon.de/dp/B09V3914B4?tag=${AMAZON_TAG}` },
-  { name: 'Badabulle Waschbär', feature: 'Weiches Material, Temperaturwarnung', rating: '4,4', affiliateLink: `https://www.amazon.de/dp/B01M278IPP?tag=${AMAZON_TAG}` },
-  { name: 'Rotho Babydesign Ente', feature: 'Enten-Design, LED-Warnung, leicht', rating: '3,8', affiliateLink: `https://www.amazon.de/dp/B012Q85TCM?tag=${AMAZON_TAG}` },
+  { name: 'Philips Avent SCH480/00', feature: 'Bad- & Raumthermometer, digital, schwimmfähig', rating: '4,8', price: 'ca. 14 €', recommended: true, affiliateLink: `https://www.amazon.de/dp/B07WKN8NQQ?tag=${AMAZON_TAG}` },
+  { name: 'Doli Yearning Seeotter', feature: 'Schwimmendes Badespielzeug, auto Ein/Aus', rating: '4,5', price: 'ca. 12 €', affiliateLink: `https://www.amazon.de/dp/B0DS256PZT?tag=${AMAZON_TAG}` },
+  { name: 'Nuby Pinguin', feature: 'LCD-Display, Heißwasserwarnung, BPA-frei', rating: '4,6', price: 'ca. 11 €', affiliateLink: `https://www.amazon.de/dp/B09V3914B4?tag=${AMAZON_TAG}` },
+  { name: 'Badabulle Waschbär', feature: 'Weiches Material, Temperaturwarnung', rating: '4,4', price: 'ca. 9 €', affiliateLink: `https://www.amazon.de/dp/B01M278IPP?tag=${AMAZON_TAG}` },
+  { name: 'Rotho Babydesign Ente', feature: 'Enten-Design, LED-Warnung, leicht', rating: '3,8', price: 'ca. 12 €', affiliateLink: `https://www.amazon.de/dp/B012Q85TCM?tag=${AMAZON_TAG}` },
 ];
 
 const faqItems = [
@@ -43,12 +43,26 @@ const faqItems = [
     answer: 'Bei normaler Nutzung (2-3 Mal pro Woche Baden) halten die meisten Batterien 1-2 Jahre. Einige Modelle schalten sich automatisch aus, um Strom zu sparen. Beim Rotho Babydesign Ente ist der Batteriewechsel allerdings schwierig &ndash; das solltest du bei der Kaufentscheidung berücksichtigen.'
   },
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="Die 5 besten Baby-Badethermometer 2026 im Vergleich"
   description="Welches Badethermometer ist das beste für dein Baby? Wir vergleichen Philips Avent, Doli, Nuby, Badabulle und Rotho &ndash; ehrlich und unabhängig."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -94,6 +108,7 @@ const faqItems = [
           'Bewährte Philips Avent Qualität'
         ]}
         rating="4,8/5 bei 7.000+ Bewertungen"
+        price="ca. 14 €"
         badge="Top-Empfehlung"
         image="/images/products/philips-avent-thermometer.jpg"
       />
@@ -137,6 +152,7 @@ const faqItems = [
           'Kompakt und griffig für kleine Babyhände'
         ]}
         rating="4,5/5"
+        price="ca. 12 €"
         badge="Tipp: Süßestes Design"
         image="/images/products/doli-seeotter-thermometer.jpg"
       />
@@ -180,6 +196,7 @@ const faqItems = [
           'Ab 0 Monaten geeignet'
         ]}
         rating="4,6/5 bei 1.400+ Bewertungen"
+        price="ca. 11 €"
         badge="Preis-Leistungs-Tipp"
         image="/images/products/nuby-pinguin-thermometer.jpg"
       />
@@ -223,6 +240,7 @@ const faqItems = [
           'Automatische Abschaltung'
         ]}
         rating="4,4/5 bei 3.400+ Bewertungen"
+        price="ca. 9 €"
         badge="Preis-Tipp"
         image="/images/products/badabulle-waschbaer-thermometer.jpg"
       />
@@ -266,6 +284,7 @@ const faqItems = [
           'Batterie (CR2032) im Lieferumfang'
         ]}
         rating="3,8/5"
+        price="ca. 12 €"
         image="/images/products/rotho-ente-thermometer.jpg"
       />
 
@@ -366,5 +385,30 @@ const faqItems = [
       <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Baby-Badethermometern</h2>
       <FAQ items={faqItems} />
     </section>
+    <!-- Passend dazu -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-extrabold mb-4">Passend zum Badethermometer</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/produkte/babywannen/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128705;</span>
+          <h3 class="font-heading font-bold text-sm">Babywannen</h3>
+          <p class="text-xs text-text-light mt-1">Die passende Wanne zum Thermometer &ndash; faltbar oder mit Gestell.</p>
+        </a>
+        <a href="/produkte/badezubehoer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128166;</span>
+          <h3 class="font-heading font-bold text-sm">Badezubehör</h3>
+          <p class="text-xs text-text-light mt-1">Handtücher, Waschlappen und mehr fürs Baby-Bad.</p>
+        </a>
+        <a href="/produkte/pflegeprodukte/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#129524;</span>
+          <h3 class="font-heading font-bold text-sm">Pflegeprodukte</h3>
+          <p class="text-xs text-text-light mt-1">Sanfte Öle und Badezusätze für zarte Babyhaut.</p>
+        </a>
+      </div>
+    </section>
+    <!-- Bewertungs-Hinweis -->
+    <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+    </p>
   </article>
 </BaseLayout>

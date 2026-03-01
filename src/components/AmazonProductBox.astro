@@ -3,6 +3,7 @@ interface Props {
   name: string;
   features: string[];
   rating?: string;
+  price?: string;
   affiliateLink?: string;
   badge?: string;
   image?: string;
@@ -16,6 +17,7 @@ const {
   name,
   features,
   rating = '4,5/5',
+  price,
   affiliateLink,
   badge,
   image,
@@ -60,7 +62,10 @@ const amazonLink = affiliateLink || `https://www.amazon.de/s?k=${encodeURICompon
       </ul>
 
       <div class="mt-4 flex flex-wrap items-center gap-3">
-        <span class="text-sm text-text-light">&#11088; {rating}</span>
+        <span class="text-sm text-text-light">&#11088; {rating} (Amazon)</span>
+        {price && (
+          <span class="text-sm font-heading font-semibold text-primary-dark">{price}</span>
+        )}
       </div>
 
       <a

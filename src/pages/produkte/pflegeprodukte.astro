@@ -34,12 +34,26 @@ const faqItems = [
     answer: 'Meide Produkte mit <strong>Parfüm/Duftstoffen, Alkohol (Ethanol), Parabenen, Mineralöl (Paraffin), PEG-Emulgatoren</strong> und synthetischen Farbstoffen. Diese können die empfindliche Babyhaut reizen. Achte auf Siegel wie NATRUE, BDIH oder Dermatest &bdquo;sehr gut&ldquo;.'
   },
 ];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="Baby-Pflegeprodukte 2026: Die 13 besten Badezusätze, Waschgels & Öle"
   description="Die besten Pflegeprodukte fürs Baby-Baden: Badezusätze, Waschgels, Badeöle und Pflegeöle &ndash; von Weleda über Penaten bis boep. Ehrlich verglichen."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -107,6 +121,7 @@ const faqItems = [
           'Von Hebammen empfohlen'
         ]}
         rating="4,9/5"
+        price="ca. 8 €"
         badge="Empfehlung"
         image="/images/products/weleda-schlaf-gut-bad.jpg"
       />
@@ -127,6 +142,7 @@ const faqItems = [
           'Ohne Alkohol und Farbstoffe'
         ]}
         rating="4,5/5"
+        price="ca. 3 €"
         badge="Preis-Tipp"
         image="/images/products/penaten-wasch-duschcreme.jpg"
         imageFit="contain"
@@ -148,6 +164,7 @@ const faqItems = [
           'Ohne Parabene, Silikone und Mineralöl'
         ]}
         rating="4,7/5"
+        price="ca. 5 €"
         badge="Viel für wenig"
         image="/images/products/buebchen-baby-bad.jpg"
         imageFit="contain"
@@ -169,6 +186,7 @@ const faqItems = [
           'Besonders empfehlenswert bei Neurodermitis-Neigung'
         ]}
         rating="4,4/5"
+        price="ca. 3 €"
         badge="Sensitiv"
         image="/images/products/penaten-ultra-sensitiv.jpg"
         imageFit="contain"
@@ -190,6 +208,7 @@ const faqItems = [
           'pH-hautneutral &ndash; schützt den Säureschutzmantel'
         ]}
         rating="4,6/5"
+        price="ca. 4 €"
         image="/images/products/nivea-baby-gute-nacht.jpg"
       />
 
@@ -224,6 +243,7 @@ const faqItems = [
           'Dezenter, natürlicher Duft'
         ]}
         rating="4,5/5"
+        price="ca. 13 €"
         badge="Von Hebammen"
         image="/images/products/mabyen-bademilch.jpg"
       />
@@ -244,6 +264,7 @@ const faqItems = [
           'Ideal für trockene und empfindliche Babyhaut'
         ]}
         rating="4,8/5"
+        price="ca. 12 €"
         badge="Naturkosmetik"
         image="/images/products/boep-babybadeoel.jpg"
       />
@@ -264,6 +285,7 @@ const faqItems = [
           'In Deutschland hergestellt'
         ]}
         rating="4,7/5"
+        price="ca. 10 €"
         image="/images/products/boep-schaumbad.jpg"
         imageFit="contain"
       />
@@ -319,6 +341,7 @@ const faqItems = [
           'Von Hebammen und Kinderärzten empfohlen'
         ]}
         rating="4,9/5"
+        price="ca. 10 €"
         badge="Top-Empfehlung"
         image="/images/products/weleda-calendula-pflegeoel.jpg"
         imageFit="contain"
@@ -340,6 +363,7 @@ const faqItems = [
           'Made in Germany &ndash; vegan und tierversuchsfrei'
         ]}
         rating="4,5/5"
+        price="ca. 15 €"
         badge="Bio-Qualität"
         image="/images/products/baybies-pflegeoel.jpg"
       />
@@ -360,6 +384,7 @@ const faqItems = [
           'Ideal für die tägliche Babymassage'
         ]}
         rating="4,7/5"
+        price="ca. 4 €"
         badge="Klassiker"
         image="/images/products/johnsons-baby-oil.jpg"
       />
@@ -380,6 +405,7 @@ const faqItems = [
           'Besonders intensiv pflegend für sehr trockene Haut'
         ]}
         rating="4,3/5"
+        price="ca. 16 €"
         badge="Nachhaltig"
         image="/images/products/eliah-sahil-babyoel.jpg"
       />
@@ -400,6 +426,7 @@ const faqItems = [
           'Überall in der Drogerie erhältlich'
         ]}
         rating="4,5/5"
+        price="ca. 5 €"
         image="/images/products/nivea-baby-massageoel.jpg"
         imageFit="contain"
       />
@@ -496,5 +523,30 @@ const faqItems = [
         </div>
       </div>
     </section>
+    <!-- Passend dazu -->
+    <section class="mb-8">
+      <h2 class="font-heading text-xl font-extrabold mb-4">Passend zu den Pflegeprodukten</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/produkte/babywannen/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128705;</span>
+          <h3 class="font-heading font-bold text-sm">Babywannen</h3>
+          <p class="text-xs text-text-light mt-1">Faltbar, mit Gestell oder als Markenprodukt &ndash; für jedes Bad.</p>
+        </a>
+        <a href="/produkte/badezubehoer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#128166;</span>
+          <h3 class="font-heading font-bold text-sm">Badezubehör</h3>
+          <p class="text-xs text-text-light mt-1">Kapuzenhandtücher und Waschlappen für die Badezeit.</p>
+        </a>
+        <a href="/produkte/badespielzeug/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#129414;</span>
+          <h3 class="font-heading font-bold text-sm">Badespielzeug</h3>
+          <p class="text-xs text-text-light mt-1">Spritztiere, Badebücher und mehr für fröhlichen Badespaß.</p>
+        </a>
+      </div>
+    </section>
+    <!-- Bewertungs-Hinweis -->
+    <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+    </p>
   </article>
 </BaseLayout>
