@@ -5,7 +5,7 @@ pubDate: 2026-03-12
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Neugeborenes", "Nabelschnur", "Erstes Bad"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/neugeborenes-baden.jpg"
 imageAlt: "Neugeborenes Baby wird sanft gebadet"
 featured: false
 draft: false

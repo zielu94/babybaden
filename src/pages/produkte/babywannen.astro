@@ -51,14 +51,14 @@ const products = [
     feature: 'Premium-Faltbadewanne, skandinavisches Design, bis 4 Jahre',
     rating: '4,7',
     price: 'ca. 43 €',
-    affiliateLink: `https://www.amazon.de/dp/B004H4CNZW?tag=${AMAZON_TAG}`,
+    affiliateLink: `https://www.amazon.de/Stokke-Flexi-Bath-Kleinkinder-zusammenklappbar/dp/B07K36PZ9P?tag=${AMAZON_TAG}`,
   },
   {
     name: 'Rotho Babydesign TOP',
     feature: 'Made in Germany, Anti-Rutsch, günstigster Preis',
     rating: '4,6',
     price: 'ca. 22 €',
-    affiliateLink: `https://www.amazon.de/dp/B000LRUHYQ?tag=${AMAZON_TAG}`,
+    affiliateLink: `https://www.amazon.de/Rotho-Babydesign-Antirutschmatten-20500-0286/dp/B07KMBGJX3?tag=${AMAZON_TAG}`,
   },
 ];
 
@@ -130,6 +130,90 @@ const faqJsonLd = {
       </p>
     </header>
 
+    <!-- Testsieger Section -->
+    <section class="mb-12">
+      <div class="text-center mb-6">
+        <span class="inline-block px-4 py-1.5 text-sm font-heading font-bold bg-yellow-400 text-yellow-900 rounded-full shadow-sm">&#127942; Unsere Testsieger 2026</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Stokke Flexi Bath -->
+        <div class="relative bg-white rounded-2xl border-2 border-yellow-400 p-5 shadow-md">
+          <span class="absolute -top-3 left-4 inline-block px-3 py-1 text-xs font-heading font-bold bg-yellow-400 text-yellow-900 rounded-full shadow-sm">&#127942; Testsieger Faltbar</span>
+          <div class="flex flex-col items-center text-center mt-2">
+            <div class="w-full h-48 bg-primary/5 rounded-xl flex items-center justify-center overflow-hidden mb-4">
+              <img src="/images/products/stokke-flexi-bath.jpg" alt="Stokke Flexi Bath White Babybadewanne" class="w-full h-full object-contain" loading="eager" />
+            </div>
+            <h3 class="font-heading font-bold text-lg leading-snug">Stokke Flexi Bath</h3>
+            <p class="text-sm text-text-light mt-1">64 x 24 x 34 cm &ndash; Faltbar, leicht &amp; robust</p>
+            <div class="mt-2 flex items-center gap-2">
+              <span class="text-sm text-text-light">&#11088; 4,7/5 (Amazon)</span>
+              <span class="text-sm font-heading font-semibold text-primary-dark">ca. 43 &euro;</span>
+            </div>
+            <ul class="mt-3 text-left text-sm text-text-light space-y-1">
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">&#10003;</span>
+                <span>Skandinavisches Premium-Design</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">&#10003;</span>
+                <span>Faltbar &ndash; ideal f&uuml;r Reisen &amp; kleine B&auml;der</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">&#10003;</span>
+                <span>Nutzbar von 0&ndash;4 Jahren</span>
+              </li>
+            </ul>
+            <a
+              href={`https://www.amazon.de/Stokke-Flexi-Bath-Kleinkinder-zusammenklappbar/dp/B07K36PZ9P?tag=${AMAZON_TAG}`}
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              class="mt-4 inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#FF9900] hover:bg-[#E8860D] text-white font-heading font-bold text-sm rounded-full transition-colors shadow-md hover:shadow-lg w-full"
+            >
+              Testsieger auf Amazon ansehen
+            </a>
+          </div>
+        </div>
+
+        <!-- Rotho Babydesign TOP -->
+        <div class="relative bg-white rounded-2xl border-2 border-yellow-400 p-5 shadow-md">
+          <span class="absolute -top-3 left-4 inline-block px-3 py-1 text-xs font-heading font-bold bg-yellow-400 text-yellow-900 rounded-full shadow-sm">&#127942; Testsieger Klassisch</span>
+          <div class="flex flex-col items-center text-center mt-2">
+            <div class="w-full h-48 bg-primary/5 rounded-xl flex items-center justify-center overflow-hidden mb-4">
+              <img src="/images/products/rotho-top-babywanne.jpg" alt="Rotho Babydesign TOP Xtra Babybadewanne grau" class="w-full h-full object-contain" loading="eager" />
+            </div>
+            <h3 class="font-heading font-bold text-lg leading-snug">Rotho Babydesign TOP Xtra</h3>
+            <p class="text-sm text-text-light mt-1">Made in Germany &ndash; Solide &amp; bew&auml;hrt</p>
+            <div class="mt-2 flex items-center gap-2">
+              <span class="text-sm text-text-light">&#11088; 4,6/5 (Amazon)</span>
+              <span class="text-sm font-heading font-semibold text-primary-dark">ca. 22 &euro;</span>
+            </div>
+            <ul class="mt-3 text-left text-sm text-text-light space-y-1">
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">&#10003;</span>
+                <span>Made in Germany &ndash; Rotho Qualit&auml;t</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">&#10003;</span>
+                <span>Ergonomisch mit Anti-Rutsch-Fl&auml;che</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-yellow-500">&#10003;</span>
+                <span>Bestes Preis-Leistungs-Verh&auml;ltnis</span>
+              </li>
+            </ul>
+            <a
+              href={`https://www.amazon.de/Rotho-Babydesign-Antirutschmatten-20500-0286/dp/B07KMBGJX3?tag=${AMAZON_TAG}`}
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              class="mt-4 inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#FF9900] hover:bg-[#E8860D] text-white font-heading font-bold text-sm rounded-full transition-colors shadow-md hover:shadow-lg w-full"
+            >
+              Testsieger auf Amazon ansehen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Quick Navigation -->
     <nav class="mb-12 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
       <h2 class="font-heading font-bold text-lg mb-4">&#128203; Auf dieser Seite</h2>
@@ -144,7 +228,7 @@ const faqJsonLd = {
           <span class="text-primary">&#10148;</span> Babywannen mit Gestell (2 Modelle)
         </a>
         <a href="#marken" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
-          <span class="text-primary">&#10148;</span> Marken: Stokke & Rotho (2 Modelle)
+          <span class="text-primary">&#10148;</span> &#127942; Testsieger: Stokke &amp; Rotho
         </a>
         <a href="#kaufberatung" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
           <span class="text-primary">&#10148;</span> Kaufberatung & Checkliste
@@ -290,9 +374,9 @@ const faqJsonLd = {
     <!-- 3. MARKEN-BABYWANNEN -->
     <!-- ==================== -->
     <section id="marken" class="mb-14">
-      <h2 class="font-heading text-2xl font-extrabold mb-6">Marken-Babywannen: Stokke & Rotho</h2>
+      <h2 class="font-heading text-2xl font-extrabold mb-6">&#127942; Unsere Testsieger: Stokke &amp; Rotho</h2>
       <p class="text-text-light leading-relaxed mb-6">
-        Neben den Amazon-Bestsellern gibt es zwei <strong>etablierte Marken</strong>, die bei Hebammen und Eltern besonders beliebt sind: Die <strong>Stokke Flexi Bath</strong> als Premium-Faltlösung und die <strong>Rotho Babydesign TOP</strong> als solider Klassiker zum kleinen Preis. Beide Wannen sind seit Jahren bewährt und in vielen Farben erhältlich.
+        Unsere beiden <strong>Testsieger 2026</strong> sind gleichzeitig die <strong>beliebtesten Marken-Babywannen</strong> bei Hebammen und Eltern: Die <strong>Stokke Flexi Bath</strong> als Premium-Faltlösung und die <strong>Rotho Babydesign TOP Xtra</strong> als solider Klassiker zum kleinen Preis. Beide Wannen sind seit Jahren bew&auml;hrt und in vielen Farben erh&auml;ltlich.
       </p>
 
       <!-- 6. Stokke Flexi Bath -->
@@ -302,8 +386,8 @@ const faqJsonLd = {
       </p>
       <p class="text-sm text-text-light mb-4"><strong>Ideal für:</strong> Qualitätsbewusste Eltern, die eine langlebige Wanne suchen, die vom Neugeborenen bis zum Kleinkind mitwächst.</p>
       <AmazonProductBox
-        name="Stokke Flexi Bath Faltbadewanne"
-        affiliateLink={`https://www.amazon.de/dp/B004H4CNZW?tag=${AMAZON_TAG}`}
+        name="Stokke Flexi Bath White (64 x 24 x 34 cm)"
+        affiliateLink={`https://www.amazon.de/Stokke-Flexi-Bath-Kleinkinder-zusammenklappbar/dp/B07K36PZ9P?tag=${AMAZON_TAG}`}
         features={[
           'Faltbar in Sekunden &ndash; extrem platzsparend (nur 10 cm flach)',
           'Stabil und standsicher &ndash; rutschfeste Gummifüße',
@@ -314,8 +398,9 @@ const faqJsonLd = {
         ]}
         rating="4,7/5"
         price="ca. 43 €"
-        badge="Marken-Tipp"
+        badge="&#127942; Testsieger Faltbar"
         image="/images/products/stokke-flexi-bath.jpg"
+        imageFit="contain"
       />
 
       <!-- 7. Rotho Babydesign TOP -->
@@ -325,8 +410,8 @@ const faqJsonLd = {
       </p>
       <p class="text-sm text-text-light mb-4"><strong>Ideal für:</strong> Eltern mit kleinem Budget oder als Zweitwanne bei den Großeltern &ndash; solide Qualität zum besten Preis.</p>
       <AmazonProductBox
-        name="Rotho Babydesign TOP Babybadewanne"
-        affiliateLink={`https://www.amazon.de/dp/B000LRUHYQ?tag=${AMAZON_TAG}`}
+        name="Rotho Babydesign TOP Xtra Babybadewanne (grau)"
+        affiliateLink={`https://www.amazon.de/Rotho-Babydesign-Antirutschmatten-20500-0286/dp/B07KMBGJX3?tag=${AMAZON_TAG}`}
         features={[
           'Made in Germany &ndash; bewährte Rotho Babydesign Qualität',
           'Ergonomische Form mit integrierter Anti-Rutsch-Fläche',
@@ -337,8 +422,9 @@ const faqJsonLd = {
         ]}
         rating="4,6/5"
         price="ca. 22 €"
-        badge="Preis-Tipp"
+        badge="&#127942; Testsieger Klassisch"
         image="/images/products/rotho-top-babywanne.jpg"
+        imageFit="contain"
       />
 
       <MamaTipp text="Die Stokke Flexi Bath ist mein Geheimtipp für Eltern, die viel reisen oder wenig Platz haben &ndash; sie ist unglaublich stabil trotz Faltfunktion. Und die Rotho TOP ist perfekt als zweite Wanne bei Oma und Opa: günstig, solide und in der Drogerie erhältlich." />

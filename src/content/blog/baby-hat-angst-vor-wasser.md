@@ -5,7 +5,7 @@ pubDate: 2026-03-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Angst vor Wasser", "Badeangst", "Tipps"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-angst-vor-wasser.jpg"
 imageAlt: "Baby schaut vorsichtig auf das Badewasser"
 featured: false
 draft: false

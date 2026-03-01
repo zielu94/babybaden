@@ -5,7 +5,7 @@ pubDate: 2026-03-28
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Erkältung", "Gesundheit", "Babybad"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-baden-erkaeltung.jpg"
 imageAlt: "Baby wird bei Erkältung vorsichtig gebadet"
 featured: false
 draft: false

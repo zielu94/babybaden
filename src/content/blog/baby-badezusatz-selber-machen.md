@@ -5,7 +5,7 @@ pubDate: 2026-04-09
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Badezusatz", "DIY", "Naturpflege"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-badezusatz-selber-machen.jpg"
 imageAlt: "Natürliche Zutaten für selbstgemachten Baby-Badezusatz"
 featured: false
 draft: false

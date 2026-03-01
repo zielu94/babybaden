@@ -5,7 +5,7 @@ pubDate: 2026-03-24
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Winter", "Hautpflege", "Tipps"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-baden-winter-tipps.jpg"
 imageAlt: "Baby eingewickelt in ein warmes Handtuch nach dem Winterbad"
 featured: false
 draft: false

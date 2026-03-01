@@ -5,7 +5,7 @@ pubDate: 2026-03-16
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Haare waschen", "Tipps", "Tränen"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-haare-waschen.jpg"
 imageAlt: "Baby bekommt sanft die Haare gewaschen ohne zu weinen"
 featured: false
 draft: false

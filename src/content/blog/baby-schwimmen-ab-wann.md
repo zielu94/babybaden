@@ -5,7 +5,7 @@ pubDate: 2026-04-13
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Babyschwimmen", "Wassergewöhnung", "Entwicklung"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-schwimmen.jpg"
 imageAlt: "Baby beim Babyschwimmen im Hallenbad mit Elternteil"
 featured: false
 draft: false

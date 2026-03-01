@@ -8,6 +8,23 @@ import FAQ from '../../components/FAQ.astro';
 
 const AMAZON_TAG = 'jalapeno123-21';
 
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Die 8 besten Baby-Badespielzeuge 2026',
+  numberOfItems: 8,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'reer MyHappyBath Toys Ente & Pinguin', url: `https://www.amazon.de/dp/B0D9YBSSZQ?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 2, name: 'BelleStyle Silikon Badetiere 4er-Set', url: `https://www.amazon.de/dp/B0CSFKRMK4?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 3, name: 'Fehn Badetier Otter Theo', url: `https://www.amazon.de/dp/B0D7HGQRCG?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 4, name: 'Fehn Bade-Schwamm Schildkröte', url: `https://www.amazon.de/dp/B09F3MSBM6?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 5, name: 'reer MyHappyBath Book Magisches Badebuch', url: `https://www.amazon.de/dp/B09D8BTCT5?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 6, name: 'Vanmor Saugnapf-Spinner 4er-Set', url: `https://www.amazon.de/dp/B092S24B41?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 7, name: 'PHNIXGAM Wal-Sprinkler mit LED-Licht', url: `https://www.amazon.de/dp/B0D8BTR9FF?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 8, name: 'Jiosdo DIY-Kugelbahn Badewannenspielzeug', url: `https://www.amazon.de/dp/B0B3RTGW8G?tag=${AMAZON_TAG}` },
+  ],
+};
+
 const faqItems = [
   {
     question: 'Ab wann ist Badespielzeug sinnvoll?',
@@ -50,10 +67,11 @@ const faqJsonLd = {
 ---
 
 <BaseLayout
-  title="Badespielzeug Baby 2026: Die 8 besten Spielzeuge fürs Bad"
-  description="Das beste Badespielzeug für Babys und Kleinkinder: Spritztiere, Badebücher, Wal-Sprinkler und Kugelbahnen &ndash; schimmelfrei und schadstoffgeprüft. Ehrlich verglichen."
+  title="Badespielzeug Baby: Die 8 besten im Test 2026 – schimmelfrei & PVC-frei"
+  description="Badespielzeug Baby Test 2026: Schimmelfreie Spritztiere, Badebücher & Wal-Sprinkler im Vergleich. PVC-frei, BPA-frei. Ab 8€ – ehrlich empfohlen."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -63,14 +81,66 @@ const faqJsonLd = {
     <!-- Intro -->
     <header class="mb-10">
       <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
-      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Badespielzeug Baby: Die 8 besten Spielzeuge fürs Bad</h1>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Badespielzeug Baby: Die 8 besten im Test 2026</h1>
       <p class="text-text-light text-lg leading-relaxed mb-4">
         Badespielzeug macht das Baden zum Erlebnis &ndash; und <strong>fördert gleichzeitig die Entwicklung</strong> deines Babys. Greifen, spritzen, stapeln, staunen: In der Badewanne trainiert dein Kind Feinmotorik, Ursache-Wirkung-Verständnis und sensorische Wahrnehmung. Von <strong>schimmelfreien Spritztieren</strong> über <strong>magische Badebücher</strong> bis zum <strong>leuchtenden Wal-Sprinkler</strong>: Hier unsere 8 ehrlichen Empfehlungen.
       </p>
       <p class="text-sm text-text-light italic">
-        <em>Zuletzt aktualisiert: Februar 2026</em>
+        <em>Zuletzt aktualisiert: März 2026</em>
       </p>
     </header>
+
+    <!-- Safety Badges -->
+    <div class="mb-10 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+      <h2 class="font-heading font-bold text-lg mb-4">&#128737; Sicherheits-Checkliste für Badespielzeug</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="flex flex-col items-center gap-2 p-3 text-center">
+          <span class="text-2xl">&#9989;</span>
+          <span class="text-sm font-heading font-semibold">PVC-frei</span>
+          <p class="text-xs text-text-light">Schadstofffreies Silikon & ABS</p>
+        </div>
+        <div class="flex flex-col items-center gap-2 p-3 text-center">
+          <span class="text-2xl">&#129440;</span>
+          <span class="text-sm font-heading font-semibold">Schimmelfrei</span>
+          <p class="text-xs text-text-light">Aufklappbar zum Reinigen</p>
+        </div>
+        <div class="flex flex-col items-center gap-2 p-3 text-center">
+          <span class="text-2xl">&#128118;</span>
+          <span class="text-sm font-heading font-semibold">BPA-frei</span>
+          <p class="text-xs text-text-light">Sicher zum Nuckeln</p>
+        </div>
+        <div class="flex flex-col items-center gap-2 p-3 text-center">
+          <span class="text-2xl">&#128065;</span>
+          <span class="text-sm font-heading font-semibold">CE-geprüft</span>
+          <p class="text-xs text-text-light">EU-Spielzeugrichtlinie</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bestseller Top 3 Hero -->
+    <div class="mb-10 bg-gradient-to-br from-accent/10 to-primary/5 rounded-2xl p-6 md:p-8 border-2 border-accent/30 shadow-sm">
+      <p class="text-sm font-heading font-bold text-accent-dark mb-2">&#127942; Unsere Top 3 Empfehlungen 2026</p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href={`https://www.amazon.de/dp/B0D7HGQRCG?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow sponsored" class="block bg-white rounded-xl p-4 text-center border border-accent/20 hover:shadow-md transition-shadow">
+          <span class="inline-block px-2 py-0.5 text-xs font-heading font-bold bg-accent text-text rounded-full mb-2">&#127942; Ab Geburt</span>
+          <p class="font-heading font-bold text-sm">Fehn Otter &bdquo;Theo&ldquo;</p>
+          <p class="text-xs text-text-light mt-1">&#11088; 4,6/5 bei 420+ Bewertungen</p>
+          <p class="text-sm font-heading font-semibold text-primary-dark mt-1">ca. 11 €</p>
+        </a>
+        <a href={`https://www.amazon.de/dp/B0D9YBSSZQ?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow sponsored" class="block bg-white rounded-xl p-4 text-center border border-accent/20 hover:shadow-md transition-shadow">
+          <span class="inline-block px-2 py-0.5 text-xs font-heading font-bold bg-green-100 text-green-800 rounded-full mb-2">Schimmelfrei</span>
+          <p class="font-heading font-bold text-sm">reer Spritztiere</p>
+          <p class="text-xs text-text-light mt-1">&#11088; 4,5/5 &ndash; Aufklappbar</p>
+          <p class="text-sm font-heading font-semibold text-primary-dark mt-1">ca. 10 €</p>
+        </a>
+        <a href={`https://www.amazon.de/dp/B09D8BTCT5?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow sponsored" class="block bg-white rounded-xl p-4 text-center border border-accent/20 hover:shadow-md transition-shadow">
+          <span class="inline-block px-2 py-0.5 text-xs font-heading font-bold bg-primary/10 text-primary-dark rounded-full mb-2">Farbwechsel</span>
+          <p class="font-heading font-bold text-sm">reer Magisches Badebuch</p>
+          <p class="text-xs text-text-light mt-1">&#11088; 4,5/5 &ndash; PVC-frei</p>
+          <p class="text-sm font-heading font-semibold text-primary-dark mt-1">ca. 7 €</p>
+        </a>
+      </div>
+    </div>
 
     <!-- Quick Navigation -->
     <nav class="mb-12 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
@@ -87,6 +157,12 @@ const faqJsonLd = {
         </a>
         <a href="#pflege" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
           <span class="text-primary">&#10148;</span> Pflege, Hygiene & Schimmel-Tipps
+        </a>
+        <a href="#alter" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Altersübersicht: Welches Spielzeug wann?
+        </a>
+        <a href="#faq" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Häufige Fragen (FAQ)
         </a>
       </div>
     </nav>
@@ -306,7 +382,7 @@ const faqJsonLd = {
     </section>
 
     <!-- Altersübersicht -->
-    <section class="mb-12">
+    <section id="alter" class="mb-12">
       <h2 class="font-heading text-2xl font-extrabold mb-6">Welches Spielzeug für welches Alter?</h2>
       <div class="grid md:grid-cols-3 gap-4">
         <div class="bg-white rounded-2xl p-5 border border-green-200 shadow-sm">
@@ -365,7 +441,7 @@ const faqJsonLd = {
     <MamaTipp text="Mein bester Tipp gegen Schimmel: Kaufe nur Spritztiere aus Silikon, die sich zum Reinigen öffnen lassen (wie reer oder BelleStyle). Und hänge ein kleines Netz mit Saugnäpfen in die Dusche &ndash; da kann alles nach dem Baden abtropfen. Spart Nerven und Schimmel-Diskussionen!" />
 
     <!-- FAQ -->
-    <section class="mb-12 mt-12">
+    <section id="faq" class="mb-12 mt-12">
       <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Badespielzeug</h2>
       <FAQ items={faqItems} />
     </section>
@@ -400,27 +476,37 @@ const faqJsonLd = {
     <!-- Passend dazu -->
     <section class="mb-8">
       <h2 class="font-heading text-xl font-extrabold mb-4">Passend zum Badespielzeug</h2>
-      <div class="grid sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
         <a href="/produkte/babywannen/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
           <span class="text-2xl block mb-2">&#128705;</span>
           <h3 class="font-heading font-bold text-sm">Babywannen</h3>
-          <p class="text-xs text-text-light mt-1">Die passende Wanne zum Planschen &ndash; faltbar oder mit Gestell.</p>
+          <p class="text-xs text-text-light mt-1">Die perfekte Wanne finden</p>
         </a>
         <a href="/produkte/badethermometer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
-          <span class="text-2xl block mb-2">&#127777;&#65039;</span>
+          <span class="text-2xl block mb-2">&#127777;</span>
           <h3 class="font-heading font-bold text-sm">Badethermometer</h3>
-          <p class="text-xs text-text-light mt-1">Immer die perfekte Badetemperatur fürs Spielbad.</p>
+          <p class="text-xs text-text-light mt-1">Sichere Temperatur messen</p>
         </a>
         <a href="/produkte/badezubehoer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
           <span class="text-2xl block mb-2">&#128166;</span>
           <h3 class="font-heading font-bold text-sm">Badezubehör</h3>
-          <p class="text-xs text-text-light mt-1">Handtücher und Waschlappen für nach dem Badespaß.</p>
+          <p class="text-xs text-text-light mt-1">Handtücher & Waschlappen</p>
+        </a>
+        <a href="/produkte/heizstrahler/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#9728;</span>
+          <h3 class="font-heading font-bold text-sm">Heizstrahler</h3>
+          <p class="text-xs text-text-light mt-1">Wärme am Wickeltisch</p>
+        </a>
+        <a href="/produkte/pflegeprodukte/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#129524;</span>
+          <h3 class="font-heading font-bold text-sm">Pflegeprodukte</h3>
+          <p class="text-xs text-text-light mt-1">Öle und Waschgels</p>
         </a>
       </div>
     </section>
     <!-- Bewertungs-Hinweis -->
     <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
-      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand März 2026. Preise sind ca.-Angaben und können variieren.
     </p>
   </article>
 </BaseLayout>

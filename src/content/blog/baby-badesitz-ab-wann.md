@@ -5,7 +5,7 @@ pubDate: 2026-03-08
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Badesitz", "Badewannensitz", "Sicherheit"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-badesitz.jpg"
 imageAlt: "Baby sitzt fröhlich in einem Badesitz in der Badewanne"
 featured: false
 draft: false

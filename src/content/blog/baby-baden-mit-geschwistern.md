@@ -5,7 +5,7 @@ pubDate: 2026-04-05
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Geschwister", "Sicherheit", "Familienbad"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-baden-mit-geschwistern.jpg"
 imageAlt: "Baby und Geschwisterkind baden zusammen in der Badewanne"
 featured: false
 draft: false

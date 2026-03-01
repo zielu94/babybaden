@@ -5,7 +5,7 @@ pubDate: 2026-04-01
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Babywanne", "Hygiene", "Reinigung"]
-image: "/images/blog/placeholder.jpg"
+image: "/images/blog/baby-badewanne-reinigen.jpg"
 imageAlt: "Saubere Babywanne bereit zum Baden"
 featured: false
 draft: false

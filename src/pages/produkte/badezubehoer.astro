@@ -8,6 +8,25 @@ import FAQ from '../../components/FAQ.astro';
 
 const AMAZON_TAG = 'jalapeno123-21';
 
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Die 10 besten Baby-Badezubehör-Produkte 2026',
+  numberOfItems: 10,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Nuby Dr. Talbot\'s Schildkröten-Badekissen', url: `https://www.amazon.de/dp/B094F7YPPC?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 2, name: 'Skip Hop Moby Haarwaschbecher', url: `https://www.amazon.de/dp/B00FXR5S20?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 3, name: 'Yookidoo Elefanten Baby-Party', url: `https://www.amazon.de/dp/B08DFFH9WJ?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 4, name: 'Frida Baby DermaFrida FlakeFixer', url: `https://www.amazon.de/dp/B0CR6K13MX?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 5, name: 'Schnurloser Baby-Haartrockner', url: `https://www.amazon.de/dp/B0BQHNFQK5?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 6, name: 'Blissful Diary Musselin-Kapuzenhandtuch', url: `https://www.amazon.de/dp/B0FYQ2C2QP?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 7, name: 'Momcozy Bambus-Badetücher 5er-Set', url: `https://www.amazon.de/dp/B086PVNCL4?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 8, name: 'Orighty Baby-Waschlappen 24er-Pack', url: `https://www.amazon.de/dp/B09KRPRWXM?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 9, name: 'Pumwoy Tier-Badeschwämme 4er-Set', url: `https://www.amazon.de/dp/B0FB8GBGWN?tag=${AMAZON_TAG}` },
+    { '@type': 'ListItem', position: 10, name: 'waschies Kids Waschpads 5er-Set', url: `https://www.amazon.de/dp/B0BTPGMH47?tag=${AMAZON_TAG}` },
+  ],
+};
+
 const faqItems = [
   {
     question: 'Was brauche ich wirklich an Badezubehör für mein Neugeborenes?',
@@ -50,10 +69,11 @@ const faqJsonLd = {
 ---
 
 <BaseLayout
-  title="Baby-Badezubehör 2026: Die 10 besten Helfer fürs Baby-Bad"
-  description="Das beste Badezubehör für dein Baby: Kapuzenhandtücher, Haarwaschbecher, Waschlappen, Badekissen und mehr &ndash; ehrlich verglichen und empfohlen."
+  title="Badezubehör Baby: Die 10 besten Helfer im Test 2026"
+  description="Badezubehör Baby Test 2026: Skip Hop Haarwaschbecher, Kapuzenhandtücher, Waschlappen & Badekissen im Vergleich. Must-haves ab 8€ – ehrlich empfohlen."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -63,21 +83,73 @@ const faqJsonLd = {
     <!-- Intro -->
     <header class="mb-10">
       <span class="inline-block px-3 py-1 text-xs font-heading font-semibold bg-primary/10 text-primary-dark rounded-full mb-4">Produktvergleich</span>
-      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Baby-Badezubehör: Die 10 besten Helfer fürs Bad</h1>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold leading-tight mb-5">Badezubehör Baby: Die 10 besten Helfer im Test 2026</h1>
       <p class="text-text-light text-lg leading-relaxed mb-4">
         Babywanne und Thermometer hast du &ndash; aber was brauchst du sonst noch? Von <strong>Kapuzenhandtüchern</strong> über <strong>Haarwaschbecher</strong> bis zum <strong>Milchschorf-Set</strong>: Hier findest du die 10 besten Badezubehör-Produkte, die das Baden einfacher, sicherer und gemütlicher machen.
       </p>
       <p class="text-sm text-text-light italic">
-        <em>Zuletzt aktualisiert: Februar 2026</em>
+        <em>Zuletzt aktualisiert: März 2026</em>
       </p>
     </header>
+
+    <!-- Kategorie-Icons -->
+    <div class="mb-10 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
+      <h2 class="font-heading font-bold text-lg mb-4">&#128203; 4 Kategorien – alles fürs Baby-Bad</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="#badehelfer" class="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-primary/5 transition-colors text-center">
+          <span class="text-3xl">&#128704;</span>
+          <span class="text-sm font-heading font-semibold">Bade-Helfer</span>
+          <span class="text-xs text-text-light">Badekissen, Becher, Dusche</span>
+        </a>
+        <a href="#kopfpflege" class="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-primary/5 transition-colors text-center">
+          <span class="text-3xl">&#129520;</span>
+          <span class="text-sm font-heading font-semibold">Kopfpflege</span>
+          <span class="text-xs text-text-light">Milchschorf, Haartrockner</span>
+        </a>
+        <a href="#handtuecher" class="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-primary/5 transition-colors text-center">
+          <span class="text-3xl">&#129531;</span>
+          <span class="text-sm font-heading font-semibold">Handtücher</span>
+          <span class="text-xs text-text-light">Kapuze, Bambus, Musselin</span>
+        </a>
+        <a href="#waschlappen" class="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-primary/5 transition-colors text-center">
+          <span class="text-3xl">&#129507;</span>
+          <span class="text-sm font-heading font-semibold">Waschlappen</span>
+          <span class="text-xs text-text-light">Pads, Schwämme, Sets</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bestseller Top 3 Hero -->
+    <div class="mb-10 bg-gradient-to-br from-accent/10 to-primary/5 rounded-2xl p-6 md:p-8 border-2 border-accent/30 shadow-sm">
+      <p class="text-sm font-heading font-bold text-accent-dark mb-2">&#127942; Unsere Top 3 Bestseller 2026</p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href={`https://www.amazon.de/dp/B00FXR5S20?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow sponsored" class="block bg-white rounded-xl p-4 text-center border border-accent/20 hover:shadow-md transition-shadow">
+          <span class="inline-block px-2 py-0.5 text-xs font-heading font-bold bg-accent text-text rounded-full mb-2">&#127942; Bestseller</span>
+          <p class="font-heading font-bold text-sm">Skip Hop Moby Haarwaschbecher</p>
+          <p class="text-xs text-text-light mt-1">&#11088; 4,5/5 bei 7.900+ Bewertungen</p>
+          <p class="text-sm font-heading font-semibold text-primary-dark mt-1">ca. 14 €</p>
+        </a>
+        <a href={`https://www.amazon.de/dp/B0CR6K13MX?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow sponsored" class="block bg-white rounded-xl p-4 text-center border border-accent/20 hover:shadow-md transition-shadow">
+          <span class="inline-block px-2 py-0.5 text-xs font-heading font-bold bg-primary/10 text-primary-dark rounded-full mb-2">Kopfpflege-Tipp</span>
+          <p class="font-heading font-bold text-sm">Frida Baby FlakeFixer</p>
+          <p class="text-xs text-text-light mt-1">&#11088; 4,7/5 bei 1.200+ Bewertungen</p>
+          <p class="text-sm font-heading font-semibold text-primary-dark mt-1">ca. 12 €</p>
+        </a>
+        <a href={`https://www.amazon.de/dp/B09KRPRWXM?tag=${AMAZON_TAG}`} target="_blank" rel="noopener noreferrer nofollow sponsored" class="block bg-white rounded-xl p-4 text-center border border-accent/20 hover:shadow-md transition-shadow">
+          <span class="inline-block px-2 py-0.5 text-xs font-heading font-bold bg-green-100 text-green-800 rounded-full mb-2">Preis-Leistung</span>
+          <p class="font-heading font-bold text-sm">Orighty Waschlappen 24er</p>
+          <p class="text-xs text-text-light mt-1">&#11088; 4,5/5 bei 1.800+ Bewertungen</p>
+          <p class="text-sm font-heading font-semibold text-primary-dark mt-1">ca. 14 €</p>
+        </a>
+      </div>
+    </div>
 
     <!-- Quick Navigation -->
     <nav class="mb-12 bg-white rounded-2xl p-6 border border-primary/10 shadow-sm">
       <h2 class="font-heading font-bold text-lg mb-4">&#128203; Auf dieser Seite</h2>
       <div class="grid sm:grid-cols-2 gap-2 text-sm">
         <a href="#badehelfer" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
-          <span class="text-primary">&#10148;</span> Bade-Helfer (Badekissen, Haarwaschbecher, Duschkopf)
+          <span class="text-primary">&#10148;</span> Bade-Helfer (Badekissen, Becher, Dusche)
         </a>
         <a href="#kopfpflege" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
           <span class="text-primary">&#10148;</span> Kopfpflege (Milchschorf-Set, Haartrockner)
@@ -87,6 +159,12 @@ const faqJsonLd = {
         </a>
         <a href="#waschlappen" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
           <span class="text-primary">&#10148;</span> Waschlappen, Schwämme & Waschpads
+        </a>
+        <a href="#kaufberatung" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Kaufberatung: Must-haves vs. Nice-to-haves
+        </a>
+        <a href="#faq" class="flex items-center gap-2 text-text-light hover:text-primary-dark transition-colors py-1">
+          <span class="text-primary">&#10148;</span> Häufige Fragen (FAQ)
         </a>
       </div>
     </nav>
@@ -387,7 +465,7 @@ const faqJsonLd = {
     </section>
 
     <!-- Kaufberatung -->
-    <section class="mb-12">
+    <section id="kaufberatung" class="mb-12">
       <h2 class="font-heading text-2xl font-extrabold mb-6">Kaufberatung: Was brauchst du wirklich?</h2>
 
       <div class="grid md:grid-cols-2 gap-6 mb-8">
@@ -413,7 +491,7 @@ const faqJsonLd = {
     <MamaTipp text="Mein Tipp für die Erstausstattung: Starte mit 2 Kapuzenhandtüchern und einem großen Waschlappen-Set (24er). Dazu der Skip Hop Haarwaschbecher für ~14€. Das reicht für den Anfang völlig &ndash; alles andere kannst du bei Bedarf nachkaufen." />
 
     <!-- FAQ -->
-    <section class="mb-12 mt-12">
+    <section id="faq" class="mb-12 mt-12">
       <h2 class="font-heading text-2xl font-extrabold mb-6">Häufige Fragen zu Baby-Badezubehör</h2>
       <FAQ items={faqItems} />
     </section>
@@ -447,27 +525,37 @@ const faqJsonLd = {
     <!-- Passend dazu -->
     <section class="mb-8">
       <h2 class="font-heading text-xl font-extrabold mb-4">Passend zum Badezubehör</h2>
-      <div class="grid sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
         <a href="/produkte/babywannen/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
           <span class="text-2xl block mb-2">&#128705;</span>
           <h3 class="font-heading font-bold text-sm">Babywannen</h3>
-          <p class="text-xs text-text-light mt-1">Finde die perfekte Wanne für euer Badezimmer.</p>
+          <p class="text-xs text-text-light mt-1">Die perfekte Wanne finden</p>
+        </a>
+        <a href="/produkte/badethermometer/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#127777;</span>
+          <h3 class="font-heading font-bold text-sm">Badethermometer</h3>
+          <p class="text-xs text-text-light mt-1">Sichere Temperatur messen</p>
+        </a>
+        <a href="/produkte/heizstrahler/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
+          <span class="text-2xl block mb-2">&#9728;</span>
+          <h3 class="font-heading font-bold text-sm">Heizstrahler</h3>
+          <p class="text-xs text-text-light mt-1">Wärme am Wickeltisch</p>
         </a>
         <a href="/produkte/pflegeprodukte/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
           <span class="text-2xl block mb-2">&#129524;</span>
           <h3 class="font-heading font-bold text-sm">Pflegeprodukte</h3>
-          <p class="text-xs text-text-light mt-1">Badezusätze, Waschgels und Öle für zarte Babyhaut.</p>
+          <p class="text-xs text-text-light mt-1">Öle und Waschgels</p>
         </a>
         <a href="/produkte/badespielzeug/" class="block bg-white rounded-xl p-4 border border-primary/10 hover:shadow-md transition-shadow">
           <span class="text-2xl block mb-2">&#129414;</span>
           <h3 class="font-heading font-bold text-sm">Badespielzeug</h3>
-          <p class="text-xs text-text-light mt-1">Badetiere, Badebücher und Wasserspielzeug.</p>
+          <p class="text-xs text-text-light mt-1">Badetiere und Wasserspiel</p>
         </a>
       </div>
     </section>
     <!-- Bewertungs-Hinweis -->
     <p class="text-xs text-text-light italic mt-8 border-t border-primary/10 pt-4">
-      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand Februar 2026. Preise sind ca.-Angaben und können variieren.
+      Bewertungen basieren auf Amazon-Kundenrezensionen, Stand März 2026. Preise sind ca.-Angaben und können variieren.
     </p>
   </article>
 </BaseLayout>
