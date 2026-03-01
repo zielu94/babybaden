@@ -116,6 +116,15 @@ Die beste Option für gemeinsames Baden ist die **reguläre Badewanne** im Badez
 
 Eine normale [Babywanne](/produkte/babywannen/) ist für zwei Kinder **zu klein**, sobald das große Kind älter als etwa 1,5 Jahre ist. Für ein Baby und ein sehr kleines Geschwisterkind (z.B. 14 Monate Altersunterschied) kann eine XXL-Babywanne vorübergehend funktionieren – aber das Platzangebot ist begrenzt.
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Stokke Flexi Bath</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Premium-Faltbadewanne, skandinavisches Design, bis 4 Jahre nutzbar.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,5/5 (Amazon) · <strong style="color: #3d2c22;">ca. 40 €</strong></p>
+<a href="https://www.amazon.de/Stokke-Flexi-Bath-Kleinkinder-zusammenklappbar/dp/B07K36PZ9P?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/babywannen/" style="color: #8b6f5e;">Alle Babywannen vergleichen →</a></span>
+</div>
+
 ### Aufblasbare Planschbecken
 
 Im Sommer kann ein aufblasbares Planschbecken im Garten eine Alternative sein. Aber: Auch hier gelten alle Sicherheitsregeln, und das Wasser kühlt im Freien schneller ab.
@@ -159,6 +168,15 @@ Wenn die Regeln nicht eingehalten werden, gibt es eine freundliche, aber klare W
 ### Beschäftigung anbieten
 
 Gib dem großen Kind eine **Aufgabe**: Es darf das Baby sanft mit einem Waschlappen waschen, ihm die Badeente reichen oder leise ein Lied singen. So fühlt es sich eingebunden und ist weniger versucht, wild zu werden.
+
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Fehn Badetier Otter "Theo"</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Kuschelweiches Badespielzeug ab Geburt, 17cm, trocknet schnell.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,7/5 (Amazon) · <strong style="color: #3d2c22;">ca. 11 €</strong></p>
+<a href="https://www.amazon.de/dp/B0D7HGQRCG?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/badespielzeug/" style="color: #8b6f5e;">Alle Badespielzeug vergleichen →</a></span>
+</div>
 
 ---
 

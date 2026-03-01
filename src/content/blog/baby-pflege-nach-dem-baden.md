@@ -36,6 +36,15 @@ Direkt nach dem Bad geht es darum, dein Baby schnell und behutsam warmzuhalten. 
 
 > **Tipp:** Lege das Handtuch schon vor dem Baden auf die Heizung oder über den [Heizstrahler](/produkte/heizstrahler/). Ein warmes Handtuch ist ein kleiner Luxus, den dein Baby sofort spürt – viele Babys entspannen sich sichtbar, wenn sie in warmen Stoff gehüllt werden.
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">reer EasyHeat Flex</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">500W Heizstrahler, Medizinstandard, Wand- oder Standmontage.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,4/5 (Amazon) · <strong style="color: #3d2c22;">ca. 80 €</strong></p>
+<a href="https://www.amazon.de/dp/B07FM6WLYW?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/heizstrahler/" style="color: #8b6f5e;">Alle Heizstrahler vergleichen →</a></span>
+</div>
+
 ### Das richtige Handtuch wählen
 
 Nicht jedes Handtuch ist für zarte Babyhaut geeignet. Kapuzenhandtücher aus **Baumwoll-Frottee oder Bambus-Mischgewebe** sind ideal – sie sind weich, saugfähig und hautfreundlich. Achte darauf, dass das Handtuch groß genug ist, um dein Baby komplett einzuwickeln (mindestens 80 x 80 cm).
@@ -70,6 +79,15 @@ Achte auf möglichst **wenige Inhaltsstoffe**, keine Duftstoffe und keine bedenk
 **Vermeide** Produkte mit Mineralöl, Parabenen, künstlichen Duftstoffen, PEG-Emulgatoren oder Alkohol. Die zarte Babyhaut nimmt alles auf – und weniger ist hier definitiv mehr.
 
 > **🧴 Passende Produkte:** Schau dir unsere [Pflegeprodukte-Empfehlungen](/produkte/pflegeprodukte/) an – wir haben die besten Cremes, Öle und Lotionen für Babys verglichen und getestet. So findest du schnell das richtige Produkt für die Haut deines Babys.
+
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Weleda Calendula Pflegeöl</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Parfümfreies Pflegeöl mit Bio-Calendula, 200ml, NATRUE-zertifiziert.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,7/5 (Amazon) · <strong style="color: #3d2c22;">ca. 10 €</strong></p>
+<a href="https://www.amazon.de/dp/B00B25PIXG?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/pflegeprodukte/" style="color: #8b6f5e;">Alle Pflegeprodukte vergleichen →</a></span>
+</div>
 
 ### Richtig eincremen – so geht's
 

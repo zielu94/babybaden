@@ -85,6 +85,15 @@ Die mildeste Option und für die meisten Babys die **beste Wahl als Einstieg**. 
 
 > **Tipp:** Wenn das Badeöl ins Wasser gegeben wird, wird die [Babybadewanne](/produkte/babywannen/) rutschiger. Halte dein Baby besonders gut fest und lege eine rutschfeste Badematte ein, wenn vorhanden.
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">boep Babybadeöl</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Naturkosmetik-Badeöl, vegan, COSMOS-zertifiziert.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,5/5 (Amazon) · <strong style="color: #3d2c22;">ca. 17 €</strong></p>
+<a href="https://www.amazon.de/dp/B0DXQ13CS5?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/pflegeprodukte/" style="color: #8b6f5e;">Alle Pflegeprodukte vergleichen →</a></span>
+</div>
+
 ### Badecreme oder Waschlotion
 
 Etwas reinigungsstärker als reines Öl, aber immer noch mild. Gut geeignet, wenn dein Baby älter ist und tatsächlich sauber gemacht werden muss – zum Beispiel nach dem **Beikost-Start**, wenn Brei in jeder Ritze sitzt.
@@ -108,6 +117,15 @@ Kamille wirkt beruhigend und entzündungshemmend. Ein Kamillen-Bad kann bei leic
 2. Warte 24 Stunden
 3. Keine Reaktion? Dann kannst du ihn vorsichtig fürs Bad verwenden
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Bübchen Kamille 1000ml</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Milde Baby-Badezusatz mit Kamille, pH-hautneutral, 1000ml nur 4€.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,8/5 (Amazon) · <strong style="color: #3d2c22;">ca. 4 €</strong></p>
+<a href="https://www.amazon.de/dp/B09W5XBHZT?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/pflegeprodukte/" style="color: #8b6f5e;">Alle Pflegeprodukte vergleichen →</a></span>
+</div>
+
 ### Lavendel-Badezusatz
 
 Lavendel wirkt entspannend und kann den Schlaf fördern. Viele Eltern schwören auf ein Lavendelbad als Teil der **Abendroutine**. Der Duft von Lavendel kann tatsächlich beruhigend wirken – das ist sogar wissenschaftlich belegt.
@@ -116,6 +134,15 @@ Lavendel wirkt entspannend und kann den Schlaf fördern. Viele Eltern schwören 
 **Ideal für:** Die Abendroutine bei älteren Babys
 
 > **Wichtig:** Verwende **niemals** reine ätherische Lavendelöle für Erwachsene! Diese sind für Babys viel zu konzentriert und können die Haut reizen oder allergische Reaktionen auslösen. Nutze ausschließlich Produkte, die speziell für Babys formuliert sind.
+
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">WELEDA Schlaf Gut Bad</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Beruhigendes Babybad mit Bio-Calendula & Lavendel, 200ml.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,9/5 (Amazon) · <strong style="color: #3d2c22;">ca. 8 €</strong></p>
+<a href="https://www.amazon.de/dp/B0FN4BD48B?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/pflegeprodukte/" style="color: #8b6f5e;">Alle Pflegeprodukte vergleichen →</a></span>
+</div>
 
 ### Schaumbad
 

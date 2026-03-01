@@ -60,6 +60,15 @@ Die [richtige Wassertemperatur](/ratgeber/baby-baden-temperatur/) ist bei einem 
 
 Benutze immer ein [Badethermometer](/produkte/badethermometer/), um die Temperatur genau zu messen. Gerade bei einem kranken Baby ist Schätzen keine gute Idee. Die Wassertemperatur sollte sich angenehm warm anfühlen – wie eine sanfte Umarmung für dein Baby.
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Philips Avent SCH480/00</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Digitales Bad- & Raumthermometer, schwimmfähig, EN71-geprüft.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,7/5 (Amazon) · <strong style="color: #3d2c22;">ca. 14 €</strong></p>
+<a href="https://www.amazon.de/dp/B07WKN8NQQ?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/badethermometer/" style="color: #8b6f5e;">Alle Badethermometer vergleichen →</a></span>
+</div>
+
 > **Tipp:** Heize das Badezimmer vor dem Baden auf mindestens 22-24 °C auf. So vermeidest du, dass dein Baby beim Ausziehen oder Abtrocknen auskühlt und zu frösteln beginnt.
 
 ---
@@ -122,6 +131,15 @@ Ab etwa 6 Monaten kannst du **sehr vorsichtig** mit milden ätherischen Ölen be
 Wichtig: Verwende immer nur **1-2 Tropfen** in einem Trägeröl (z.B. Mandelöl) und gib diese Mischung ins Badewasser. Niemals ätherische Öle unverdünnt verwenden!
 
 > **Sicherer Tipp:** Statt ätherischer Öle kannst du einen **Kamillentee-Aufguss** ins Badewasser geben. Kamille ist mild, entzündungshemmend und für Babys jeden Alters unbedenklich. Einfach 2-3 Beutel Kamillentee in heißem Wasser aufbrühen, abkühlen lassen und dem Badewasser beimischen.
+
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">WELEDA Schlaf Gut Bad</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Beruhigendes Babybad mit Bio-Calendula & Lavendel, 200ml.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,9/5 (Amazon) · <strong style="color: #3d2c22;">ca. 8 €</strong></p>
+<a href="https://www.amazon.de/dp/B0FN4BD48B?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/pflegeprodukte/" style="color: #8b6f5e;">Alle Pflegeprodukte vergleichen →</a></span>
+</div>
 
 ---
 

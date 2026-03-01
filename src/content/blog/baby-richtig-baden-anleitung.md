@@ -47,9 +47,36 @@ Hier ist alles, was du brauchst – übersichtlich aufgelistet:
 
 > **🛁 Alles auf einen Blick:** Unsere [Babywannen im Vergleich](/produkte/babywannen/) helfen dir, die perfekte Wanne für eure Bedürfnisse zu finden – ob klassisch, faltbar oder mit Gestell.
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Stokke Flexi Bath</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Premium-Faltbadewanne, skandinavisches Design, bis 4 Jahre nutzbar.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,5/5 (Amazon) · <strong style="color: #3d2c22;">ca. 40 €</strong></p>
+<a href="https://www.amazon.de/Stokke-Flexi-Bath-Kleinkinder-zusammenklappbar/dp/B07K36PZ9P?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/babywannen/" style="color: #8b6f5e;">Alle Babywannen vergleichen →</a></span>
+</div>
+
 > **🌡️ Sicher messen:** Ein zuverlässiges [Badethermometer](/produkte/badethermometer/) ist die wichtigste Anschaffung. In unserem Test findest du die besten Modelle ab wenigen Euro.
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Philips Avent SCH480/00</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Digitales Bad- & Raumthermometer, schwimmfähig, EN71-geprüft.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,7/5 (Amazon) · <strong style="color: #3d2c22;">ca. 14 €</strong></p>
+<a href="https://www.amazon.de/dp/B07WKN8NQQ?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/badethermometer/" style="color: #8b6f5e;">Alle Badethermometer vergleichen →</a></span>
+</div>
+
 > **☀️ Wohlig warm:** Ein [Heizstrahler am Wickeltisch](/produkte/heizstrahler/) sorgt dafür, dass dein Baby beim Aus- und Anziehen nicht friert – besonders in den kühleren Monaten Gold wert.
+
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">reer EasyHeat Flex</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">500W Heizstrahler, Medizinstandard, Wand- oder Standmontage.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,4/5 (Amazon) · <strong style="color: #3d2c22;">ca. 80 €</strong></p>
+<a href="https://www.amazon.de/dp/B07FM6WLYW?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/heizstrahler/" style="color: #8b6f5e;">Alle Heizstrahler vergleichen →</a></span>
+</div>
 
 > **🧸 Badespaß:** Ab etwa 3–4 Monaten kann [Badespielzeug](/produkte/badespielzeug/) das Baden zu einem echten Highlight machen – Quietscheentchen, Gießbecher und Wassermühlen sorgen für strahlende Augen.
 

@@ -207,4 +207,13 @@ Die Babywanne sauber zu halten ist keine Raketenwissenschaft. Mit einfachen Haus
 
 Vergiss dabei nicht das Badespielzeug – besonders Spritztiere solltest du regelmäßig reinigen oder am besten durch geschlossene Alternativen ersetzen. Wenn du noch auf der Suche nach der richtigen [Babywanne](/produkte/babywannen/) bist, achte auf Materialien, die leicht zu reinigen sind und keine Schadstoffe enthalten.
 
+<div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: linear-gradient(135deg, #fef9f5 0%, #fff5f0 100%); border: 1px solid rgba(194,154,133,0.2); border-radius: 12px;">
+<p style="margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8b6f5e;">🛒 Passender Produkt-Tipp</p>
+<p style="margin: 0 0 0.25rem; font-size: 1.05rem; font-weight: 700; color: #3d2c22;">Stokke Flexi Bath</p>
+<p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: #6b5a52; line-height: 1.5;">Premium-Faltbadewanne, skandinavisches Design, bis 4 Jahre nutzbar.</p>
+<p style="margin: 0 0 0.75rem; font-size: 0.875rem; color: #5a4a3f;">⭐ 4,5/5 (Amazon) · <strong style="color: #3d2c22;">ca. 40 €</strong></p>
+<a href="https://www.amazon.de/Stokke-Flexi-Bath-Kleinkinder-zusammenklappbar/dp/B07K36PZ9P?tag=jalapeno123-21" target="_blank" rel="nofollow noopener sponsored" style="display: inline-block; padding: 0.5rem 1.25rem; background: #FF9900; color: white; font-weight: 700; font-size: 0.8125rem; border-radius: 9999px; text-decoration: none;">Auf Amazon ansehen</a>
+<span style="margin-left: 0.75rem; font-size: 0.8125rem;"><a href="/produkte/babywannen/" style="color: #8b6f5e;">Alle Babywannen vergleichen →</a></span>
+</div>
+
 Dein Baby verdient ein sauberes, sicheres Badevergnügen – und mit diesen Tipps ist das ganz einfach!
