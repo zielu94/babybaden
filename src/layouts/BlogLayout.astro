@@ -15,6 +15,7 @@ interface Props {
   category?: string;
   headings: { depth: number; slug: string; text: string }[];
   affiliateDisclosure?: boolean;
+  readingTime?: number;
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   category = 'Ratgeber',
   headings,
   affiliateDisclosure,
+  readingTime = 5,
 } = Astro.props;
 
 const formattedPubDate = pubDate.toLocaleDateString('de-DE', {
@@ -40,9 +42,6 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString('de-DE', {
   year: 'numeric',
 });
 
-const wordCount = 2500;
-const readingTime = Math.ceil(wordCount / 200);
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -54,12 +53,23 @@ const jsonLd = {
   author: {
     '@type': 'Organization',
     name: 'babybaden.de Redaktion',
+    url: 'https://babybaden.de/ueber-uns/',
   },
   publisher: {
     '@type': 'Organization',
     name: 'babybaden.de',
     url: 'https://babybaden.de',
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/favicon.svg', Astro.site).href,
+    },
   },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': Astro.url.href,
+  },
+  wordCount: readingTime * 200,
+  inLanguage: 'de',
 };
 ---
 
@@ -124,7 +134,7 @@ const jsonLd = {
           {/* Hero Image */}
           {image && (
             <div class="mt-8 rounded-2xl overflow-hidden shadow-lg">
-              <img src={image} alt={imageAlt || title} class="w-full h-auto object-cover max-h-[400px]" loading="eager" />
+              <img src={image} alt={imageAlt || title} class="w-full h-auto object-cover max-h-[400px]" loading="eager" width="896" height="400" />
             </div>
           )}
         </header>

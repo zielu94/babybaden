@@ -1,7 +1,7 @@
 ---
 title: "Baby Haare waschen ohne Tränen: 7 bewährte Tipps"
 description: "Dein Baby weint beim Haarewaschen? Mit diesen 7 Tipps wird das Haarewaschen stressfrei und tränenlos."
-pubDate: 2026-03-16
+pubDate: 2026-02-18
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Haare waschen", "Tipps", "Tränen"]

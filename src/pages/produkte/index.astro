@@ -39,12 +39,30 @@ const categories = [
     icon: '&#129414;',
   },
 ];
+
+const collectionJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Produkte für das Baby-Baden',
+  description: 'Die besten Produkte für das Baby-Baden im Vergleich: Babywannen, Thermometer, Heizstrahler und mehr.',
+  url: new URL('/produkte/', Astro.site).href,
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: categories.map((cat, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: new URL(cat.href, Astro.site).href,
+      name: cat.title,
+    })),
+  },
+};
 ---
 
 <BaseLayout
   title="Produkte für das Baby-Baden"
   description="Die besten Produkte für das Baby-Baden im Vergleich: Babywannen, Thermometer, Heizstrahler und mehr."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(collectionJsonLd)} />
   <section class="mx-auto max-w-6xl px-4 py-10">
     <h1 class="font-heading text-3xl md:text-4xl font-extrabold text-center mb-4">Produkte</h1>
     <p class="text-center text-text-light max-w-2xl mx-auto mb-8">

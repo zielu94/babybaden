@@ -39,10 +39,12 @@ const modifiedMeta = modifiedDate ? `<meta property="article:modified_time" cont
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="de" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
 <meta name="robots" content="index, follow" />
-<html lang="de" />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate" type="application/rss+xml" title="babybaden.de RSS Feed" href="/rss.xml" />
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,6 +60,13 @@ const modifiedMeta = modifiedDate ? `<meta property="article:modified_time" cont
 <meta property="og:url" content={canonical} />
 <meta property="og:site_name" content={siteTitle} />
 <meta property="og:locale" content="de_DE" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={imageAlt} />
 
 <!-- Pinterest -->
 <meta name="pinterest-rich-pin" content="true" />

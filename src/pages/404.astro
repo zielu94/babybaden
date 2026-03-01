@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Seite nicht gefunden"
+  description="Die gesuchte Seite existiert leider nicht. Entdecke unsere Ratgeber und Produktvergleiche rund ums Baby-Baden."
+>
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-20 md:py-32 text-center">
+    <span class="text-6xl block mb-6">&#128704;</span>
+    <h1 class="font-heading text-4xl md:text-5xl font-extrabold">Seite nicht gefunden</h1>
+    <p class="mt-4 text-lg text-text-light leading-relaxed max-w-xl mx-auto">
+      Die Seite, die du suchst, existiert leider nicht mehr oder wurde verschoben. Aber keine Sorge &ndash; hier findest du bestimmt, was du brauchst:
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent hover:bg-accent-dark text-text font-heading font-bold rounded-full transition-colors shadow-sm">
+        Zur Startseite
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <a href="/ratgeber/" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white border border-primary/20 text-text font-heading font-semibold rounded-full hover:bg-primary/5 hover:shadow-sm transition-all">
+        Alle Ratgeber
+      </a>
+    </div>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <a href="/ratgeber/baby-richtig-baden-anleitung/" class="group block bg-white rounded-2xl p-5 shadow-sm hover:shadow-md border border-primary/10 transition-all">
+        <span class="text-2xl block mb-2">&#128705;</span>
+        <h2 class="font-heading font-bold text-sm group-hover:text-primary-dark transition-colors">Baby richtig baden</h2>
+        <p class="mt-1 text-xs text-text-light">Die komplette Anleitung</p>
+      </a>
+      <a href="/produkte/babywannen/" class="group block bg-white rounded-2xl p-5 shadow-sm hover:shadow-md border border-primary/10 transition-all">
+        <span class="text-2xl block mb-2">&#127777;&#65039;</span>
+        <h2 class="font-heading font-bold text-sm group-hover:text-primary-dark transition-colors">Babywannen</h2>
+        <p class="mt-1 text-xs text-text-light">Die besten im Vergleich</p>
+      </a>
+      <a href="/checkliste/" class="group block bg-white rounded-2xl p-5 shadow-sm hover:shadow-md border border-primary/10 transition-all">
+        <span class="text-2xl block mb-2">&#9989;</span>
+        <h2 class="font-heading font-bold text-sm group-hover:text-primary-dark transition-colors">Checkliste</h2>
+        <p class="mt-1 text-xs text-text-light">Alles vorbereitet?</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,7 +1,7 @@
 ---
 title: "Baby baden bei Erkältung: Ja oder nein? Das sagen Kinderärzte"
 description: "Darf man ein erkältetes Baby baden? Kinderärzte erklären, wann ein warmes Bad hilft und wann du lieber darauf verzichten solltest."
-pubDate: 2026-03-28
+pubDate: 2026-02-21
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Erkältung", "Gesundheit", "Babybad"]

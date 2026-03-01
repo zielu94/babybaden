@@ -96,6 +96,20 @@ const websiteJsonLd = {
   },
 };
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'babybaden.de',
+  url: 'https://babybaden.de',
+  logo: new URL('/favicon.svg', Astro.site).href,
+  description: 'Dein Ratgeber rund ums Baby-Baden: Produktvergleiche, Anleitungen und Tipps von Eltern für Eltern.',
+  founder: [
+    { '@type': 'Person', name: 'Rafael' },
+    { '@type': 'Person', name: 'Karolina' },
+  ],
+  sameAs: [],
+};
+
 const homepageFaqs = [
   {
     question: 'Ab wann darf ich mein Baby baden?',
@@ -139,6 +153,7 @@ const faqJsonLd = {
 >
   <!-- Schema Markup -->
   <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <Hero />
 
@@ -243,6 +258,8 @@ const faqJsonLd = {
               alt="Baby wird liebevoll gebadet"
               class="w-full h-full object-cover"
               loading="lazy"
+              width="640"
+              height="480"
             />
             <div class="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent md:from-primary/5 md:to-transparent"></div>
           </div>

@@ -1,7 +1,7 @@
 ---
 title: "Babywanne reinigen & desinfizieren: So geht's richtig"
 description: "Babywanne richtig reinigen: Mit Hausmitteln wie Essig und Natron Kalk, Schimmel und Bakterien entfernen. Tipps für alle Materialien."
-pubDate: 2026-04-01
+pubDate: 2026-02-22
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Babywanne", "Hygiene", "Reinigung"]

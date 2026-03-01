@@ -1,7 +1,7 @@
 ---
 title: "Neugeborenes baden: Wann nach der Nabelschnur & wie richtig?"
 description: "Wann darf dein Neugeborenes ins Wasser? Alles über Nabelheilung, erstes Bad und die richtige Wassertemperatur."
-pubDate: 2026-03-12
+pubDate: 2026-02-17
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Neugeborenes", "Nabelschnur", "Erstes Bad"]
