@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /404
+Disallow: /404/
+
+# Crawl-Delay reduzieren für schnelleres Indexieren
+# (kein Crawl-Delay = Google darf so oft crawlen wie nötig)
 
 Sitemap: https://babybaden.de/sitemap-index.xml
