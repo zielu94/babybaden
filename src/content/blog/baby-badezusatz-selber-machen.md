@@ -2,6 +2,7 @@
 title: "Baby-Badezusatz selber machen: 5 natürliche DIY-Rezepte"
 description: "Baby-Badezusatz einfach selber machen: 5 natürliche Rezepte mit Haferflocken, Kamille, Muttermilch & mehr. Sanft, günstig und ohne Chemie."
 pubDate: 2026-02-25
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Badezusatz", "DIY", "Naturpflege"]

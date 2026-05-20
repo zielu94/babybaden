@@ -106,6 +106,30 @@ const faqJsonLd = {
     },
   })),
 };
+
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Die 7 besten Babybadewannen 2026 im Vergleich',
+  url: 'https://babybaden.de/produkte/babywannen/',
+  numberOfItems: products.length,
+  itemListElement: products.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.name,
+    url: p.affiliateLink,
+  })),
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://babybaden.de/' },
+    { '@type': 'ListItem', position: 2, name: 'Produkte', item: 'https://babybaden.de/produkte/' },
+    { '@type': 'ListItem', position: 3, name: 'Babybadewannen', item: 'https://babybaden.de/produkte/babywannen/' },
+  ],
+};
 ---
 
 <BaseLayout
@@ -113,6 +137,8 @@ const faqJsonLd = {
   description="Welche Babywanne ist die beste? Wir vergleichen 7 beliebte Modelle 2026 &ndash; faltbar und mit Gestell. Mit ehrlicher Kaufberatung und Praxistipps."
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -127,7 +153,7 @@ const faqJsonLd = {
         Eine gute Babywanne macht das Baden sicher und bequem &ndash; für dein Baby <strong>und</strong> für dich. Aber welche passt zu euch? <strong>Faltbar</strong> für kleine Bäder und Reisen? Oder mit <strong>Gestell</strong>, damit dein Rücken geschont wird? Wir haben die 7 beliebtesten Modelle verglichen und zeigen dir, worauf es wirklich ankommt.
       </p>
       <p class="text-sm text-text-light italic">
-        <em>Zuletzt aktualisiert: Februar 2026</em>
+        <em>Zuletzt aktualisiert: Mai 2026</em>
       </p>
     </header>
 

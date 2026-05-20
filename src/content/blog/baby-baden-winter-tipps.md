@@ -2,6 +2,7 @@
 title: "Baby baden im Winter: So schützt du empfindliche Babyhaut"
 description: "Baby baden im Winter: Tipps zu Raumtemperatur, Hautpflege, Heizstrahler und wie du Babys Haut vor trockener Heizungsluft schützt."
 pubDate: 2026-02-20
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Winter", "Hautpflege", "Tipps"]

@@ -64,6 +64,16 @@ const faqJsonLd = {
     },
   })),
 };
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://babybaden.de/' },
+    { '@type': 'ListItem', position: 2, name: 'Produkte', item: 'https://babybaden.de/produkte/' },
+    { '@type': 'ListItem', position: 3, name: 'Badespielzeug', item: 'https://babybaden.de/produkte/badespielzeug/' },
+  ],
+};
 ---
 
 <BaseLayout
@@ -72,6 +82,7 @@ const faqJsonLd = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
@@ -86,7 +97,7 @@ const faqJsonLd = {
         Badespielzeug macht das Baden zum Erlebnis &ndash; und <strong>fördert gleichzeitig die Entwicklung</strong> deines Babys. Greifen, spritzen, stapeln, staunen: In der Badewanne trainiert dein Kind Feinmotorik, Ursache-Wirkung-Verständnis und sensorische Wahrnehmung. Von <strong>schimmelfreien Spritztieren</strong> über <strong>magische Badebücher</strong> bis zum <strong>leuchtenden Wal-Sprinkler</strong>: Hier unsere 8 ehrlichen Empfehlungen.
       </p>
       <p class="text-sm text-text-light italic">
-        <em>Zuletzt aktualisiert: März 2026</em>
+        <em>Zuletzt aktualisiert: Mai 2026</em>
       </p>
     </header>
 

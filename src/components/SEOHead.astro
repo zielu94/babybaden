@@ -44,6 +44,13 @@ const modifiedMeta = modifiedDate ? `<meta property="article:modified_time" cont
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Preload LCP image for faster rendering -->
+{type === 'website' && (
+  <link rel="preload" as="image" href={image} fetchpriority="high" />
+)}
+<!-- Preconnect for fonts is handled below, preload critical font -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" />
+
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />

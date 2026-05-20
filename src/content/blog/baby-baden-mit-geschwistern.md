@@ -2,6 +2,7 @@
 title: "Baby und Geschwisterkind zusammen baden: Ab wann & worauf achten?"
 description: "Ab wann können Baby und Geschwisterkind zusammen baden? Sicherheitstipps, Altersempfehlungen und worauf Eltern achten müssen."
 pubDate: 2026-02-24
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Geschwister", "Sicherheit", "Familienbad"]

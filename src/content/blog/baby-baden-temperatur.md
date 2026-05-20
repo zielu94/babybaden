@@ -2,6 +2,7 @@
 title: "Die richtige Temperatur zum Baby baden: So prüfst du es sicher"
 description: "Wie warm muss das Badewasser fürs Baby sein? 36-37 Grad sind ideal. Hier erfährst du wie du die Temperatur sicher prüfst – mit und ohne Thermometer."
 pubDate: 2026-01-15
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Temperatur", "Sicherheit", "Badethermometer"]

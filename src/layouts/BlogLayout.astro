@@ -71,6 +71,31 @@ const jsonLd = {
   wordCount: readingTime * 200,
   inLanguage: 'de',
 };
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Startseite',
+      item: 'https://babybaden.de/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: category === 'Ratgeber' ? 'Ratgeber' : 'Produkte',
+      item: category === 'Ratgeber' ? 'https://babybaden.de/ratgeber/' : 'https://babybaden.de/produkte/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: title,
+      item: Astro.url.href,
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -83,6 +108,8 @@ const jsonLd = {
   modifiedDate={(updatedDate || pubDate).toISOString()}
   jsonLd={jsonLd}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+
   {/* Reading Progress Bar */}
   <div id="reading-progress" class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-primary-dark to-accent z-[60] transition-all duration-150" style="width: 0%"></div>
 

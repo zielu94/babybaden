@@ -2,6 +2,7 @@
 title: "Baby-Bade-Erstausstattung: Alles was du wirklich brauchst"
 description: "Was brauche ich zum Baby baden? Die komplette Einkaufsliste für die Bade-Erstausstattung – nur das, was wirklich sinnvoll ist."
 pubDate: 2026-02-23
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Erstausstattung", "Einkaufsliste", "Zubehör"]

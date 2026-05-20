@@ -2,6 +2,7 @@
 title: "Badezusatz fürs Baby: Ab wann und welcher ist der richtige?"
 description: "Braucht mein Baby Badezusatz? Ab wann ist es sinnvoll? Welche Produkte sind wirklich gut? Alles was du wissen musst – ehrlich und unabhängig."
 pubDate: 2026-03-01
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Badezusatz", "Pflegeprodukte", "Babyhaut"]

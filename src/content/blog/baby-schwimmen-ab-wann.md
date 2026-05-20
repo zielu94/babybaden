@@ -2,6 +2,7 @@
 title: "Babyschwimmen ab wann? Alles was Eltern wissen müssen"
 description: "Babyschwimmen ab wann sinnvoll? Ab 3 Monaten möglich! Erfahre alles über Vorteile, Kosten, Ablauf und was du mitnehmen musst."
 pubDate: 2026-02-27
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Babyschwimmen", "Wassergewöhnung", "Entwicklung"]

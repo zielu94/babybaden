@@ -2,6 +2,7 @@
 title: "Hilfe, mein Baby hasst Baden! 7 Tipps für Wassermuffel"
 description: "Dein Baby schreit beim Baden? Du bist nicht allein! Hier sind 7 erprobte Tipps, wie du kleine Wassermuffel sanft ans Baden gewöhnen kannst."
 pubDate: 2026-02-14
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Tipps"
 tags: ["Baby weint", "Wassermuffel", "Tipps"]

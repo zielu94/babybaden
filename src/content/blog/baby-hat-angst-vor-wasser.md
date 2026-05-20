@@ -2,6 +2,7 @@
 title: "Baby hat Angst vor Wasser: 8 Tipps für entspanntes Baden"
 description: "Dein Baby hat plötzlich Angst vor Wasser? 8 sanfte Strategien, um die Badeangst zu überwinden."
 pubDate: 2026-02-19
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Angst vor Wasser", "Badeangst", "Tipps"]

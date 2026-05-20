@@ -2,7 +2,7 @@
 title: "Baby baden: Die komplette Anleitung für frischgebackene Eltern"
 description: "Dein Baby zum ersten Mal baden? Hier findest du alles: richtige Temperatur, Schritt-für-Schritt-Anleitung, Sicherheitstipps und die beste Ausstattung."
 pubDate: 2026-01-08
-updatedDate: 2026-03-01
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Baby baden", "Anleitung", "Neugeborene", "Sicherheit"]

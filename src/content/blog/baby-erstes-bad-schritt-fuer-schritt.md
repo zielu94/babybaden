@@ -2,6 +2,7 @@
 title: "Das erste Bad: Schritt-für-Schritt-Anleitung für nervöse Eltern"
 description: "Aufgeregt vor dem ersten Bad? Verständlich! Unsere einfache Schritt-für-Schritt-Anleitung nimmt dir die Nervosität. Du schaffst das!"
 pubDate: 2026-01-22
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Erstes Bad", "Anleitung", "Schritt für Schritt"]

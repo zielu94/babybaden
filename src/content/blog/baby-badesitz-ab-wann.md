@@ -2,6 +2,7 @@
 title: "Baby-Badesitz ab wann? Alles über Badewannensitze für Babys"
 description: "Ab wann darf dein Baby in den Badesitz? Erfahre alles über Alter, Arten, Sicherheit und Tipps für Badewannensitze."
 pubDate: 2026-02-15
+updatedDate: 2026-05-20
 author: "babybaden.de Redaktion"
 category: "Ratgeber"
 tags: ["Badesitz", "Badewannensitz", "Sicherheit"]
