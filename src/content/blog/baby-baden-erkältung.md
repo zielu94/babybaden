@@ -13,7 +13,7 @@ draft: false
 affiliateDisclosure: false
 ---
 
-Dein Baby hat Schnupfen, hustet ein wenig und ist quengelig – und du fragst dich: **Darf ich mein erkältetes Baby trotzdem baden?** Diese Frage stellen sich viele Eltern, besonders in der kalten Jahreszeit. Die gute Nachricht: In den meisten Fällen ist ein warmes Bad nicht nur erlaubt, sondern kann deinem kleinen Schatz sogar richtig guttun. Aber es gibt ein paar wichtige Ausnahmen, die du kennen solltest.
+Dein Baby hat Schnupfen, hustet ein wenig und ist quengelig – und du fragst dich: **Darf ich mein erkältetes Baby trotzdem baden?** Diese Frage stellen sich viele Eltern, besonders in der kalten Jahreszeit, in der auch beim [Baden im Winter](/ratgeber/baby-baden-winter-tipps/) ein paar Besonderheiten zu beachten sind. Die gute Nachricht: In den meisten Fällen ist ein warmes Bad nicht nur erlaubt, sondern kann deinem kleinen Schatz sogar richtig guttun. Aber es gibt ein paar wichtige Ausnahmen, die du kennen solltest.
 
 Hier erfährst du, was Kinderärzte empfehlen, welche Vorteile ein Bad bei Erkältung hat und wann du lieber darauf verzichten solltest.
 
@@ -151,7 +151,7 @@ Damit das Bad bei Erkältung zum Wohlfühl-Erlebnis wird, hier ein paar bewährt
 1. **Badezimmer vorheizen:** Mindestens 22-24 °C Raumtemperatur
 2. **Alles vorbereiten:** Handtuch, Kleidung, Nasentropfen griffbereit legen
 3. **Tür schließen:** So bleibt der wohltuende Dampf im Raum
-4. **Nach dem Bad:** Baby sofort in ein vorgewärmtes Handtuch wickeln
+4. **Nach dem Bad:** Baby sofort in ein vorgewärmtes Handtuch wickeln und wie gewohnt [pflegen](/ratgeber/baby-pflege-nach-dem-baden/)
 5. **Nasentropfen geben:** Direkt nach dem Bad ist der ideale Zeitpunkt, denn die Schleimhäute sind weich und aufnahmebereit
 6. **Nicht föhnen:** Babys Haare sanft trocken tupfen, der Föhn ist zu laut und zu heiß
 7. **Warme Kleidung:** Body, Strampler und eventuell Socken bereitlegen
@@ -166,6 +166,26 @@ Wenn du dir unsicher bist oder dein Baby das Bad gerade ablehnt, gibt es sanfte 
 - **Dampfbad im Badezimmer:** Lass heißes Wasser in die Badewanne oder Dusche laufen und setze dich mit deinem Baby (angezogen!) in das dampfige Badezimmer. So profitiert dein Baby vom Dampf, ohne gebadet zu werden.
 - **Warmer Waschlappen:** Ein feuchtwarmer Waschlappen auf der Brust kann wohltuend wirken.
 - **Fußbad:** Für ältere Babys (ab ca. 8 Monaten) kann auch ein warmes Fußbad helfen, die Durchblutung anzuregen.
+
+---
+
+## Häufige Fragen: Baby baden bei Erkältung
+
+### Darf ich mein Baby mit Schnupfen baden?
+
+Ja. Bei leichtem Schnupfen ohne hohes Fieber ist ein kurzes, warmes Bad unbedenklich und kann sogar helfen – der Wasserdampf befeuchtet die Schleimhäute und löst festsitzendes Sekret. Entscheidend ist der Allgemeinzustand: Ist dein Baby munter, spricht nichts dagegen.
+
+### Ab welcher Temperatur sollte ich mein erkältetes Baby nicht baden?
+
+Bei Fieber über **38,5 °C** (rektal gemessen) solltest du auf das Baden verzichten, da die Wärme den Kreislauf zusätzlich belastet. Bei Babys unter 3 Monaten gilt: bei jedem Fieber zuerst den Kinderarzt kontaktieren.
+
+### Wie oft darf ich mein erkältetes Baby baden?
+
+Auch bei Erkältung gilt die normale Empfehlung von [zwei bis drei Bädern pro Woche](/ratgeber/wie-oft-baby-baden/) – nicht häufiger, da häufiges Baden die ohnehin beanspruchte Haut zusätzlich austrocknet. Halte jedes Bad auf 3–5 Minuten kurz.
+
+### Darf ich Erkältungsbäder oder ätherische Öle verwenden?
+
+Für Babys unter 6 Monaten sind ätherische Öle wie Eukalyptus, Menthol oder Kampfer **tabu** – sie können Atemkrämpfe auslösen. Greife stattdessen zu einem milden Kamillentee-Aufguss im Badewasser, der für jedes Alter unbedenklich ist.
 
 ---
 

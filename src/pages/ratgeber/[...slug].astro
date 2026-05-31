@@ -19,10 +19,20 @@ const wordCount = rawBody.split(/\s+/).filter((w: string) => w.length > 0).lengt
 const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const ownTags = new Set(post.data.tags ?? []);
 const related = allPosts
   .filter(p => p.id !== post.id)
+  .map(p => {
+    const sharedTags = (p.data.tags ?? []).filter((t: string) => ownTags.has(t)).length;
+    const sameCategory = p.data.category === post.data.category ? 1 : 0;
+    return { p, score: sharedTags * 10 + sameCategory };
+  })
+  .sort((a, b) =>
+    b.score - a.score ||
+    b.p.data.pubDate.valueOf() - a.p.data.pubDate.valueOf()
+  )
   .slice(0, 3)
-  .map(p => ({
+  .map(({ p }) => ({
     title: p.data.title,
     description: p.data.description,
     slug: p.id,

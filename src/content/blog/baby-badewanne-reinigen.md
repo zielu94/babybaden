@@ -25,6 +25,8 @@ Lass uns erstmal die Grundlagen klären: Eine schnelle Reinigung sollte **nach j
 - **Einmal pro Woche:** Gründlichere Reinigung mit einem milden Hausmittel
 - **Einmal im Monat:** Intensive Reinigung inklusive Kalkentfernung und Kontrolle auf Schimmel
 
+Wie oft die Wanne im Einsatz ist, hängt natürlich davon ab, [wie oft du dein Baby badest](/ratgeber/wie-oft-baby-baden/) – in den ersten Monaten reichen meist zwei bis drei Bäder pro Woche, entsprechend seltener fällt auch die gründliche Reinigung an.
+
 > **Wichtig:** Lass die Babywanne nach jedem Gebrauch **vollständig trocknen**. Stelle sie am besten schräg auf, damit das restliche Wasser ablaufen kann. Stehendes Wasser ist der beste Freund von Bakterien und Schimmel.
 
 ---
@@ -143,7 +145,7 @@ Nicht jede [Babywanne](/produkte/babywannen/) ist gleich. Je nach Material gibt 
 
 Die meisten Babywannen bestehen aus PP-Kunststoff. Dieses Material ist robust, pflegeleicht und verträgt alle genannten Hausmittel problemlos. PP-Wannen sind zudem BPA-frei und spülmaschinenfest – wobei die meisten Babywannen schlicht zu groß für die Spülmaschine sind.
 
-**Pflegetipp:** PP-Wannen können sich bei häufigem Gebrauch von Badezusätzen leicht verfärben. Natron-Paste hilft, die Verfärbungen zu entfernen.
+**Pflegetipp:** PP-Wannen können sich bei häufigem Gebrauch von [Badezusätzen](/ratgeber/baby-badezusatz-ab-wann/) leicht verfärben. Natron-Paste hilft, die Verfärbungen zu entfernen.
 
 ### Thermoplastisches Elastomer (TPE) – faltbare Wannen
 
@@ -199,6 +201,26 @@ Hier nochmal alles auf einen Blick:
 - Kalkflecken behandeln
 - Auf Schimmel und Verfärbungen kontrollieren
 - Badespielzeug auskochen oder ersetzen
+
+---
+
+## Häufige Fragen zur Babywannen-Reinigung
+
+### Womit reinige ich die Babywanne am besten?
+
+Mit einfachen Hausmitteln: Weißer Haushaltsessig löst Kalk und wirkt antibakteriell, Natron scheuert sanft und neutralisiert Gerüche. Für die normale Reinigung nach dem Bad reicht klares, warmes Wasser und ein Mikrofasertuch. Aggressive Allzweck- oder Desinfektionsreiniger sind für Babys empfindliche Haut tabu.
+
+### Muss ich die Babywanne desinfizieren?
+
+In der Regel nein. Bei einem gesunden Baby genügt die regelmäßige Reinigung mit Essig, der von Natur aus antibakteriell wirkt. Wichtiger als Desinfektion ist, dass die Wanne nach jedem Bad **vollständig trocknet** – stehendes Wasser ist die eigentliche Brutstätte für Keime.
+
+### Wie entferne ich Kalk aus der Babywanne?
+
+Trage eine Essig-Wasser-Mischung (1:1) oder bei hartnäckigen Flecken Zitronensäure-Lösung (2 EL auf 500 ml Wasser) auf, lasse sie 10–30 Minuten einwirken und spüle gründlich nach. Vorbeugend hilft es, die Wanne nach jedem Bad trockenzureiben, bevor das Wasser verdunsten kann.
+
+### Wie oft sollte ich die Babywanne reinigen?
+
+Eine kurze Reinigung nach jedem Bad (ausspülen + trockenwischen), eine gründlichere mit Hausmitteln einmal pro Woche und eine Intensivreinigung mit Kalkentfernung einmal im Monat. Die [richtige Wassertemperatur](/ratgeber/baby-baden-temperatur/) und eine saubere Wanne gehören für ein sicheres Badevergnügen zusammen.
 
 ---
 
