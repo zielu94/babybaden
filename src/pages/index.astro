@@ -133,18 +133,6 @@ const homepageFaqs = [
   },
 ];
 
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: homepageFaqs.map(faq => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
-    },
-  })),
-};
 ---
 
 <BaseLayout
@@ -154,7 +142,6 @@ const faqJsonLd = {
   <!-- Schema Markup -->
   <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <Hero />
 
   <!-- Quick Tips Section -->

@@ -54,37 +54,13 @@ const faqItems = [
   },
 ];
 
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqItems.map(faq => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
-    },
-  })),
-};
-
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://babybaden.de/' },
-    { '@type': 'ListItem', position: 2, name: 'Produkte', item: 'https://babybaden.de/produkte/' },
-    { '@type': 'ListItem', position: 3, name: 'Badezubehör', item: 'https://babybaden.de/produkte/badezubehoer/' },
-  ],
-};
 ---
 
 <BaseLayout
   title="Badezubehör Baby: Die 10 besten Helfer im Test 2026"
   description="Badezubehör Baby Test 2026: Skip Hop Haarwaschbecher, Kapuzenhandtücher, Waschlappen & Badekissen im Vergleich. Must-haves ab 8€ – ehrlich empfohlen."
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(itemListJsonLd)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
   <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <Breadcrumb items={[
       { label: 'Produkte', href: '/produkte/' },
