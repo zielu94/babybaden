@@ -26,8 +26,8 @@ const {
 const siteTitle = 'babybaden.de';
 const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 
-// Canonical URL immer mit Trailing Slash normalisieren
-const rawCanonical = canonicalUrl || Astro.url.href;
+// Canonical URL immer auf non-www Basis normalisieren
+const rawCanonical = canonicalUrl || new URL(Astro.url.pathname + Astro.url.search, Astro.site).href;
 const canonicalUrlObj = new URL(rawCanonical);
 if (!canonicalUrlObj.pathname.endsWith('/')) {
   canonicalUrlObj.pathname += '/';
