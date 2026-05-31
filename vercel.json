@@ -5,12 +5,6 @@
       "has": [{ "type": "host", "value": "www.babybaden.de" }],
       "destination": "https://babybaden.de/:path*",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "babybaden.de" }],
-      "destination": "https://babybaden.de/:path*",
-      "permanent": true
     }
   ]
 }
